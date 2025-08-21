@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Tools and Workflows for Writing | Advanced Research Writing in Statistics and Data Science</title>
+  <meta name="description" content="<p>“This is a book developed using the bookdown package. The
+output format for this example is bookdown::gitbook.”</p>" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Tools and Workflows for Writing | Advanced Research Writing in Statistics and Data Science" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>“This is a book developed using the bookdown package. The
+output format for this example is bookdown::gitbook.”</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Tools and Workflows for Writing | Advanced Research Writing in Statistics and Data Science" />
+  
+  <meta name="twitter:description" content="<p>“This is a book developed using the bookdown package. The
+output format for this example is bookdown::gitbook.”</p>" />
+  
+
+<meta name="author" content="Kun Chen" />
+
+
+<meta name="date" content="2025-08-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="parts.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#types-of-papers-in-statistics-and-data-science"><i class="fa fa-check"></i><b>2.1</b> Types of Papers in Statistics and Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#theory-papers"><i class="fa fa-check"></i><b>2.1.1</b> Theory papers</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#methodological-papers"><i class="fa fa-check"></i><b>2.1.2</b> Methodological papers</a></li>
+<li class="chapter" data-level="2.1.3" data-path="intro.html"><a href="intro.html#applied-papers"><i class="fa fa-check"></i><b>2.1.3</b> Applied papers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#data-science-and-machine-learning-papers"><i class="fa fa-check"></i><b>2.2</b> Data Science and Machine Learning Papers</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#scientific-writing-resources"><i class="fa fa-check"></i><b>2.3</b> Scientific Writing Resources</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#about-this-book"><i class="fa fa-check"></i><b>2.4</b> About This Book</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#outline-of-the-book"><i class="fa fa-check"></i><b>2.5</b> Outline of the Book</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#before-we-start"><i class="fa fa-check"></i><b>2.6</b> Before We Start</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-tools.html"><a href="ch-tools.html"><i class="fa fa-check"></i><b>3</b> Tools and Workflows for Writing</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-tools.html"><a href="ch-tools.html#word-vs.-latex"><i class="fa fa-check"></i><b>3.1</b> Word vs. LaTeX</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-tools.html"><a href="ch-tools.html#git-for-version-control"><i class="fa fa-check"></i><b>3.2</b> Git for Version Control</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-tools.html"><a href="ch-tools.html#set-updownload-git-here."><i class="fa fa-check"></i><b>3.2.1</b> Set Up+Download Git here.</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-tools.html"><a href="ch-tools.html#most-frequently-used-git-commands"><i class="fa fa-check"></i><b>3.2.2</b> Most Frequently Used Git Commands</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-tools.html"><a href="ch-tools.html#tips-on-using-git"><i class="fa fa-check"></i><b>3.2.3</b> Tips on using Git:</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ch-tools.html"><a href="ch-tools.html#pull-request"><i class="fa fa-check"></i><b>3.2.4</b> Pull Request</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-tools.html"><a href="ch-tools.html#latex-for-typesetting"><i class="fa fa-check"></i><b>3.3</b> LaTeX for Typesetting</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-tools.html"><a href="ch-tools.html#a-beginners-template"><i class="fa fa-check"></i><b>3.3.1</b> A beginner’s template</a></li>
+<li class="chapter" data-level="3.3.2" data-path="ch-tools.html"><a href="ch-tools.html#math-equations"><i class="fa fa-check"></i><b>3.3.2</b> Math equations</a></li>
+<li class="chapter" data-level="3.3.3" data-path="ch-tools.html"><a href="ch-tools.html#tables"><i class="fa fa-check"></i><b>3.3.3</b> Tables</a></li>
+<li class="chapter" data-level="3.3.4" data-path="ch-tools.html"><a href="ch-tools.html#figures"><i class="fa fa-check"></i><b>3.3.4</b> Figures</a></li>
+<li class="chapter" data-level="3.3.5" data-path="ch-tools.html"><a href="ch-tools.html#references"><i class="fa fa-check"></i><b>3.3.5</b> References</a></li>
+<li class="chapter" data-level="3.3.6" data-path="ch-tools.html"><a href="ch-tools.html#cross-referencing"><i class="fa fa-check"></i><b>3.3.6</b> Cross-referencing</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-tools.html"><a href="ch-tools.html#using-r-markdown-as-a-frontend"><i class="fa fa-check"></i><b>3.4</b> Using R Markdown as a Frontend</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-tools.html"><a href="ch-tools.html#command-line-interface"><i class="fa fa-check"></i><b>3.5</b> Command Line Interface</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
+<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
+<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
+<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
+<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
+<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Research Writing in Statistics and Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-tools" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Tools and Workflows for Writing<a href="ch-tools.html#ch-tools" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Many people use MS Word when it comes to writing.
+Not withholding the importance of the invention of MS Office, it is not the right tool to write methodological or theoretical papers in
+statistics. To many, writing a statistical
+paper using MS Word would be as interesting as running a statistical data
+analysis using MS Excel. Simply put, MS Office is great for office staff to do
+routine office documentary tasks.</p>
+<p>For professional writing, one need to be aware
+of the professional tools and invest time to master them.</p>
+<div id="word-vs.-latex" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Word vs. LaTeX<a href="ch-tools.html#word-vs.-latex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The right, high - quality, professional typesetting system is LaTeX. LaTeX is a
+typesetting language that makes it easier and cleaner to write documents
+involving extensive mathematical content. It is the standard in Statistics, Mathematics, Physics, Chemistry and other disciplines that require many
+mathematical formulas.</p>
+<p>LaTeX separates the appearance of a document from its content. This allows authors
+to be able to focus on writing the content without having to worry about
+its appearance until the end. There are many different
+professionally looking appearances one can choose or design, allowing for easy
+adaptation to different formats and styles.</p>
+<p>A LaTeX document has <code>.tex</code> extension, and can be
+edited by your favorite text editor. The final output of the document can have
+different formats, the most popular of which is <code>pdf</code>, which stands for <em>
+portable
+document format </em> . It can be opened on any platform (computer operating system).</p>
+<p>The source <code>.tex</code> file is a plain text file. Just like source code of any
+programming language, a plain text file allows version control, which makes
+tracking and managing the source easy and professional. The most popular version
+control tool today is <code>git</code>.:::example
+** LaTeX vs. Word **</p>
+<p>Suppose you want to write down a likelihood function for a Gaussian model:<span class="math display">\[L(\mu, \sigma^2 \mid x_1, \ldots, x_n)
+= (2\pi\sigma^2)^{
+-n / 2
+}\exp\left\{
+-\frac{
+1
+}{
+2\sigma^2
+}\sum_{
+i = 1
+}^n(x_i - \mu)^2\right\
+}.
+\]</span></p>
+<p>-** In LaTeX ** , the source code is simple and transparent:<code>latex L(\mu, \sigma^2 \mid x_1, \ldots, x_n) = (2\pi\sigma^2)^{ -n / 2 }\exp\left\{ -\frac{ 1 }{ 2\sigma^2 }\sum_{ i = 1 }^n(x_i - \mu)^2\right\ }.</code></p>
+<p>This produces beautifully typeset mathematics, is reproducible, and can be revised easily.
+In MS Word, one must insert each symbol manually through the Equation Editor:Greek letters via dropdowns, summations via menus, exponents via special boxes.
+Formatting quickly becomes clumsy, and editing dozens of formulas is tedious.
+Copy - pasting often breaks structure, and version control is nearly impossible.</p>
+<p>For one or two equations Word may be acceptable. But for an entire paper with dozens of equations, cross -
+references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.::::::{
+.exercise
+}
+Compare Word and LaTeX</p>
+<ol style="list-style-type: decimal">
+<li><p>Typeset the following equation in ** MS Word ** using its built - in Equation Editor:<span class="math display">\[\hat{
+\beta
+} = \arg\min_{
+\beta \in \mathbb{
+R
+}^p
+}
+\left\{
+\frac{
+1
+}{
+2n
+}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\
+}.
+\]</span></p></li>
+<li><p>Now, paste this LaTeX code into Overleaf (or another LaTeX editor) and compile:<code>latex \hat{ \beta } = \arg\min_{ \beta \in \mathbb{ R }^p } \left\{ \frac{ 1 }{ 2n }\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\ }</code></p></li>
+</ol>
+<p>-Which approach is faster ?
+-Which result looks more professional ?
+-Which is easier to revise and share ?:::While LaTeX is the professional standard for statistical and mathematical
+writing, statisticians must also remain flexible when collaborating with
+scientists from other fields. In many interdisciplinary projects, collaborators
+still prefer Word as the common platform for writing and revision. This can also
+often be the case when developing grant applications to
+National Insititutes of Health (NIH).
+This is understandable, since for papers in fileds such as biology, medicine, or social
+sciences, statistical formulas are often minimal or should even be avoided
+altogether. In such cases, it is often best to accommodate collaborators by
+using Word for the main text, while reserving LaTeX for supplementary technical
+sections, appendices, or internal drafts where precise mathematical notation is
+required.</p>
+</div>
+<div id="git-for-version-control" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Git for Version Control<a href="ch-tools.html#git-for-version-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many tutorials are available in different formats. Here is a <a href="https:%20/%20/%20www.youtube.com%20/%20watch%20?%20v%20=%20RGOj5yH7evk">YouTube video
+``Git and GitHub for Beginners—Crash
+Course’’</a>
+&lt; !–https: / / www.youtube.com / watch ? v = USjZcfj8yxE).- -&gt;
+The video also covers GitHub, a cloud service for Git. Other similar services
+are, for example, <a href="bitbucket.org">bitbucket</a> and <a href="gitlab.com">GitLab</a>. A cloud
+service gives you a cloud back up of your work and makes collaboration with
+co - workers easy.</p>
+<p>There are tools that make learning Git easy.</p>
+<ul>
+<li>Here is a collection of
+<a href="https:%20/%20/%20gitexercises.fracz.com">online Git exersices</a>
+that I used for Git training in other courses that I taught.</li>
+<li>Here is a game called <a href="https:%20/%20/%20ohmygit.org"><code>Oh My Git</code></a>, an open
+source game about learning Git !</li>
+</ul>
+<div id="set-updownload-git-here." class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Set Up+Download Git <a href="https:%20/%20/%20git%20-%20scm.com%20/%20downloads">here</a>.<a href="ch-tools.html#set-updownload-git-here." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Make a GitHub Account <a href="https:%20/%20/%20www.github.com">here</a> if you don’t have one yet.</li>
+<li>Get started with your GitHub account by following the <a href="https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account">help
+page</a>.</li>
+<li>One important step is the
+<a href="https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account#2-setting-up-git">set-up</a>.</li>
+<li>The connection between your local and GitHub repositories needs
+to be <a href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories">set up only
+once</a>.
+One easy way is with a personal access token, as illustrated
+in a <a href="https://www.youtube.com/watch?v=kHkQnuYzwoo">YouTube video</a>.</li>
+</ul>
+</div>
+<div id="most-frequently-used-git-commands" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Most Frequently Used Git Commands<a href="ch-tools.html#most-frequently-used-git-commands" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><code>git clone</code>:
+<ul>
+<li>Clones a remote repository to a local folder.</li>
+<li>Requires either HTTPS link or SSH key to authenticate.</li>
+</ul></li>
+<li><code>git pull</code>:
+<ul>
+<li>Downloads any updates made to the remote repository and automatically updates the local repository.</li>
+</ul></li>
+<li><code>git status</code>:
+<ul>
+<li>Returns the state of the working directory.</li>
+<li>Lists the files that have been modified, and are yet to be or have been staged and/or committed.</li>
+<li>Shows if the local repository is begind or ahead a remote branch.</li>
+</ul></li>
+<li><code>git add</code>:
+<ul>
+<li>Adds new or modified files to the Git staging area.</li>
+<li>Gives the option to select which files are to be sent to the remote repository</li>
+</ul></li>
+<li><code>git rm</code>:
+<ul>
+<li>Used to remove files from the staging index or the local repository.</li>
+</ul></li>
+<li><code>git commit</code>:
+<ul>
+<li>Commits changes made to the local repository and saves it like a snapshot.</li>
+<li>A message is recommended with every commit to keep track of changes made.</li>
+</ul></li>
+<li><code>git push</code>:
+<ul>
+<li>Pushes commits made on local repository to the remote repository.</li>
+</ul></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-1" class="example"><strong>Example 3.1  </strong></span><strong>A clean daily Git workflow</strong></p>
+<ol style="list-style-type: decimal">
+<li>Pull the latest changes</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="ch-tools.html#cb1-1" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Write/edit files (e.g., intro.Rmd, style.css).</p></li>
+<li><p>Check what has changed</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="ch-tools.html#cb2-1" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb2-2"><a href="ch-tools.html#cb2-2" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Stage only what you intend to commit</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="ch-tools.html#cb3-1" tabindex="-1"></a><span class="fu">git</span> add intro.Rmd style.css</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Commit with a focused message</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="ch-tools.html#cb4-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;intro: refine motivation; style: add callout color&quot;</span></span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Push to remote</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="ch-tools.html#cb5-1" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div>
+</div>
+</div>
+<div id="tips-on-using-git" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Tips on using Git:<a href="ch-tools.html#tips-on-using-git" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Use the command line interface instead of the web interface (e.g., upload on GitHub)</li>
+<li>Make frequent small commits instead of rare large commits.</li>
+<li>Make commit messages informative and meaningful.</li>
+<li>Name your files/folders by some reasonable convention.</li>
+<li>Lower cases are better than upper cases.</li>
+<li>No blanks in file/folder names.</li>
+<li>Keep the repo clean by not tracking generated files.</li>
+<li>Creat a <code>.gitignore</code> file for better output from <code>git status</code>.</li>
+<li>Keep the linewidth of sources to under 80 for better <code>git diff</code> view.</li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 3.2  </strong></span><strong>A useful <code>.gitignore</code> for LaTeX/Bookdown</strong></p>
+<p>Create a file named <code>.gitignore</code> in the project root:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="ch-tools.html#cb6-1" tabindex="-1"></a>R <span class="op">/</span> RStudio</span>
+<span id="cb6-2"><a href="ch-tools.html#cb6-2" tabindex="-1"></a>.Rproj.<span class="fu">user</span></span>
+<span id="cb6-3"><a href="ch-tools.html#cb6-3" tabindex="-1"></a>.Rhistory</span>
+<span id="cb6-4"><a href="ch-tools.html#cb6-4" tabindex="-1"></a>.RData</span>
+<span id="cb6-5"><a href="ch-tools.html#cb6-5" tabindex="-1"></a>.Ruserdata</span>
+<span id="cb6-6"><a href="ch-tools.html#cb6-6" tabindex="-1"></a>OS artifacts</span>
+<span id="cb6-7"><a href="ch-tools.html#cb6-7" tabindex="-1"></a>.DS_Store</span>
+<span id="cb6-8"><a href="ch-tools.html#cb6-8" tabindex="-1"></a>Thumbs.db</span>
+<span id="cb6-9"><a href="ch-tools.html#cb6-9" tabindex="-1"></a>Bookdown outputs</span>
+<span id="cb6-10"><a href="ch-tools.html#cb6-10" tabindex="-1"></a>_book<span class="op">/</span></span>
+<span id="cb6-11"><a href="ch-tools.html#cb6-11" tabindex="-1"></a>docs<span class="op">/</span></span>
+<span id="cb6-12"><a href="ch-tools.html#cb6-12" tabindex="-1"></a>_bookdown_files<span class="op">/</span></span>
+<span id="cb6-13"><a href="ch-tools.html#cb6-13" tabindex="-1"></a><span class="op">*</span>.utf8.md</span>
+<span id="cb6-14"><a href="ch-tools.html#cb6-14" tabindex="-1"></a><span class="op">*</span>.knit.md</span>
+<span id="cb6-15"><a href="ch-tools.html#cb6-15" tabindex="-1"></a>LaTeX artifacts</span>
+<span id="cb6-16"><a href="ch-tools.html#cb6-16" tabindex="-1"></a><span class="op">*</span>.aux</span>
+<span id="cb6-17"><a href="ch-tools.html#cb6-17" tabindex="-1"></a><span class="op">*</span>.<span class="fu">log</span></span>
+<span id="cb6-18"><a href="ch-tools.html#cb6-18" tabindex="-1"></a><span class="op">*</span>.<span class="kw">out</span></span>
+<span id="cb6-19"><a href="ch-tools.html#cb6-19" tabindex="-1"></a><span class="op">*</span>.toc</span>
+<span id="cb6-20"><a href="ch-tools.html#cb6-20" tabindex="-1"></a><span class="op">*</span>.synctex.gz</span>
+<span id="cb6-21"><a href="ch-tools.html#cb6-21" tabindex="-1"></a><span class="op">*</span>.bbl</span>
+<span id="cb6-22"><a href="ch-tools.html#cb6-22" tabindex="-1"></a><span class="op">*</span>.blg</span>
+<span id="cb6-23"><a href="ch-tools.html#cb6-23" tabindex="-1"></a><span class="op">*</span>.fls</span>
+<span id="cb6-24"><a href="ch-tools.html#cb6-24" tabindex="-1"></a><span class="op">*</span>.fdb_latexmk</span>
+<span id="cb6-25"><a href="ch-tools.html#cb6-25" tabindex="-1"></a>Node <span class="op">/</span> <span class="kw">cache</span> (<span class="cf">if</span> used)</span>
+<span id="cb6-26"><a href="ch-tools.html#cb6-26" tabindex="-1"></a>node_modules<span class="op">/</span></span></code></pre></div>
+<p>Now <code>git status</code> will show only meaningful source changes.</p>
+</div>
+</div>
+<div id="pull-request" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Pull Request<a href="ch-tools.html#pull-request" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To contribute to an open source project (e.g., our classnotes), use pull
+requests. <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Pull requests</a>
+“let you tell others about changes you’ve pushed to a branch in a repository on
+GitHub. Once a pull request is opened, you can discuss and review the potential
+changes with collaborators and add follow - up commits before your changes are
+merged into the base branch.”</p>
+<p>Watch this YouTube video: <a href="https://youtu.be/8lGpZkjnkt4">GitHub pull requests in 100 seconds</a>.</p>
+</div>
+</div>
+<div id="latex-for-typesetting" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> LaTeX for Typesetting<a href="ch-tools.html#latex-for-typesetting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A source file has extension name <code>.tex</code>. It is a plain text file that can
+be edited by any text editor. It can be tracked easily for differences between
+any two versions. Different document classes are predefined such as <code>letter</code>,
+<code>article</code>, <code>report</code>, <code>beamer</code> (for presentations), and <code>book</code>. Customized
+document classes can be defined once
+you know more about LaTeX. We focus on <code>article</code> here.</p>
+<p>The instructions in this section are practiced in a
+<a href="https://github.com/jun-yan/writing-demo">demo repo</a>.</p>
+<p><a href="https://www.linkedin.com/in/anthony-zeimbekakis/">Anthony Zeimekakis</a>
+was an undergraduate student who worked with us on a thesis. The
+tex sources, data, and code are in a <a href="https://github.com/azeimbekakis/KS-Test-Thesis">GitHub
+repo</a>, which can be
+used as a template too. This paper was published in <a href="https://doi.org/10.1080/00031305.2024.2356095">American
+Statistician</a>, two
+years after Anthony graduated. Interested students beaware that this
+is a serious commitment.</p>
+<div id="a-beginners-template" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> A beginner’s template<a href="ch-tools.html#a-beginners-template" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For the product to look like a paper, we need to have title, author, abstract,
+sections, and references. Let us start from a very basic template in the
+<a href="https://github.com/jun-yan/writing-demo">demo repo</a>. Clone it to an appropriate
+location on your own computer. Go to the <code>manuscript</code> folder and compile the pdf
+product with the following:</p>
+<pre><code>pdflatex statspaper
+bibtex statspaper
+pdflatex statspaper
+pdflatex statspaper</code></pre>
+<p>It is the <code>bibtex</code> step that incorporates the references from the bib files. Two
+rounds of <code>pdflatex</code> are necessary for  to get all the cross-referencing
+settled.</p>
+<p>The whole process could be automated by:</p>
+<pre><code>latexmk -pdf statspaper</code></pre>
+<p>Advanded users may take a look at the <code>Makefile</code>, in which different targets can
+be set up and the needed opertations for each target is automated.</p>
+<p>Tips on getting started with .</p>
+<ul>
+<li>Read the compiling log and fix the errors/warnings.</li>
+<li>Googling the error/warning messages usually helps.</li>
+<li>Limit the preamble to include only what is necessary.</li>
+<li>Set up document margins with the <code>geometry</code> package.</li>
+<li>No manually controlling spaces.</li>
+<li>Familiarize yourself with <a href="https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols">LaTeX symbol
+tables</a>.</li>
+<li>Keep line widths under 80 characters in source files.</li>
+<li>Separate paragraphs in source files by double blank lines.</li>
+<li>Define acronyms at their first occurrences and only once.</li>
+</ul>
+</div>
+<div id="math-equations" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Math equations<a href="ch-tools.html#math-equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For serious math typesetting, use packages <code>amsmath</code>, <code>amsthm</code>, and others.</p>
+<p>Tips on using math:</p>
+<ul>
+<li>Punctuate equations as they always are part of sentences.</li>
+<li>Add spaces between symbols for better readability in sources.</li>
+<li>Do not start a sentence with a math symbol; rephrase to avoid it.</li>
+<li>No fractions (<code>\frac</code>) in inline math expressions.</li>
+<li>No breaking inline math expressions into different lines in tex sources.</li>
+<li>No labeling equations that are not referenced.</li>
+<li>Reference labeled equations with <code>\eqref</code> instead of <code>(\ref)</code>.</li>
+<li>Keep fonts consistent for the same notations (e.g., <span class="math inline">\(n\)</span> not n;
+AIC not <span class="math inline">\(AIC\)</span>).</li>
+<li>Use appropriate sizes for parentheses.</li>
+<li>When multiple parentheses are needed in mathematical expressions, use the
+following ordering unless the journal specifies otherwise <span class="math inline">\([\{(\mbox{math here})\}].\)</span></li>
+<li>Use predefined math functions (e.g, <span class="math inline">\(\exp\)</span> not <span class="math inline">\(exp\)</span>; <span class="math inline">\(\Pr\)</span> not <span class="math inline">\(P\)</span>).</li>
+<li>Use <code>\allowdisplaybreak</code> to allow page breaks in aligned equations.</li>
+<li>Use <code>\dd</code> for differentiation operator (available from package <code>physics</code>).</li>
+<li>No breaking long equations arbitrarily in tex source; break them into short
+lines at appropriate places and add sufficient spaces to make the sources more
+readable.</li>
+<li>Align at appropriate places in multiline equations.</li>
+</ul>
+</div>
+<div id="tables" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Tables<a href="ch-tools.html#tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you are manually typing a table source, think if you can generate the
+source. There are multiple R packages that can generate the tex source from a
+given dataset. See package <code>xtable</code> for example.</p>
+<p>Tips on professional tables:</p>
+<ul>
+<li>Use <code>tbp</code> for floating locations; avoid <code>h</code>.</li>
+<li>Make it self-contained with an informative caption.</li>
+<li>Captions should be located above the table unless the journal specifies
+otherwise.</li>
+<li>Avoid vertical lines.</li>
+<li>Put negative signs in math mode.</li>
+<li>Use better top, middle, and bottom rules from package <code>booktabs</code>.</li>
+<li>Allow hierarchy by <code>cmidrule()</code>.</li>
+<li>Do not change font size for tables. Change table layout to fit instead of
+re-sizing it.</li>
+<li>Right adjust numbers with decimal places.</li>
+<li>Use consistent number of decimal places within a column or row of same types
+of measurements.</li>
+<li>Avoid having many leading 0’s in decimal entries.</li>
+</ul>
+<p>See <a href="https://people.inf.ethz.ch/markusp/teaching/guides/guide-tables.pdf">Small Guide to Making Nice Tables by Markus
+Puschel</a></p>
+</div>
+<div id="figures" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Figures<a href="ch-tools.html#figures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use vector graphs, not raster graphs (unless you have to, e.g.,
+screenshots). Save the code that generates the figures so the figures can be
+improved easily.</p>
+<p>Tips on figures:</p>
+<ul>
+<li>Use <code>tbp</code> for floating locations; avoid <code>h</code>.</li>
+<li>Use latex package <code>graphicx</code>.</li>
+<li>Make it self-contained with an informative caption.</li>
+<li>Captions should be located below the figure unless the journal specifies
+otherwise.</li>
+<li>For line plots with different groups, use different line pattern to
+distinguish them, not only color, so that readers can tell the difference if
+printed in black/white. Same for different dots (symbols) on plots.</li>
+<li>Use colorblind friendly colors (especially avoid red/green).</li>
+<li>Keep the right aspect ratio when necessary (e.g., basketball court; map;
+pp-plot).</li>
+<li>Remove extra margins.</li>
+<li>Keep the ratio when resizing (e.g., <code>width = \textwidth</code>)</li>
+<li>Name the figure files appropriately.</li>
+</ul>
+</div>
+<div id="references" class="section level3 hasAnchor" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> References<a href="ch-tools.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>BibTeX is a reference management tool for formatting lists of references that
+can be used together with to generate a reference list.
+Non-referenced
+references are not to be cited. All referenced references are to be listed. This
+nice feature is made possible by the package <code>natbib</code>. We need to collect
+references in BibTeX format and save them in a bib database (<code>.bib</code>) file. The
+display styles of the references are controlled by bib style (<code>.bst</code>)
+files. Many journals have their own bib style files available for download. One
+can construct a customized bib style easily with the help of <code>custom-bib</code>.</p>
+<p>An alternative to BibTeX and <code>natbib</code> is <code>biblatex</code>. Most journals, however, use
+BibTeX and <code>natbib</code>, so we focus on that here.</p>
+<p>A reference is cited in the manuscript through its key by <code>\citep{}</code> for
+parenthetical citations or <code>\citet{}</code> for textual citations, where the key is
+placed inside the curly brackets. The key is used to cite or cross-reference the
+bibliographic entry in a <code>.tex</code> document. Variations
+<code>\citep*{}</code> and <code>\citet*{}</code> prints all authors. Sometimes, <code>\citeauthor{}</code>
+and <code>\citeyear{}</code> can be useful when only author(s) or year is needed.
+The key of the cited references is put in the parentheses.</p>
+<p>For <code>\citep{}</code>, multiple keys separated by commas can be put in the same
+parentheses for citing
+multiple references. Two optional arguments are allowed to <code>\citep[][]{}</code>.
+For example, <code>\citep[see, e.g.,][p. 26]{}</code> could be useful when a specific page
+(or section/chapter) is being referenced as an example.</p>
+<p>In general, to compile a tex file with bibtex references into a pdf document,
+one needs to run <code>pdflatex</code> first, then <code>bibtex</code>, and then <code>pdflatex</code> twice to
+get the references correct. A simpler solution is <code>latexmk -pdf</code>. In my
+practice, I always have a <code>Makefile</code> and use <code>make</code> to smartly automate the
+compiling process. See, for example, Anthony’s thesis repo.</p>
+<p>Tips on preparing BibTeX databases:</p>
+<ul>
+<li>Devise a good naming convention for reference keys and stick to it.</li>
+<li>Keep the bib database sorted and formatted tidy. (No repeated entries.)</li>
+<li>Title: Capitalize first letters of notional words (not form words).</li>
+<li>Use Google Scholar to get the bibtex source of a reference, but be sure to
+<strong>quality control</strong> the google output for missing fields and errors.</li>
+<li>Protect capitalization of words with special meanings in curly braces.
+(e.g., <code>{B}ayesian</code>, <code>{M}arkov Chain {M}onte {C}arlo</code>)</li>
+<li>Protect capitalization of initial words after a colon in titles and journals.</li>
+<li>Use title style for jornal/book titles.</li>
+<li>For book chapters or proceeding articles, use <code>@incollection</code> instead of
+<code>@article</code>, and fill the <code>booktitle</code> and <code>editor</code> fields.</li>
+<li>Separate pages numbers with double dashes and no other spaces (e.g.,
+<code>pages = {110--118}</code>).</li>
+<li>Books need to have publisher and address fields.</li>
+<li>For preprints, always check if they have been published recently.</li>
+<li>Use the <code>note</code> field to show information that should always be shown,</li>
+<li>All references without page numbers or volume number should be checked.</li>
+<li>Keep bib key style consistent.</li>
+</ul>
+</div>
+<div id="cross-referencing" class="section level3 hasAnchor" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Cross-referencing<a href="ch-tools.html#cross-referencing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Define a label for each object and refer to it by its label.</p>
+<p>Tips on cross-referencing:</p>
+<ul>
+<li>Devise a good naming convention for labels and stick to it.</li>
+<li>Use different label prefixes for different types of objects (e.g, <code>eq:</code> for
+equations, <code>sec:</code> for sections, <code>tab:</code> for tables, <code>fig:</code> for figures, <code>alg:</code>
+for algorithms, etc.)</li>
+<li>Labels within the source(s) for a single document must be unique.</li>
+<li>Prevent referencing numbers from starting at a new line (e.g., use
+<code>Table~\ref{tab:simulation}</code>; note the tilde).</li>
+<li>Watch warnings from compiling logs for undefined labels or multiply defined
+labels and fix them.</li>
+<li>Use package <code>xr</code> for cross-document referencing (and labels must be unique
+across documents).</li>
+</ul>
+</div>
+</div>
+<div id="using-r-markdown-as-a-frontend" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Using R Markdown as a Frontend<a href="ch-tools.html#using-r-markdown-as-a-frontend" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here is <a href="https://statds.org/templates.html">a template from the UConn Data Science Lab</a>.</p>
+</div>
+<div id="command-line-interface" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Command Line Interface<a href="ch-tools.html#command-line-interface" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>On Linux or MacOS, simply open a terminal.</p>
+<p>On Windows, several options can be considered.</p>
+<ul>
+<li>Cygwin (with X): <a href="https://x.cygwin.com" class="uri">https://x.cygwin.com</a></li>
+<li>Git Bash: <a href="https://www.gitkraken.com/blog/what-is-git-bash" class="uri">https://www.gitkraken.com/blog/what-is-git-bash</a></li>
+</ul>
+<p>The new Windows OS provides a <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for
+Linux</a>. As the name
+suggests, it aims to provide a Linux system on a Windows computer. It might be
+worth trying out.</p>
+<p>To jump start, here is a tutorial:
+<a href="https://ubuntu.com/tutorials/command-line-for-beginners">Ubuntu Linux for beginners</a>.</p>
+<p>At least, you need to know how to handle files and traverse across
+directories. The tab completion and introspection supports are very useful.</p>
+<p>Here are several commonly used shell commands:</p>
+<ul>
+<li><code>cd</code>: change directory; <code>..</code> means parent directory.</li>
+<li><code>pwd</code>: present working directory.</li>
+<li><code>ls</code>: list the content of a folder; <code>-l</code> long version;
+<code>-a</code> show hidden files; <code>-t</code> ordered by modification time.</li>
+<li><code>mkdir</code>: create a new directory.</li>
+<li><code>cp</code>: copy file/folder from a source to a target.</li>
+<li><code>mv</code>: move file/folder from a source to a target.</li>
+<li><code>rm</code>: remove a file a folder.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="parts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-tools.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

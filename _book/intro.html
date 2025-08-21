@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Introduction | Advanced Research Writing in Statistics and Data Science</title>
+  <meta name="description" content="<p>“This is a book developed using the bookdown package. The
+output format for this example is bookdown::gitbook.”</p>" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Introduction | Advanced Research Writing in Statistics and Data Science" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>“This is a book developed using the bookdown package. The
+output format for this example is bookdown::gitbook.”</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introduction | Advanced Research Writing in Statistics and Data Science" />
+  
+  <meta name="twitter:description" content="<p>“This is a book developed using the bookdown package. The
+output format for this example is bookdown::gitbook.”</p>" />
+  
+
+<meta name="author" content="Kun Chen" />
+
+
+<meta name="date" content="2025-08-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="ch-tools.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#types-of-papers-in-statistics-and-data-science"><i class="fa fa-check"></i><b>2.1</b> Types of Papers in Statistics and Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#theory-papers"><i class="fa fa-check"></i><b>2.1.1</b> Theory papers</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#methodological-papers"><i class="fa fa-check"></i><b>2.1.2</b> Methodological papers</a></li>
+<li class="chapter" data-level="2.1.3" data-path="intro.html"><a href="intro.html#applied-papers"><i class="fa fa-check"></i><b>2.1.3</b> Applied papers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#data-science-and-machine-learning-papers"><i class="fa fa-check"></i><b>2.2</b> Data Science and Machine Learning Papers</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#scientific-writing-resources"><i class="fa fa-check"></i><b>2.3</b> Scientific Writing Resources</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#about-this-book"><i class="fa fa-check"></i><b>2.4</b> About This Book</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#outline-of-the-book"><i class="fa fa-check"></i><b>2.5</b> Outline of the Book</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#before-we-start"><i class="fa fa-check"></i><b>2.6</b> Before We Start</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-tools.html"><a href="ch-tools.html"><i class="fa fa-check"></i><b>3</b> Tools and Workflows for Writing</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-tools.html"><a href="ch-tools.html#git-for-version-control"><i class="fa fa-check"></i><b>3.1</b> Git for Version Control</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="ch-tools.html"><a href="ch-tools.html#set-up"><i class="fa fa-check"></i><b>3.1.1</b> Set Up</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ch-tools.html"><a href="ch-tools.html#most-frequently-used-git-commands"><i class="fa fa-check"></i><b>3.1.2</b> Most Frequently Used Git Commands</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ch-tools.html"><a href="ch-tools.html#tips-on-using-git"><i class="fa fa-check"></i><b>3.1.3</b> Tips on using Git:</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ch-tools.html"><a href="ch-tools.html#pull-request"><i class="fa fa-check"></i><b>3.1.4</b> Pull Request</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="ch-tools.html"><a href="ch-tools.html#latex-for-typesetting"><i class="fa fa-check"></i><b>3.2</b> LaTeX for Typesetting</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-tools.html"><a href="ch-tools.html#a-beginners-template"><i class="fa fa-check"></i><b>3.2.1</b> A beginner’s template</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-tools.html"><a href="ch-tools.html#math-equations"><i class="fa fa-check"></i><b>3.2.2</b> Math equations</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-tools.html"><a href="ch-tools.html#tables"><i class="fa fa-check"></i><b>3.2.3</b> Tables</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ch-tools.html"><a href="ch-tools.html#figures"><i class="fa fa-check"></i><b>3.2.4</b> Figures</a></li>
+<li class="chapter" data-level="3.2.5" data-path="ch-tools.html"><a href="ch-tools.html#references"><i class="fa fa-check"></i><b>3.2.5</b> References</a></li>
+<li class="chapter" data-level="3.2.6" data-path="ch-tools.html"><a href="ch-tools.html#cross-referencing"><i class="fa fa-check"></i><b>3.2.6</b> Cross-referencing</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-tools.html"><a href="ch-tools.html#using-r-markdown-as-a-frontend"><i class="fa fa-check"></i><b>3.3</b> Using R Markdown as a Frontend</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-tools.html"><a href="ch-tools.html#command-line-interface"><i class="fa fa-check"></i><b>3.4</b> Command Line Interface</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
+<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
+<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
+<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
+<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
+<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Research Writing in Statistics and Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introduction<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>What does a statistical or data science paper look like? As with all scientific papers, it should have some commonly expected structures: title, abstract, keywords, introduction, methods, results, discussion, acknowledgements, references, appendix, and supplement. Due to the specificity of the statistical discipline, machine learning practices, and application domains, however, research papers can look very different from one another.</p>
+<p>What does a statistical or data science paper look like, and why should we study it?<br />
+For many graduate students and researchers, writing a paper is one of the most challenging yet most important parts of their training. A paper is more than just record of results; correctness is only the bottom line. A paper is the primary way for researchers to communicate ideas, establish credibility, and contribute to scientific literature. Good writing makes research visible, while poor writing may jeopardize delay the acknowledgement of even the most important discoveries.</p>
+<p>As with all scientific papers, statistical and data science articles generally follow a set of commonly expected structures: title, abstract, keywords, introduction, methods, results, discussion, acknowledgements, references, appendix, and supplement. Yet, due to the specificity of the statistical discipline, the practices of machine learning, and the variety of application domains, research papers can look very different from one another.</p>
+<p>This book (and its companion course) is motivated by the need to make these conventions explicit, to demystify the writing process, and to provide practical guidance through many examples and exercises. It is designed for graduate students and researchers who wish to sharpen their writing, whether they are preparing a dissertation chapter, a methodological paper, or an applied paper. Our goal is to teach students <em>how</em> statistical and data science papers are structured, <em>why</em> they are written in such ways, and <em>what</em> we shall do to adapt writing for different audiences and outlets.</p>
+<hr />
+<div id="types-of-papers-in-statistics-and-data-science" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Types of Papers in Statistics and Data Science<a href="intro.html#types-of-papers-in-statistics-and-data-science" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="theory-papers" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Theory papers<a href="intro.html#theory-papers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>theory paper</strong> in statistics and probability is closest in form to a mathematical paper. It typically includes the statement of the problem, formulation of assumptions, and the presentation of theorems, lemmas, and proofs. The purpose is often to establish fundamental properties of certain statistical or probabilistic tools/approaches, including but well beyond consistency, efficiency, optimality, convergence, asymptotic distributions, and non-asymptotic error bounds.</p>
+<p>While theory papers may not always feature data, simulations, or applications, they form the <strong>mathematical and probabilistic foundation</strong> upon which methodology and applied work are built.</p>
+<p>Most of the articles in journals such as <em>Annals of Statistics</em>, <em>Annals of Probability</em>, <em>Bernoulli</em>, <em>Probability Theory and Related Fields</em>, among others, are considered as theory papers. In other words, these journals should be the primary outlets for a theory paper.</p>
+<p>Examples include <span class="citation">Barber et al. (<a href="#ref-Foygel2021">2021</a>)</span>.</p>
+</div>
+<div id="methodological-papers" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Methodological papers<a href="intro.html#methodological-papers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>methodological paper</strong> focuses on proposing a novel methodological contribution that can be applied to a general class of real-world problems. A commonly seen structure is:</p>
+<ul>
+<li>Introduction</li>
+<li>Literature review</li>
+<li>Methods (e.g., estimation, hypothesis tests, diagnostic procedures)<br />
+</li>
+<li>Theoretical properties<br />
+</li>
+<li>Simulation studies<br />
+</li>
+<li>Applications/Illustrations<br />
+</li>
+<li>Discussion/Conclusions</li>
+</ul>
+<p>Such papers emphasis on methodological development, with a blend of theory (e.g., asymptotic or non-asymptotic guarantees) and empirical validations.</p>
+<p>Such papers emphasize methodological development, often with a blend of theory (e.g., asymptotic or non-asymptotic guarantees) and empirical validations. Astrong methodological paper should not be just a mechanical combination or minor extension of existing methods. Instead, it should be driven by a clear motivation from real-world applications.</p>
+<p>In other words, the most impactful methodological contributions are those that connect with practical relevance. They are inspired by genuine applied needs, but provide solutions that are general enough to influence future work in an important domain or even across different domains.</p>
+<p>Example include <span class="citation">Li et al. (<a href="#ref-li2023regularized">2023</a>)</span> and <span class="citation">Lau and Yan (<a href="#ref-lau2022bias">2022</a>)</span>.</p>
+</div>
+<div id="applied-papers" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Applied papers<a href="intro.html#applied-papers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An <strong>applied paper</strong> focuses on addressing a concrete scientific question in a particular domain using statistical or data science methods. Its structure often includes:</p>
+<ul>
+<li>Introduction<br />
+</li>
+<li>Data description<br />
+</li>
+<li>Methods (applied or adapted)<br />
+</li>
+<li>Results<br />
+</li>
+<li>Discussion</li>
+</ul>
+<p>Sometimes simulation studies are added to assess sensitivity. Applied papers may involve applying existing methods or developing new ones motivated by the application. Examples include <span class="citation">Price and Yan (<a href="#ref-price2022effects">2022</a>)</span>; <span class="citation">Caplan et al. (<a href="#ref-caplan2019dental">2019</a>)</span>; <span class="citation">Jiao et al. (<a href="#ref-jiao2022cyberattack">2022</a>)</span>.</p>
+<p>It is important to note that what we call “applied papers” here includes a large portion of scientific papers that rely on data analytics, statistics, and machine learning methods. In many scientific domains, these papers may in fact be considered theoretical or methodological contributions within that field. For instance, an applied paper with genomical data analysis could be regarded as a methodological paper in genetics.</p>
+<p>Such works are most often interdisciplinary, typically resulting from close collaborations between statisticians, data scientists, and domain experts. They showcase how quantitative methods advance science in other fields, while also motivating the development of new techniques within statistics and machine learning.</p>
+<hr />
+</div>
+</div>
+<div id="data-science-and-machine-learning-papers" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Data Science and Machine Learning Papers<a href="intro.html#data-science-and-machine-learning-papers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Beyond traditional statistics journals, researchers often publish in data science, machine learning, and data mining journals and conferences, including outlets such as <em>NeurIPS</em>, <em>ICML</em>, <em>KDD</em>, and <em>AAAI</em>. These conference papers emphasize:</p>
+<ul>
+<li>Conciseness (strict page limits)<br />
+</li>
+<li>Algorithmic novelty<br />
+</li>
+<li>Benchmark comparisons on standard datasets<br />
+</li>
+<li>Open-source reproducibility<br />
+</li>
+<li>Clarity for an interdisciplinary readership</li>
+</ul>
+<!-- Compared to *JASA* or *Annals of Statistics*, these outlets may prioritize empirical performance and novelty over theoretical justifications or development, though many still include core mathematical analysis. This is in part because of the current  -->
+<p>Compared to <em>JASA</em> or <em>Annals of Statistics</em>, these outlets often prioritize empirical performance and novelty over extensive theoretical justifications or methodological development, though many still include core mathematical or probabilistical analysis. This emphasis partly reflects the nature of the research topics: for many cutting-edge machine learning and AI methods, their theoretical understanding is still evolving and often lags behind practice. As a result, papers are judged primarily on their ability to demonstrate empirical advances on benchmark datasets or practical applications.</p>
+<hr />
+</div>
+<div id="scientific-writing-resources" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Scientific Writing Resources<a href="intro.html#scientific-writing-resources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many resources on scientific writing are available. For example, <span class="citation">Gopen and Swan (<a href="#ref-gopen1990science">1990</a>)</span> was selected by its publisher, <em>American Scientist</em>, as one of its 36 “Classic Articles” from the first 100 years of publishing history. Popular books are <span class="citation">Oshima and Hogue (<a href="#ref-oshima2000writing">2000</a>)</span>, <span class="citation">Gopen (<a href="#ref-gopen2004expectations">2004</a>)</span>, <span class="citation">Hairston and Keene (<a href="#ref-hairston2003successful">2003</a>)</span>, and <span class="citation">Lebrun and Lebrun (<a href="#ref-lebrun2021scientific">2021</a>)</span>.</p>
+<hr />
+</div>
+<div id="about-this-book" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> About This Book<a href="intro.html#about-this-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This book, <em>Advanced Research Writing in Statistics and Data Science</em>, extends earlier efforts with <a href="https://statds.github.io/stat-writing/"><em>Statistical Writing</em></a> by broadening its scope and including examples/exercises.</p>
+<p>The book emphasizes three guiding principles:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Clarity</strong>: communicating complex technical ideas to both expert and interdisciplinary audiences.</p></li>
+<li><p><strong>Adaptive</strong>: tailoring style and structure to journals, conferences, and other outlets.<br />
+</p></li>
+<li><p><strong>Learning by Doing</strong>: the book includes examples, annotated excerpts, and practical exercises.</p></li>
+</ol>
+<hr />
+</div>
+<div id="outline-of-the-book" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Outline of the Book<a href="intro.html#outline-of-the-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The planned content includes:</p>
+<ul>
+<li><strong>Introduction</strong> (this chapter): Types of research papers — theory, methods, and applied — and the conventions of scientific writing across statistics, data science, and machine learning.<br />
+</li>
+<li><strong>Tools and Workflows for Writing</strong>: Version control (Git/GitHub), LaTeX, R Markdown/Bookdown, and reproducibility practices.<br />
+</li>
+<li><strong>Getting Started with Writing</strong>: The research and writing lifecycle, writing proposals, and planning strategies.<br />
+</li>
+<li><strong>Writing Specific Sections</strong>: Titles, abstracts, introductions, methods, results, discussion, figures, tables, captions, and style.<br />
+</li>
+<li><strong>Writing for Different Outlets</strong>: How to adapt writing for different audiences and venues — e.g., writing statistical analysis sections in interdisciplinary papers, preparing concise ML/AI conference papers, and meeting expectations in statistics journals.<br />
+</li>
+<li><strong>Peer Review and Revision</strong>: How to review manuscripts constructively, write referee reports, and respond to reviewers effectively.<br />
+</li>
+<li><strong>Grant Proposals and Research Statements</strong>: Writing for funding agencies, fellowships, and academic job applications.<br />
+</li>
+<li><strong>Ethics and Integrity</strong>: Authorship, plagiarism, collaboration, and responsible use of AI tools.<br />
+</li>
+<li><strong>Exercises and Practice</strong>: Rewriting, reviewing, and polishing tasks, designed to simulate authentic writing and reviewing experiences.</li>
+</ul>
+<p>Each chapter will include <strong>examples drawn from real papers across statistics, biostatistics, and machine learning</strong> and will feature <strong>exercises</strong> that encourage hands-on practice and reflection.</p>
+<hr />
+</div>
+<div id="before-we-start" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Before We Start<a href="intro.html#before-we-start" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>An author should always keep the target audience in mind. Statistical journals span a wide spectrum from applied to theoretical. Machine learning venues differ again in expectations. Even technical reports, white papers, or grant proposals have unique readerships.</p>
+<p>Regardless of outlet, any scientific writing should be convincing and concise. Authors need to show clearly that their work is important, valid, and useful.</p>
+<p>Ultimately, strong writing can never substitute for strong research. In short, keep in mind that <strong>a good paper must rest on good work</strong>. Just as important, a good paper is made through revision.</p>
+<p>Or, as the Chinese phrase puts it: <strong>好文章是改出来的</strong>.</p>
+<p>You can view an example of a marked-up draft with comments from my PhD advisor here:<br />
+<a href="files/ks-comments.pdf">Download advisor’s comments (PDF)</a></p>
+<p><img src="files/ks-comments.png" style="width:70.0%" /></p>
+<hr />
+
+</div>
+</div>
+<h3>References<a href="references-1.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Foygel2021" class="csl-entry">
+Barber, Rina Foygel, Emmanuel J. Candès, Aaditya Ramdas, and Ryan J. Tibshirani. 2021. <span>“<span class="nocase">Predictive inference with the jackknife+</span>.”</span> <em>The Annals of Statistics</em> 49 (1): 486–507. <a href="https://doi.org/10.1214/20-AOS1965">https://doi.org/10.1214/20-AOS1965</a>.
+</div>
+<div id="ref-caplan2019dental" class="csl-entry">
+Caplan, D J, Y Li, W Wang, S Kang, L Marchini, HJ Cowen, and J Yan. 2019. <span>“Dental Restoration Longevity Among Geriatric and Special Needs Patients.”</span> <em>JDR Clinical &amp; Translational Research</em> 4 (1): 41–48. <a href="https://doi.org/10.1177/2380084418799083">https://doi.org/10.1177/2380084418799083</a>.
+</div>
+<div id="ref-gopen2004expectations" class="csl-entry">
+Gopen, George D. 2004. <em>Expectations: <span>T</span>eaching Writing from the Reader’s Perspective</em>. Pearson.
+</div>
+<div id="ref-gopen1990science" class="csl-entry">
+Gopen, George D, and Judith A Swan. 1990. <span>“The Science of Scientific Writing.”</span> <em>American Scientist</em> 78 (6): 550–58.
+</div>
+<div id="ref-hairston2003successful" class="csl-entry">
+Hairston, Maxine, and Michael L Keene. 2003. <em>Successful Writing</em>. 5th ed. W. W. Norton &amp; Company.
+</div>
+<div id="ref-jiao2022cyberattack" class="csl-entry">
+Jiao, J., Z. Tang, M. Yue, P. Zhang, and J. Yan. 2022. <span>“Cyberattack-Resilient Load Forecasting with Adaptive Robust Regression.”</span> <em>International Journal of Forecasting</em> 38 (3): 910–19. <a href="https://doi.org/10.1016/j.ijforecast.2021.06.009">https://doi.org/10.1016/j.ijforecast.2021.06.009</a>.
+</div>
+<div id="ref-lau2022bias" class="csl-entry">
+Lau, Abby Y. Z., and Jun Yan. 2022. <span>“Bias Analysis of Generalized Estimating Equations Under Measurement Error and Practical Bias Correction.”</span> <em>Stat</em> 11 (1): e418. <a href="https://doi.org/10.1002/sta4.418">https://doi.org/10.1002/sta4.418</a>.
+</div>
+<div id="ref-lebrun2021scientific" class="csl-entry">
+Lebrun, Jean-Luc, and Justin Lebrun. 2021. <em>Scientific Writing 3.0: <span>A</span> Reader and Writer’s Guide</em>. World Scientific.
+</div>
+<div id="ref-li2023regularized" class="csl-entry">
+Li, Yan, Kun Chen, Jun Yan, and Xuebin Zhang. 2023. <span>“Regularized Fingerprinting in Detection and Attribution of Climate Change with Weight Matrix Optimizing the Efficiency in Scaling Factor Estimation.”</span> <em>Annals of Applied Statistics</em> 17 (1): 225–39. <a href="https://doi.org/10.1214/22-AOAS1624">https://doi.org/10.1214/22-AOAS1624</a>.
+</div>
+<div id="ref-oshima2000writing" class="csl-entry">
+Oshima, Alex, and Ann Hogue. 2000. <em>Writing Academic English</em>. Longman.
+</div>
+<div id="ref-price2022effects" class="csl-entry">
+Price, Michael, and Jun Yan. 2022. <span>“The Effects of the <span>NBA</span> <span>COVID</span> Bubble on the <span>NBA</span> Playoffs: <span>A</span> Case Study for Home-Court Advantage.”</span> <em>American Journal of Undergraduate Research</em> 18(4): 3–15. <a href="https://doi.org/10.33697/ajur.2022.051">https://doi.org/10.33697/ajur.2022.051</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-tools.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

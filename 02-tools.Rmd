@@ -1,0 +1,546 @@
+# Tools and Workflows for Writing {#ch-tools}
+
+Many people use MS Word when it comes to writing.
+Not withholding the importance of the invention of MS Office, it is not the right tool to write methodological or theoretical papers in
+statistics. To many, writing a statistical
+paper using MS Word would be as interesting as running a statistical data
+analysis using MS Excel. Simply put, MS Office is great for office staff to do
+routine office documentary tasks.
+
+For professional writing, one need to be aware
+of the professional tools and invest time to master them.
+
+
+
+## Word vs. LaTeX
+
+The right, high - quality, professional typesetting system is LaTeX. LaTeX is a
+typesetting language that makes it easier and cleaner to write documents
+involving extensive mathematical content. It is the standard in Statistics, Mathematics, Physics, Chemistry and other disciplines that require many
+mathematical formulas.
+
+LaTeX separates the appearance of a document from its content. This allows authors
+to be able to focus on writing the content without having to worry about
+its appearance until the end. There are many different
+professionally looking appearances one can choose or design, allowing for easy
+adaptation to different formats and styles.
+
+A LaTeX document has `.tex` extension, and can be
+edited by your favorite text editor. The final output of the document can have
+different formats, the most popular of which is `pdf`, which stands for *
+portable
+document format * . It can be opened on any platform (computer operating system).
+
+The source `.tex` file is a plain text file. Just like source code of any
+programming language, a plain text file allows version control, which makes
+tracking and managing the source easy and professional. The most popular version
+control tool today is `git`.:::example
+** LaTeX vs. Word **
+
+Suppose you want to write down a likelihood function for a Gaussian model:\[L(\mu, \sigma^2 \mid x_1, \ldots, x_n)
+= (2\pi\sigma^2)^{
+-n / 2
+}\exp\left\{
+-\frac{
+1
+}{
+2\sigma^2
+}\sum_{
+i = 1
+}^n(x_i - \mu)^2\right\
+}.
+\]
+
+-** In LaTeX ** , the source code is simple and transparent:```latex
+L(\mu, \sigma^2 \mid x_1, \ldots, x_n) =
+(2\pi\sigma^2)^{
+-n / 2
+}\exp\left\{
+-\frac{
+1
+}{
+2\sigma^2
+}\sum_{
+i = 1
+}^n(x_i - \mu)^2\right\
+}.
+```
+
+This produces beautifully typeset mathematics, is reproducible, and can be revised easily.
+In MS Word, one must insert each symbol manually through the Equation Editor:Greek letters via dropdowns, summations via menus, exponents via special boxes.
+Formatting quickly becomes clumsy, and editing dozens of formulas is tedious.
+Copy - pasting often breaks structure, and version control is nearly impossible.
+
+For one or two equations Word may be acceptable. But for an entire paper with dozens of equations, cross -
+references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.::::::{
+.exercise
+}
+Compare Word and LaTeX
+
+1. Typeset the following equation in ** MS Word ** using its built - in Equation Editor:\[\hat{
+\beta
+} = \arg\min_{
+\beta \in \mathbb{
+R
+}^p
+}
+\left\{
+\frac{
+1
+}{
+2n
+}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\
+}.
+\]
+
+2. Now, paste this LaTeX code into Overleaf (or another LaTeX editor) and compile:```latex
+\hat{
+\beta
+} = \arg\min_{
+\beta \in \mathbb{
+R
+}^p
+}
+\left\{
+\frac{
+1
+}{
+2n
+}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\
+}
+```
+
+-Which approach is faster ?
+-Which result looks more professional ?
+-Which is easier to revise and share ?:::While LaTeX is the professional standard for statistical and mathematical
+writing, statisticians must also remain flexible when collaborating with
+scientists from other fields. In many interdisciplinary projects, collaborators
+still prefer Word as the common platform for writing and revision. This can also
+often be the case when developing grant applications to
+National Insititutes of Health (NIH).
+This is understandable, since for papers in fileds such as biology, medicine, or social
+sciences, statistical formulas are often minimal or should even be avoided
+altogether. In such cases, it is often best to accommodate collaborators by
+using Word for the main text, while reserving LaTeX for supplementary technical
+sections, appendices, or internal drafts where precise mathematical notation is
+required.
+
+
+
+## Git for Version Control
+
+Many tutorials are available in different formats. Here is a [YouTube video
+``Git and GitHub for Beginners---Crash
+Course''](https: /  / www.youtube.com / watch ? v = RGOj5yH7evk)
+< !--https: /  / www.youtube.com / watch ? v = USjZcfj8yxE).- ->
+The video also covers GitHub, a cloud service for Git. Other similar services
+are, for example, [bitbucket](bitbucket.org) and [GitLab](gitlab.com). A cloud
+service gives you a cloud back up of your work and makes collaboration with
+co - workers easy.
+
+
+There are tools that make learning Git easy.
+
++ Here is a collection of
+[online Git exersices](https: /  / gitexercises.fracz.com)
+that I used for Git training in other courses that I taught.
++ Here is a game called [`Oh My Git`](https: /  / ohmygit.org), an open
+source game about learning Git !
+
+
+
+
+### Set Up+Download Git [here](https: /  / git - scm.com / downloads).
++ Make a GitHub Account [here](https: /  / www.github.com) if you don't have one yet.
++ Get started with your GitHub account by following the [help
+page](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account).
+- One important step is the
+[set-up](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account#2-setting-up-git).
+- The connection between your local and GitHub repositories needs
+to be [set up only
+once](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories).
+One easy way is with a personal access token, as illustrated
+in a [YouTube video](https://www.youtube.com/watch?v=kHkQnuYzwoo).
+
+
+### Most Frequently Used Git Commands
+
++ `git clone`:
+  + Clones a remote repository to a local folder.
+  + Requires either HTTPS link or SSH key to authenticate.
++ `git pull`:
+  + Downloads any updates made to the remote repository and automatically updates the local repository.
++ `git status`:
+  + Returns the state of the working directory.
+  + Lists the files that have been modified, and are yet to be or have been staged and/or committed.
+  + Shows if the local repository is begind or ahead a remote branch.
++ `git add`:
+  + Adds new or modified files to the Git staging area.
+  + Gives the option to select which files are to be sent to the remote repository
++ `git rm`:
+  + Used to remove files from the staging index or the local repository.
++ `git commit`:
+  + Commits changes made to the local repository and saves it like a snapshot.
+  + A message is recommended with every commit to keep track of changes made.
++ `git push`:
+  + Pushes commits made on local repository to the remote repository.
+
+
+::: {.example}
+**A clean daily Git workflow**
+
+1. Pull the latest changes
+  ```bash
+  git pull
+  ```
+
+2. Write/edit files (e.g., intro.Rmd, style.css).
+
+3. Check what has changed
+  ```bash
+  git status
+  git diff
+  ```
+
+4. Stage only what you intend to commit
+  ```bash
+  git add intro.Rmd style.css
+  ```
+
+5. Commit with a focused message
+  ```bash
+  git commit -m "intro: refine motivation; style: add callout color"
+  ```
+
+6. Push to remote
+  ```bash
+  git push
+  ```
+
+:::
+
+
+### Tips on using Git:
+
++ Use the command line interface instead of the web interface (e.g., upload on GitHub)
++ Make frequent small commits instead of rare large commits.
++ Make commit messages informative and meaningful.
++ Name your files/folders by some reasonable convention.
+- Lower cases are better than upper cases.
+- No blanks in file/folder names.
++ Keep the repo clean by not tracking generated files.
++ Creat a `.gitignore` file for better output from `git status`.
++ Keep the linewidth of sources to under 80 for better `git diff` view.
+
+::: {.example}
+**A useful `.gitignore` for LaTeX/Bookdown**
+
+Create a file named `.gitignore` in the project root:
+
+```
+#R / RStudio
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+OS artifacts
+.DS_Store
+Thumbs.db
+Bookdown outputs
+_book/
+docs/
+_bookdown_files/
+*.utf8.md
+*.knit.md
+LaTeX artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+Node / cache (if used)
+node_modules/
+```
+
+Now `git status` will show only meaningful source changes.
+
+:::
+
+
+
+
+### Pull Request
+
+To contribute to an open source project (e.g., our classnotes), use pull
+requests. [Pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+"let you tell others about changes you've pushed to a branch in a repository on
+GitHub. Once a pull request is opened, you can discuss and review the potential
+changes with collaborators and add follow - up commits before your changes are
+merged into the base branch."
+
+
+Watch this YouTube video: [GitHub pull requests in 100 seconds](https://youtu.be/8lGpZkjnkt4).
+
+
+## LaTeX for Typesetting
+
+A \LaTeX source file has extension name `.tex`. It is a plain text file that can
+be edited by any text editor. It can be tracked easily for differences between
+any two versions. Different document classes are predefined such as `letter`,
+`article`, `report`, `beamer` (for presentations), and `book`. Customized
+document classes can be defined once
+you know more about LaTeX. We focus on `article` here.
+
+
+The instructions in this section are practiced in a
+[demo repo](https://github.com/jun-yan/writing-demo).
+
+
+[Anthony Zeimekakis](https://www.linkedin.com/in/anthony-zeimbekakis/)
+was an undergraduate student who worked with us on a thesis. The
+tex sources, data, and code are in a [GitHub
+repo](https://github.com/azeimbekakis/KS-Test-Thesis), which can be
+used as a template too. This paper was published in [American
+Statistician](https://doi.org/10.1080/00031305.2024.2356095), two
+years after Anthony graduated. Interested students beaware that this
+is a serious commitment.
+
+
+### A beginner's template
+
+For the product to look like a paper, we need to have title, author, abstract,
+sections, and references. Let us start from a very basic template in the
+[demo repo](https://github.com/jun-yan/writing-demo). Clone it to an appropriate
+location on your own computer. Go to the `manuscript` folder and compile the pdf
+product with the following:
+```
+pdflatex statspaper
+bibtex statspaper
+pdflatex statspaper
+pdflatex statspaper
+```
+It is the `bibtex` step that incorporates the references from the bib files. Two
+rounds of `pdflatex` are necessary for \LaTeX\ to get all the cross-referencing
+settled.
+
+
+The whole process could be automated by:
+```
+latexmk -pdf statspaper
+```
+
+
+Advanded users may take a look at the `Makefile`, in which different targets can
+be set up and the needed opertations for each target is automated.
+
+
+Tips on getting started with \LaTeX.
+
++ Read the compiling log and fix the errors/warnings.
++ Googling the error/warning messages usually helps.
++ Limit the preamble to include only what is necessary.
++ Set up document margins with the `geometry` package.
++ No manually controlling spaces.
++ Familiarize yourself with [LaTeX symbol
+tables](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols).
++ Keep line widths under 80 characters in source files.
++ Separate paragraphs in source files by double blank lines.
++ Define acronyms at their first occurrences and only once.
+
+
+### Math equations
+
+For serious math typesetting, use packages `amsmath`, `amsthm`, and others.
+
+Tips on using math:
+
++ Punctuate equations as they always are part of sentences.
++ Add spaces between symbols for better readability in sources.
++ Do not start a sentence with a math symbol; rephrase to avoid it.
++ No fractions (`\frac`) in inline math expressions.
++ No breaking inline math expressions into different lines in tex sources.
++ No labeling equations that are not referenced.
++ Reference labeled equations with `\eqref` instead of `(\ref)`.
++ Keep fonts consistent for the same notations (e.g., $n$ not n;
+AIC not $AIC$).
++ Use appropriate sizes for parentheses.
++ When multiple parentheses are needed in mathematical expressions, use the
+following ordering unless the journal specifies otherwise $[\{(\mbox{math here})\}].$
++ Use predefined math functions (e.g, $\exp$ not $exp$; $\Pr$ not $P$).
++ Use `\allowdisplaybreak` to allow page breaks in aligned equations.
++ Use `\dd` for differentiation operator (available from package `physics`).
++ No breaking long equations arbitrarily in tex source; break them into short
+lines at appropriate places and add sufficient spaces to make the sources more
+readable.
++ Align at appropriate places in multiline equations.
+
+
+### Tables
+
+If you are manually typing a \LaTeX table source, think if you can generate the
+source. There are multiple R packages that can generate the tex source from a
+given dataset. See package `xtable` for example.
+
+Tips on professional \LaTeX tables:
+
++ Use `tbp` for floating locations; avoid `h`.
++ Make it self-contained with an informative caption.
++ Captions should be located above the table unless the journal specifies
+otherwise.
++ Avoid vertical lines.
++ Put negative signs in math mode.
++ Use better top, middle, and bottom rules from package `booktabs`.
++ Allow hierarchy by `cmidrule()`.
++ Do not change font size for tables. Change table layout to fit instead of
+re-sizing it.
++ Right adjust numbers with decimal places.
++ Use consistent number of decimal places within a column or row of same types
+of measurements.
++ Avoid having many leading 0's in decimal entries.
+
+
+See [Small Guide to Making Nice Tables by Markus
+Puschel](https://people.inf.ethz.ch/markusp/teaching/guides/guide-tables.pdf)
+
+### Figures
+
+Use vector graphs, not raster graphs (unless you have to, e.g.,
+screenshots). Save the code that generates the figures so the figures can be
+improved easily.
+
+Tips on \LaTeX figures:
+
++ Use `tbp` for floating locations; avoid `h`.
++ Use latex package `graphicx`.
++ Make it self-contained with an informative caption.
++ Captions should be located below the figure unless the journal specifies
+otherwise.
++ For line plots with different groups, use different line pattern to
+distinguish them, not only color, so that readers can tell the difference if
+printed in black/white. Same for different dots (symbols) on plots.
++ Use colorblind friendly colors (especially avoid red/green).
++ Keep the right aspect ratio when necessary (e.g., basketball court; map;
+pp-plot).
++ Remove extra margins.
++ Keep the ratio when resizing (e.g., `width = \textwidth`)
++ Name the figure files appropriately.
+
+
+### References
+
+BibTeX is a reference management tool for formatting lists of references that
+can be used together with \LaTeX to generate a reference list.
+Non-referenced
+references are not to be cited. All referenced references are to be listed. This
+nice feature is made possible by the package `natbib`.  We need to collect
+references in BibTeX format and save them in a bib database (`.bib`) file. The
+display styles of the references are controlled by bib style (`.bst`)
+files. Many journals have their own bib style files available for download. One
+can construct a customized bib style easily with the help of `custom-bib`.
+
+An alternative to BibTeX and `natbib` is `biblatex`. Most journals, however, use
+BibTeX and `natbib`, so we focus on that here.
+
+
+A reference is cited in the manuscript through its key by `\citep{}` for
+parenthetical citations or `\citet{}` for textual citations, where the key is
+placed inside the curly brackets. The key is used to cite or cross-reference the
+bibliographic entry in a `.tex` document. Variations
+`\citep*{}` and `\citet*{}` prints all authors. Sometimes, `\citeauthor{}`
+and `\citeyear{}` can be useful when only author(s) or year is needed.
+The key of the cited references is put in the parentheses.
+
+
+For `\citep{}`, multiple keys separated by commas can be put in the same
+parentheses for citing
+multiple references. Two optional arguments are allowed to `\citep[][]{}`.
+For example, `\citep[see, e.g.,][p. 26]{}` could be useful when a specific page
+(or section/chapter) is being referenced as an example.
+
+
+In general, to compile a tex file with bibtex references into a pdf document,
+one needs to run `pdflatex` first,  then `bibtex`, and then `pdflatex` twice to
+get the references correct. A simpler solution is `latexmk -pdf`. In my
+practice, I always have a `Makefile` and use `make` to smartly automate the
+compiling process. See, for example, Anthony's thesis repo.
+
+
+Tips on preparing BibTeX databases:
+
++ Devise a good naming convention for reference keys and stick to it.
++ Keep the bib database sorted and formatted tidy. (No repeated entries.)
++ Title: Capitalize first letters of notional words (not form words).
++ Use Google Scholar to get the bibtex source of a reference, but be sure to
+__quality control__ the google output for missing fields and errors.
++ Protect capitalization of words with special meanings in curly braces.
+(e.g., `{B}ayesian`, `{M}arkov Chain {M}onte {C}arlo`)
++ Protect capitalization of initial words after a colon in titles and journals.
++ Use title style for jornal/book titles.
++ For book chapters or proceeding articles, use `@incollection` instead of
+`@article`, and fill the `booktitle` and `editor` fields.
++ Separate pages numbers with double dashes and no other spaces (e.g.,
+`pages = {110--118}`).
++ Books need to have publisher and address fields.
++ For preprints, always check if they have been published recently.
++ Use the `note` field to show information that should always be shown,
++ All references without page numbers or volume number should be checked.
++ Keep bib key style consistent.
+
+### Cross-referencing
+
+Define a label for each object and refer to it by its label.
+
+Tips on cross-referencing:
+
++ Devise a good naming convention for labels and stick to it.
++ Use different label prefixes for different types of objects (e.g, `eq:` for
+equations, `sec:` for sections, `tab:` for tables, `fig:` for figures, `alg:`
+for algorithms, etc.)
++ Labels within the source(s) for a single document must be unique.
++ Prevent referencing numbers from starting at a new line (e.g., use
+`Table~\ref{tab:simulation}`; note the tilde).
++ Watch warnings from compiling logs for undefined labels or multiply defined
+labels and fix them.
++ Use package `xr` for cross-document referencing (and labels must be unique
+across documents).
+
+
+## Using R Markdown as a Frontend
+
+Here is [a template from the UConn Data Science Lab](https://statds.org/templates.html).
+
+
+## Command Line Interface
+
+On Linux or MacOS, simply open a terminal.
+
+On Windows, several options can be considered.
+
++ Cygwin (with X): <https://x.cygwin.com>
++ Git Bash: <https://www.gitkraken.com/blog/what-is-git-bash>
+
+The new Windows OS provides a [Windows Subsystem for
+Linux](https://learn.microsoft.com/en-us/windows/wsl/install). As the name
+suggests, it aims to provide a Linux system on a Windows computer. It might be
+worth trying out.
+
+To jump start, here is a tutorial:
+[Ubuntu Linux for beginners](https://ubuntu.com/tutorials/command-line-for-beginners).
+
+At least, you need to know how to handle files and traverse across
+directories. The tab completion and introspection supports are very useful.
+
+Here are several commonly used shell commands:
+
++ `cd`: change directory; `..` means parent directory.
++ `pwd`: present working directory.
++ `ls`: list the content of a folder; `-l` long version;
+`-a` show hidden files; `-t` ordered by modification time.
++ `mkdir`: create a new directory.
++ `cp`: copy file/folder from a source to a target.
++ `mv`: move file/folder from a source to a target.
++ `rm`: remove a file a folder.
