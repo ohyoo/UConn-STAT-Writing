@@ -1,0 +1,57 @@
+name: Build and Deploy bookdown
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      # If you use renv, uncomment this (and remove the next install step):
+      # - name: Restore R package cache with renv
+      #   uses: r-lib/actions/setup-renv@v2
+
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages(c("bookdown"))'
+          # Add more if your book needs them, e.g.:
+          # Rscript -e 'install.packages(c("tidyverse","knitr","rmarkdown","ggplot2"))'
+
+      # If you need PDF/LaTeX output, also install TinyTeX:
+      # - name: TinyTeX (for PDF)
+      #   run: Rscript -e 'install.packages("tinytex"); tinytex::install_tinytex()'
+
+      - name: Build book
+        run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
