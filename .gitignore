@@ -1,6 +1,41 @@
-.Rproj.user
+# RStudio / R files
+.Rproj.user/
 .Rhistory
-.Rdata
-.httr-oauth
+.RData
+.Ruserdata
+
+# Bookdown build output
+_book/
+_bookdown_files/
+*.utf8.md
+*.knit.md
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc*
+*.out
+*.pdf        # <-- if you want to keep generated PDFs out of git
+*.synctex.gz
+*.toc
+*.ttt
+*.xdv
+
+# Common OS junk
 .DS_Store
-.quarto
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
