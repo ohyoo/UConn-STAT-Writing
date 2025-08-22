@@ -65,7 +65,7 @@ Such works are most often interdisciplinary, typically resulting from close coll
 
 ---
 
-## Data Science and Machine Learning Papers
+### Data Science and Machine Learning Papers
 
 Beyond traditional statistics journals, researchers often publish in data science, machine learning, and data mining journals and conferences, including outlets such as *NeurIPS*, *ICML*, *KDD*, and *AAAI*. These conference papers emphasize:  
 
@@ -89,13 +89,13 @@ Many resources on scientific writing are available. For example, @gopen1990scien
 
 ## About This Book
 
-This book, *Advanced Research Writing in Statistics and Data Science*, extends earlier efforts with [*Statistical Writing*](https://statds.github.io/stat-writing/) by broadening its scope and including examples/exercises.   
+This book, *Advanced Research Writing in Statistics and Data Science*, extends earlier efforts from [*Statistical Writing*](https://statds.github.io/stat-writing/), by broadening its scope and including hands-on examples and exercises.   
 
 The book emphasizes three guiding principles:  
 
 1. **Clarity**: communicating complex technical ideas to both expert and interdisciplinary audiences.  
 
-2. **Adaptive**: tailoring style and structure to journals, conferences, and other outlets.  
+2. **Adaptivity**: tailoring style and structure to journals, conferences, and other outlets.  
 3. **Learning by Doing**: the book includes examples, annotated excerpts, and practical exercises.  
 
 
@@ -129,7 +129,7 @@ Ultimately, strong writing can never substitute for strong research. In short, k
 
 Or, as the Chinese phrase puts it: **好文章是改出来的**.
 
-You can view an example of a marked-up draft with comments from my PhD advisor here:  
+You can view an example of a marked-up draft with comments from my PhD advisor:  
 [Download advisor’s comments (PDF)](files/ks-comments.pdf)
 
 ![](files/ks-comments.png){width=70%}

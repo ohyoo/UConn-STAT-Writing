@@ -23,10 +23,10 @@ output format for this example is bookdown::gitbook.”</p>" />
 output format for this example is bookdown::gitbook.”</p>" />
   
 
-<meta name="author" content="Kun Chen" />
+<meta name="author" content="Kun Chen, Elizabeth Schifano, Jun Yan" />
 
 
-<meta name="date" content="2025-08-21" />
+<meta name="date" content="2025-08-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -174,12 +174,12 @@ div.csl-indent {
 <li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#theory-papers"><i class="fa fa-check"></i><b>2.1.1</b> Theory papers</a></li>
 <li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#methodological-papers"><i class="fa fa-check"></i><b>2.1.2</b> Methodological papers</a></li>
 <li class="chapter" data-level="2.1.3" data-path="intro.html"><a href="intro.html#applied-papers"><i class="fa fa-check"></i><b>2.1.3</b> Applied papers</a></li>
+<li class="chapter" data-level="2.1.4" data-path="intro.html"><a href="intro.html#data-science-and-machine-learning-papers"><i class="fa fa-check"></i><b>2.1.4</b> Data Science and Machine Learning Papers</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#data-science-and-machine-learning-papers"><i class="fa fa-check"></i><b>2.2</b> Data Science and Machine Learning Papers</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#scientific-writing-resources"><i class="fa fa-check"></i><b>2.3</b> Scientific Writing Resources</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#about-this-book"><i class="fa fa-check"></i><b>2.4</b> About This Book</a></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#outline-of-the-book"><i class="fa fa-check"></i><b>2.5</b> Outline of the Book</a></li>
-<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#before-we-start"><i class="fa fa-check"></i><b>2.6</b> Before We Start</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#scientific-writing-resources"><i class="fa fa-check"></i><b>2.2</b> Scientific Writing Resources</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#about-this-book"><i class="fa fa-check"></i><b>2.3</b> About This Book</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#outline-of-the-book"><i class="fa fa-check"></i><b>2.4</b> Outline of the Book</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#before-we-start"><i class="fa fa-check"></i><b>2.5</b> Before We Start</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="ch-tools.html"><a href="ch-tools.html"><i class="fa fa-check"></i><b>3</b> Tools and Workflows for Writing</a>
 <ul>
@@ -271,52 +271,44 @@ document format </em> . It can be opened on any platform (computer operating sys
 <p>The source <code>.tex</code> file is a plain text file. Just like source code of any
 programming language, a plain text file allows version control, which makes
 tracking and managing the source easy and professional. The most popular version
-control tool today is <code>git</code>.:::example
-** LaTeX vs. Word **</p>
-<p>Suppose you want to write down a likelihood function for a Gaussian model:<span class="math display">\[L(\mu, \sigma^2 \mid x_1, \ldots, x_n)
-= (2\pi\sigma^2)^{
--n / 2
-}\exp\left\{
--\frac{
-1
-}{
-2\sigma^2
-}\sum_{
-i = 1
-}^n(x_i - \mu)^2\right\
-}.
+control tool today is <code>git</code>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-1" class="example"><strong>Example 3.1  </strong></span><strong>LaTeX vs. Word</strong></p>
+<p>Suppose you want to write down a likelihood function for a Gaussian model:
+<span class="math display">\[
+L(\mu, \sigma^2 \mid x_1, \ldots, x_n)= (2\pi\sigma^2)^{-n / 2}\exp\left\{
+-\frac{1}{2\sigma^2}\sum_{i = 1}^n(x_i - \mu)^2\right\}.
 \]</span></p>
-<p>-** In LaTeX ** , the source code is simple and transparent:<code>latex L(\mu, \sigma^2 \mid x_1, \ldots, x_n) = (2\pi\sigma^2)^{ -n / 2 }\exp\left\{ -\frac{ 1 }{ 2\sigma^2 }\sum_{ i = 1 }^n(x_i - \mu)^2\right\ }.</code></p>
+<ul>
+<li><strong>In LaTeX</strong> , the source code is simple and transparent:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb1-1"><a href="ch-tools.html#cb1-1" tabindex="-1"></a>L(<span class="fu">\mu</span>, <span class="fu">\sigma</span>^2 <span class="fu">\mid</span> x_1, <span class="fu">\ldots</span>, x_n) = (2<span class="fu">\pi\sigma</span>^2)^{-n / 2}<span class="fu">\exp\left\{</span></span>
+<span id="cb1-2"><a href="ch-tools.html#cb1-2" tabindex="-1"></a>-<span class="fu">\frac</span>{1}{2<span class="fu">\sigma</span>^2}<span class="fu">\sum</span>_{i = 1}^n(x_i - <span class="fu">\mu</span>)^2<span class="fu">\right\}</span>.</span></code></pre></div>
 <p>This produces beautifully typeset mathematics, is reproducible, and can be revised easily.
 In MS Word, one must insert each symbol manually through the Equation Editor:Greek letters via dropdowns, summations via menus, exponents via special boxes.
 Formatting quickly becomes clumsy, and editing dozens of formulas is tedious.
 Copy - pasting often breaks structure, and version control is nearly impossible.</p>
 <p>For one or two equations Word may be acceptable. But for an entire paper with dozens of equations, cross -
-references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.::::::{
-.exercise
-}
-Compare Word and LaTeX</p>
+references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Exercise 3.1  </strong></span>Compare Word and LaTeX</p>
 <ol style="list-style-type: decimal">
-<li><p>Typeset the following equation in ** MS Word ** using its built - in Equation Editor:<span class="math display">\[\hat{
-\beta
-} = \arg\min_{
-\beta \in \mathbb{
-R
-}^p
-}
-\left\{
-\frac{
-1
-}{
-2n
-}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\
-}.
+<li><p>Typeset the following equation in <strong>MS Word</strong> using its built - in Equation Editor:
+<span class="math display">\[
+\hat{\beta} = \arg\min_{\beta \in \mathbb{R}^p}\left\{\frac{1}{2n}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\}.
 \]</span></p></li>
-<li><p>Now, paste this LaTeX code into Overleaf (or another LaTeX editor) and compile:<code>latex \hat{ \beta } = \arg\min_{ \beta \in \mathbb{ R }^p } \left\{ \frac{ 1 }{ 2n }\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\ }</code></p></li>
+<li><p>Now, paste this LaTeX code into Overleaf (or another LaTeX editor) and compile:</p></li>
 </ol>
-<p>-Which approach is faster ?
--Which result looks more professional ?
--Which is easier to revise and share ?:::While LaTeX is the professional standard for statistical and mathematical
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb2-1"><a href="ch-tools.html#cb2-1" tabindex="-1"></a><span class="fu">\hat</span>{<span class="fu">\beta</span>} = <span class="fu">\arg\min</span>_{<span class="fu">\beta</span> <span class="fu">\in</span> <span class="fu">\mathbb</span>{R}^p}</span>
+<span id="cb2-2"><a href="ch-tools.html#cb2-2" tabindex="-1"></a><span class="fu">\left\{\frac</span>{1}{2n}<span class="fu">\ </span>| y - X<span class="fu">\beta\ </span>| _2^2 + <span class="fu">\lambda</span> <span class="fu">\ </span>| <span class="fu">\beta\ </span>| _1 <span class="fu">\right\}</span></span></code></pre></div>
+<ul>
+<li>Which approach is faster ?</li>
+<li>Which result looks more professional ?</li>
+<li>Which is easier to revise and share ?</li>
+</ul>
+</div>
+<p>While LaTeX is the professional standard for statistical and mathematical
 writing, statisticians must also remain flexible when collaborating with
 scientists from other fields. In many interdisciplinary projects, collaborators
 still prefer Word as the common platform for writing and revision. This can also
@@ -400,29 +392,29 @@ in a <a href="https://www.youtube.com/watch?v=kHkQnuYzwoo">YouTube video</a>.</l
 </ul></li>
 </ul>
 <div class="example">
-<p><span id="exm:unlabeled-div-1" class="example"><strong>Example 3.1  </strong></span><strong>A clean daily Git workflow</strong></p>
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 3.2  </strong></span><strong>A clean daily Git workflow</strong></p>
 <ol style="list-style-type: decimal">
 <li>Pull the latest changes</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="ch-tools.html#cb1-1" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="ch-tools.html#cb3-1" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Write/edit files (e.g., intro.Rmd, style.css).</p></li>
 <li><p>Check what has changed</p></li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="ch-tools.html#cb2-1" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb2-2"><a href="ch-tools.html#cb2-2" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="ch-tools.html#cb4-1" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb4-2"><a href="ch-tools.html#cb4-2" tabindex="-1"></a><span class="fu">git</span> diff</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Stage only what you intend to commit</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="ch-tools.html#cb3-1" tabindex="-1"></a><span class="fu">git</span> add intro.Rmd style.css</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="ch-tools.html#cb5-1" tabindex="-1"></a><span class="fu">git</span> add intro.Rmd style.css</span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Commit with a focused message</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="ch-tools.html#cb4-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;intro: refine motivation; style: add callout color&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="ch-tools.html#cb6-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;intro: refine motivation; style: add callout color&quot;</span></span></code></pre></div>
 <ol start="6" style="list-style-type: decimal">
 <li>Push to remote</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="ch-tools.html#cb5-1" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="ch-tools.html#cb7-1" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div>
 </div>
 </div>
 <div id="tips-on-using-git" class="section level3 hasAnchor" number="3.2.3">
@@ -439,34 +431,49 @@ in a <a href="https://www.youtube.com/watch?v=kHkQnuYzwoo">YouTube video</a>.</l
 <li>Keep the linewidth of sources to under 80 for better <code>git diff</code> view.</li>
 </ul>
 <div class="example">
-<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 3.2  </strong></span><strong>A useful <code>.gitignore</code> for LaTeX/Bookdown</strong></p>
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 3.3  </strong></span><strong>A useful <code>.gitignore</code> for LaTeX/Bookdown</strong></p>
 <p>Create a file named <code>.gitignore</code> in the project root:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="ch-tools.html#cb6-1" tabindex="-1"></a>R <span class="op">/</span> RStudio</span>
-<span id="cb6-2"><a href="ch-tools.html#cb6-2" tabindex="-1"></a>.Rproj.<span class="fu">user</span></span>
-<span id="cb6-3"><a href="ch-tools.html#cb6-3" tabindex="-1"></a>.Rhistory</span>
-<span id="cb6-4"><a href="ch-tools.html#cb6-4" tabindex="-1"></a>.RData</span>
-<span id="cb6-5"><a href="ch-tools.html#cb6-5" tabindex="-1"></a>.Ruserdata</span>
-<span id="cb6-6"><a href="ch-tools.html#cb6-6" tabindex="-1"></a>OS artifacts</span>
-<span id="cb6-7"><a href="ch-tools.html#cb6-7" tabindex="-1"></a>.DS_Store</span>
-<span id="cb6-8"><a href="ch-tools.html#cb6-8" tabindex="-1"></a>Thumbs.db</span>
-<span id="cb6-9"><a href="ch-tools.html#cb6-9" tabindex="-1"></a>Bookdown outputs</span>
-<span id="cb6-10"><a href="ch-tools.html#cb6-10" tabindex="-1"></a>_book<span class="op">/</span></span>
-<span id="cb6-11"><a href="ch-tools.html#cb6-11" tabindex="-1"></a>docs<span class="op">/</span></span>
-<span id="cb6-12"><a href="ch-tools.html#cb6-12" tabindex="-1"></a>_bookdown_files<span class="op">/</span></span>
-<span id="cb6-13"><a href="ch-tools.html#cb6-13" tabindex="-1"></a><span class="op">*</span>.utf8.md</span>
-<span id="cb6-14"><a href="ch-tools.html#cb6-14" tabindex="-1"></a><span class="op">*</span>.knit.md</span>
-<span id="cb6-15"><a href="ch-tools.html#cb6-15" tabindex="-1"></a>LaTeX artifacts</span>
-<span id="cb6-16"><a href="ch-tools.html#cb6-16" tabindex="-1"></a><span class="op">*</span>.aux</span>
-<span id="cb6-17"><a href="ch-tools.html#cb6-17" tabindex="-1"></a><span class="op">*</span>.<span class="fu">log</span></span>
-<span id="cb6-18"><a href="ch-tools.html#cb6-18" tabindex="-1"></a><span class="op">*</span>.<span class="kw">out</span></span>
-<span id="cb6-19"><a href="ch-tools.html#cb6-19" tabindex="-1"></a><span class="op">*</span>.toc</span>
-<span id="cb6-20"><a href="ch-tools.html#cb6-20" tabindex="-1"></a><span class="op">*</span>.synctex.gz</span>
-<span id="cb6-21"><a href="ch-tools.html#cb6-21" tabindex="-1"></a><span class="op">*</span>.bbl</span>
-<span id="cb6-22"><a href="ch-tools.html#cb6-22" tabindex="-1"></a><span class="op">*</span>.blg</span>
-<span id="cb6-23"><a href="ch-tools.html#cb6-23" tabindex="-1"></a><span class="op">*</span>.fls</span>
-<span id="cb6-24"><a href="ch-tools.html#cb6-24" tabindex="-1"></a><span class="op">*</span>.fdb_latexmk</span>
-<span id="cb6-25"><a href="ch-tools.html#cb6-25" tabindex="-1"></a>Node <span class="op">/</span> <span class="kw">cache</span> (<span class="cf">if</span> used)</span>
-<span id="cb6-26"><a href="ch-tools.html#cb6-26" tabindex="-1"></a>node_modules<span class="op">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="ch-tools.html#cb8-1" tabindex="-1"></a># RStudio <span class="op">/</span> R files</span>
+<span id="cb8-2"><a href="ch-tools.html#cb8-2" tabindex="-1"></a>.Rproj.<span class="fu">user</span><span class="op">/</span></span>
+<span id="cb8-3"><a href="ch-tools.html#cb8-3" tabindex="-1"></a>.Rhistory</span>
+<span id="cb8-4"><a href="ch-tools.html#cb8-4" tabindex="-1"></a>.RData</span>
+<span id="cb8-5"><a href="ch-tools.html#cb8-5" tabindex="-1"></a>.Ruserdata</span>
+<span id="cb8-6"><a href="ch-tools.html#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="ch-tools.html#cb8-7" tabindex="-1"></a># Bookdown <span class="kw">build</span> output</span>
+<span id="cb8-8"><a href="ch-tools.html#cb8-8" tabindex="-1"></a>_book<span class="op">/</span></span>
+<span id="cb8-9"><a href="ch-tools.html#cb8-9" tabindex="-1"></a>_bookdown_files<span class="op">/</span></span>
+<span id="cb8-10"><a href="ch-tools.html#cb8-10" tabindex="-1"></a><span class="op">*</span>.utf8.md</span>
+<span id="cb8-11"><a href="ch-tools.html#cb8-11" tabindex="-1"></a><span class="op">*</span>.knit.md</span>
+<span id="cb8-12"><a href="ch-tools.html#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="ch-tools.html#cb8-13" tabindex="-1"></a># LaTeX <span class="kw">build</span> files</span>
+<span id="cb8-14"><a href="ch-tools.html#cb8-14" tabindex="-1"></a><span class="op">*</span>.aux</span>
+<span id="cb8-15"><a href="ch-tools.html#cb8-15" tabindex="-1"></a><span class="op">*</span>.bbl</span>
+<span id="cb8-16"><a href="ch-tools.html#cb8-16" tabindex="-1"></a><span class="op">*</span>.blg</span>
+<span id="cb8-17"><a href="ch-tools.html#cb8-17" tabindex="-1"></a><span class="op">*</span>.brf</span>
+<span id="cb8-18"><a href="ch-tools.html#cb8-18" tabindex="-1"></a><span class="op">*</span>.fls</span>
+<span id="cb8-19"><a href="ch-tools.html#cb8-19" tabindex="-1"></a><span class="op">*</span>.fdb_latexmk</span>
+<span id="cb8-20"><a href="ch-tools.html#cb8-20" tabindex="-1"></a><span class="op">*</span>.idx</span>
+<span id="cb8-21"><a href="ch-tools.html#cb8-21" tabindex="-1"></a><span class="op">*</span>.ilg</span>
+<span id="cb8-22"><a href="ch-tools.html#cb8-22" tabindex="-1"></a><span class="op">*</span>.ind</span>
+<span id="cb8-23"><a href="ch-tools.html#cb8-23" tabindex="-1"></a><span class="op">*</span>.lof</span>
+<span id="cb8-24"><a href="ch-tools.html#cb8-24" tabindex="-1"></a><span class="op">*</span>.<span class="fu">log</span></span>
+<span id="cb8-25"><a href="ch-tools.html#cb8-25" tabindex="-1"></a><span class="op">*</span>.lot</span>
+<span id="cb8-26"><a href="ch-tools.html#cb8-26" tabindex="-1"></a><span class="op">*</span>.maf</span>
+<span id="cb8-27"><a href="ch-tools.html#cb8-27" tabindex="-1"></a><span class="op">*</span>.mtc<span class="op">*</span></span>
+<span id="cb8-28"><a href="ch-tools.html#cb8-28" tabindex="-1"></a><span class="op">*</span>.<span class="kw">out</span></span>
+<span id="cb8-29"><a href="ch-tools.html#cb8-29" tabindex="-1"></a><span class="op">*</span>.pdf        # <span class="op">&lt;</span><span class="co">-- if you want to keep generated PDFs out of git</span></span>
+<span id="cb8-30"><a href="ch-tools.html#cb8-30" tabindex="-1"></a><span class="op">*</span>.synctex.gz</span>
+<span id="cb8-31"><a href="ch-tools.html#cb8-31" tabindex="-1"></a><span class="op">*</span>.toc</span>
+<span id="cb8-32"><a href="ch-tools.html#cb8-32" tabindex="-1"></a><span class="op">*</span>.ttt</span>
+<span id="cb8-33"><a href="ch-tools.html#cb8-33" tabindex="-1"></a><span class="op">*</span>.xdv</span>
+<span id="cb8-34"><a href="ch-tools.html#cb8-34" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="ch-tools.html#cb8-35" tabindex="-1"></a># Common OS junk</span>
+<span id="cb8-36"><a href="ch-tools.html#cb8-36" tabindex="-1"></a>.DS_Store</span>
+<span id="cb8-37"><a href="ch-tools.html#cb8-37" tabindex="-1"></a>Thumbs.db</span>
+<span id="cb8-38"><a href="ch-tools.html#cb8-38" tabindex="-1"></a></span>
+<span id="cb8-39"><a href="ch-tools.html#cb8-39" tabindex="-1"></a># Editor files</span>
+<span id="cb8-40"><a href="ch-tools.html#cb8-40" tabindex="-1"></a><span class="op">*</span>.swp</span>
+<span id="cb8-41"><a href="ch-tools.html#cb8-41" tabindex="-1"></a><span class="op">*</span>.swo</span></code></pre></div>
 <p>Now <code>git status</code> will show only meaningful source changes.</p>
 </div>
 </div>

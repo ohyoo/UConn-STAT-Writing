@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Tools and Workflows for Writing {#ch-tools}
 
 Many people use MS Word when it comes to writing.
@@ -34,36 +39,22 @@ document format * . It can be opened on any platform (computer operating system)
 The source `.tex` file is a plain text file. Just like source code of any
 programming language, a plain text file allows version control, which makes
 tracking and managing the source easy and professional. The most popular version
-control tool today is `git`.:::example
-** LaTeX vs. Word **
+control tool today is `git`.
 
-Suppose you want to write down a likelihood function for a Gaussian model:\[L(\mu, \sigma^2 \mid x_1, \ldots, x_n)
-= (2\pi\sigma^2)^{
--n / 2
-}\exp\left\{
--\frac{
-1
-}{
-2\sigma^2
-}\sum_{
-i = 1
-}^n(x_i - \mu)^2\right\
-}.
+
+:::example
+**LaTeX vs. Word**
+
+Suppose you want to write down a likelihood function for a Gaussian model:
+\[
+L(\mu, \sigma^2 \mid x_1, \ldots, x_n)= (2\pi\sigma^2)^{-n / 2}\exp\left\{
+-\frac{1}{2\sigma^2}\sum_{i = 1}^n(x_i - \mu)^2\right\}.
 \]
 
--** In LaTeX ** , the source code is simple and transparent:```latex
-L(\mu, \sigma^2 \mid x_1, \ldots, x_n) =
-(2\pi\sigma^2)^{
--n / 2
-}\exp\left\{
--\frac{
-1
-}{
-2\sigma^2
-}\sum_{
-i = 1
-}^n(x_i - \mu)^2\right\
-}.
+- **In LaTeX** , the source code is simple and transparent:
+```latex
+L(\mu, \sigma^2 \mid x_1, \ldots, x_n) = (2\pi\sigma^2)^{-n / 2}\exp\left\{
+-\frac{1}{2\sigma^2}\sum_{i = 1}^n(x_i - \mu)^2\right\}.
 ```
 
 This produces beautifully typeset mathematics, is reproducible, and can be revised easily.
@@ -72,52 +63,37 @@ Formatting quickly becomes clumsy, and editing dozens of formulas is tedious.
 Copy - pasting often breaks structure, and version control is nearly impossible.
 
 For one or two equations Word may be acceptable. But for an entire paper with dozens of equations, cross -
-references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.::::::{
-.exercise
-}
+references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.
+
+:::
+
+
+:::{.exercise}
 Compare Word and LaTeX
 
-1. Typeset the following equation in ** MS Word ** using its built - in Equation Editor:\[\hat{
-\beta
-} = \arg\min_{
-\beta \in \mathbb{
-R
-}^p
-}
-\left\{
-\frac{
-1
-}{
-2n
-}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\
-}.
+1. Typeset the following equation in **MS Word** using its built - in Equation Editor:
+\[
+\hat{\beta} = \arg\min_{\beta \in \mathbb{R}^p}\left\{\frac{1}{2n}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\}.
 \]
 
-2. Now, paste this LaTeX code into Overleaf (or another LaTeX editor) and compile:```latex
-\hat{
-\beta
-} = \arg\min_{
-\beta \in \mathbb{
-R
-}^p
-}
-\left\{
-\frac{
-1
-}{
-2n
-}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\
-}
+2. Now, paste this LaTeX code into Overleaf (or another LaTeX editor) and compile:
+```latex
+\hat{\beta} = \arg\min_{\beta \in \mathbb{R}^p}
+\left\{\frac{1}{2n}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\}
 ```
 
--Which approach is faster ?
--Which result looks more professional ?
--Which is easier to revise and share ?:::While LaTeX is the professional standard for statistical and mathematical
+- Which approach is faster ?
+- Which result looks more professional ?
+- Which is easier to revise and share ?
+:::
+
+
+While LaTeX is the professional standard for statistical and mathematical
 writing, statisticians must also remain flexible when collaborating with
 scientists from other fields. In many interdisciplinary projects, collaborators
 still prefer Word as the common platform for writing and revision. This can also
 often be the case when developing grant applications to
-National Insititutes of Health (NIH).
+National Insititutes of Health (NIH). 
 This is understandable, since for papers in fileds such as biology, medicine, or social
 sciences, statistical formulas are often minimal or should even be avoided
 altogether. In such cases, it is often best to accommodate collaborators by
@@ -216,7 +192,6 @@ in a [YouTube video](https://www.youtube.com/watch?v=kHkQnuYzwoo).
   ```bash
   git push
   ```
-
 :::
 
 
@@ -232,38 +207,54 @@ in a [YouTube video](https://www.youtube.com/watch?v=kHkQnuYzwoo).
 + Creat a `.gitignore` file for better output from `git status`.
 + Keep the linewidth of sources to under 80 for better `git diff` view.
 
+
 ::: {.example}
 **A useful `.gitignore` for LaTeX/Bookdown**
 
 Create a file named `.gitignore` in the project root:
 
-```
-#R / RStudio
-.Rproj.user
+```sql
+# RStudio / R files
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
-OS artifacts
-.DS_Store
-Thumbs.db
-Bookdown outputs
+
+# Bookdown build output
 _book/
-docs/
 _bookdown_files/
 *.utf8.md
 *.knit.md
-LaTeX artifacts
+
+# LaTeX build files
 *.aux
-*.log
-*.out
-*.toc
-*.synctex.gz
 *.bbl
 *.blg
+*.brf
 *.fls
 *.fdb_latexmk
-Node / cache (if used)
-node_modules/
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc*
+*.out
+*.pdf        # <-- if you want to keep generated PDFs out of git
+*.synctex.gz
+*.toc
+*.ttt
+*.xdv
+
+# Common OS junk
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
 ```
 
 Now `git status` will show only meaningful source changes.

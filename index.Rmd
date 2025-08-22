@@ -1,6 +1,6 @@
 --- 
 title: "Advanced Research Writing in Statistics and Data Science"
-author: "Kun Chen"
+author: "Kun Chen, Elizabeth Schifano, Jun Yan"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
