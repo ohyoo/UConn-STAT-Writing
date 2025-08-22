@@ -1,0 +1,35 @@
+<script>
+window.MathJax = {
+  tex: {
+    packages: {'[+]': ['base', 'ams']},  // make sure AMS is on
+    macros: {
+      // generic
+      bs: ["{\\boldsymbol{#1}}", 1],
+
+      // bold vectors
+      bsm: "{\\boldsymbol{m}}",
+      balpha: "{\\boldsymbol{\\alpha}}",
+      bp: "{\\boldsymbol{p}}",
+      bbeta: "{\\boldsymbol{\\beta}}",
+
+      // sets / simplex
+      IN: "{\\mathbb{N}}",
+      IR: "{\\mathbb{R}}",
+      simp: "{\\Delta}",
+
+      // operators (MathJax doesn't know \DeclareMathOperator—define as macros)
+      E: "{\\mathbb{E}}",
+      Var: "{\\mathrm{Var}}",
+      Prb: "{\\mathrm{Pr}}",
+
+      // transpose
+      trans: "{^{\\mathsf T}}",
+
+      // distribution names
+      DM: "{\\mathrm{DM}}",
+      Dir: "{\\mathrm{Dir}}",
+      Mult: "{\\mathrm{Multinomial}}"
+    }
+  }
+};
+</script>

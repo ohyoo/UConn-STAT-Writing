@@ -1,1 +1,42 @@
 \usepackage{booktabs}
+\usepackage{setspace}
+%\usepackage{amsthm}
+%\usepackage{ltxdoc}
+%\usepackage{amsthm}
+
+%\makeatletter
+%\def\thm@space@setup{%
+%  \thm@preskip=8pt plus 2pt minus 4pt
+%  \thm@postskip=\thm@preskip
+%}
+%\makeatother
+
+% ==== Math (classic stack; no unicode-math) ====
+\usepackage{amsmath,amssymb,bm,mathtools}
+% If you use theorem environments:
+\usepackage{amsthm}
+
+% Bold symbols
+\newcommand{\bs}[1]{\boldsymbol{#1}}  % wrapper
+\newcommand{\bsm}{\bs{m}}
+\newcommand{\balpha}{\bs{\alpha}}
+\newcommand{\bp}{\bs{p}}
+\newcommand{\bbeta}{\bs{\beta}}
+
+% Sets/simplex
+\newcommand{\IN}{\mathbb{N}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\simp}{\Delta}
+
+% Operators
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Prb}{Pr}   % use \Prb to avoid clashes; or \Pr if unused elsewhere
+
+% Transpose
+\newcommand{\trans}{^{\mathsf T}}
+
+% Distribution shorthands (as text inside math)
+\newcommand{\DM}{\mathrm{DM}}
+\newcommand{\Dir}{\mathrm{Dir}}
+\newcommand{\Mult}{\mathrm{Multinomial}}

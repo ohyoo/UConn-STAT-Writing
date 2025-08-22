@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.4)  21 AUG 2025 10:24
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.4)  22 AUG 2025 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,12 +337,54 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 \Gin@req@width=\dimen178
 )
 \pandoc@box=\box64
-(/usr/local/texlive/2024/texmf-dist/tex/latex/natbib/natbib.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/lmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+
+Package mathtools Warning: For best results, please load mathtools *before* 
+(mathtools)                unicode-math on input line 127.
+
+\g_MT_multlinerow_int=\count307
+\l_MT_multwidth_dim=\dimen179
+\origjot=\skip63
+\l_MT_shortvdotswithinadjustabove_dim=\dimen180
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen181
+\l_MT_above_intertext_sep=\dimen182
+\l_MT_below_intertext_sep=\dimen183
+\l_MT_above_shortintertext_sep=\dimen184
+\l_MT_below_shortintertext_sep=\dimen185
+\xmathstrut@box=\box65
+\xmathstrut@dim=\dimen186
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
+\thm@preskip=\skip64
+\thm@postskip=\skip65
+\thm@headsep=\skip66
+\dth@everypar=\toks33
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip63
-\bibsep=\skip64
+\bibhang=\skip67
+\bibsep=\skip68
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count307
+\c@NAT@ctr=\count308
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -373,17 +415,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count308
+\c@section@level=\count309
 )
-\@linkdim=\dimen179
-\Hy@linkcounter=\count309
-\Hy@pagecounter=\count310
+\@linkdim=\dimen187
+\Hy@linkcounter=\count310
+\Hy@pagecounter=\count311
 (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count311
+\Hy@SavedSpaceFactor=\count312
 (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 )
@@ -395,22 +437,22 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count312
+\c@Hy@tempcnt=\count313
 (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen180
+\XeTeXLinkMargin=\dimen188
 (/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count313
-\Field@Width=\dimen181
-\Fld@charsize=\dimen182
+\Fld@menulength=\count314
+\Field@Width=\dimen189
+\Fld@charsize=\dimen190
 Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
@@ -422,9 +464,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count314
-\c@Item=\count315
-\c@Hfootnote=\count316
+\Hy@abspage=\count315
+\c@Item=\count316
+\c@Hfootnote=\count317
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hxetex.def
@@ -433,11 +475,11 @@ File: hxetex.def 2024-01-20 v7.01h Hyperref driver for XeTeX
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box65
-\c@Hy@AnnotLevel=\count317
-\HyField@AnnotCount=\count318
-\Fld@listcount=\count319
-\c@bookmark@seq@number=\count320
+\pdfm@box=\box66
+\c@Hy@AnnotLevel=\count318
+\HyField@AnnotCount=\count319
+\Fld@listcount=\count320
+\c@bookmark@seq@number=\count321
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -452,70 +494,59 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip65
+\Hy@SectionHShift=\skip69
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
-\BKM@id=\count321
+\BKM@id=\count322
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/xurl/xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks28
-\thm@bodyfont=\toks29
-\thm@headfont=\toks30
-\thm@notefont=\toks31
-\thm@headpunct=\toks32
-\thm@preskip=\skip66
-\thm@postskip=\skip67
-\thm@headsep=\skip68
-\dth@everypar=\toks33
 )
-\c@theorem=\count322
-\c@lemma=\count323
-\c@corollary=\count324
-\c@proposition=\count325
-\c@conjecture=\count326
-\c@definition=\count327
-\c@example=\count328
-\c@exercise=\count329
-\c@hypothesis=\count330
+\c@theorem=\count323
+\c@lemma=\count324
+\c@corollary=\count325
+\c@proposition=\count326
+\c@conjecture=\count327
+\c@definition=\count328
+\c@example=\count329
+\c@exercise=\count330
+\c@hypothesis=\count331
 (./_main.aux)
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 182.
+LaTeX Font Info:    ... okay on input line 182.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 141.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 182.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 141.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 182.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 141.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 182.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 141.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 182.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 141.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 182.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 141.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 182.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 141.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 182.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -544,7 +575,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 141.
+(Font)              scaled to size 10.0pt on input line 182.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -583,18 +614,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 141.
+(Font)              scaled to size 10.0pt on input line 182.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 141.
+(Font)              `operators' in the math version `normal' on input line 182.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 141.
+ line 182.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 141.
+(Font)              `operators' in the math version `bold' on input line 182.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 141.
+t line 182.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -681,15 +712,15 @@ t=math;language=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 141.
+(Font)              `symbols' in the math version `normal' on input line 182.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 141.
+t line 182.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 141.
+(Font)              `symbols' in the math version `bold' on input line 182.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 141.
+t line 182.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -759,22 +790,40 @@ pt=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-41.
+82.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 141.
+t line 182.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 141
+(Font)              `largesymbols' in the math version `bold' on input line 182
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 141.
-LaTeX Info: Redefining \microtypecontext on input line 141.
-Package microtype Info: Applying patch `item' on input line 141.
-Package microtype Info: Applying patch `toc' on input line 141.
-Package microtype Info: Applying patch `eqnum' on input line 141.
-Package microtype Info: Applying patch `footnote' on input line 141.
-Package microtype Info: Applying patch `verbatim' on input line 141.
+t line 182.
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
+LaTeX Info: Redefining \microtypecontext on input line 182.
+Package microtype Info: Applying patch `item' on input line 182.
+Package microtype Info: Applying patch `toc' on input line 182.
+Package microtype Info: Applying patch `eqnum' on input line 182.
+Package microtype Info: Applying patch `footnote' on input line 182.
+Package microtype Info: Applying patch `verbatim' on input line 182.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -785,43 +834,53 @@ Package microtype Info: No adjustment of kerning.
 File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 141.
+Package hyperref Info: Link coloring OFF on input line 182.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 143.
+(Font)              scaled to size 12.0pt on input line 184.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 143.
+(Font)              scaled to size 8.0pt on input line 184.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 143.
+(Font)              scaled to size 6.0pt on input line 184.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-43.
+84.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 143.
+(Font)              scaled to size 12.0011pt on input line 184.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 143.
+(Font)              scaled to size 8.00073pt on input line 184.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 143.
+(Font)              scaled to size 6.00055pt on input line 184.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 143.
+(Font)              scaled to size 11.99872pt on input line 184.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 143.
+(Font)              scaled to size 7.99915pt on input line 184.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 143.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 143
+(Font)              scaled to size 5.99936pt on input line 184.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 184
 .
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 143
+LaTeX Font Info:    Trying to load font information for U+msb on input line 184
 .
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+84.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+184.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 
@@ -851,299 +910,226 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 [3] [4
 
 ]
-
-Package natbib Warning: Citation `xie2016bookdown' on page 5 undefined on input
- line 157.
-
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 162.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 203.
 [5] [6
 
 ]
 Chapter 1.
-
-Package natbib Warning: Citation `Foygel2021' on page 7 undefined on input line
- 190.
-
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 199--201
+Underfull \hbox (badness 10000) in paragraph at lines 251--253
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--205
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
-
- []
-
-
-Package natbib Warning: Citation `li2023regularized' on page 8 undefined on inp
-ut line 212.
-
-
-Package natbib Warning: Citation `lau2022bias' on page 8 undefined on input lin
-e 212.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--223
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--229
-
- []
-
-
-Package natbib Warning: Citation `price2022effects' on page 8 undefined on inpu
-t line 232.
-
-
-Package natbib Warning: Citation `caplan2019dental' on page 8 undefined on inpu
-t line 232.
-
-
-Package natbib Warning: Citation `jiao2022cyberattack' on page 8 undefined on i
-nput line 232.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--245
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 245--247
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
 
-Package natbib Warning: Citation `gopen1990science' on page 9 undefined on inpu
-t line 266.
-
-
-Package natbib Warning: Citation `oshima2000writing' on page 9 undefined on inp
-ut line 266.
-
-
-Package natbib Warning: Citation `gopen2004expectations' on page 9 undefined on
- input line 266.
-
-
-Package natbib Warning: Citation `hairston2003successful' on page 9 undefined o
-n input line 266.
-
-
-Package natbib Warning: Citation `lebrun2021scientific' on page 9 undefined on 
-input line 266.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--284
-
- []
+Underfull \vbox (badness 1168) has occurred while \output is active []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
+Underfull \hbox (badness 10000) in paragraph at lines 303--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--300
+Underfull \hbox (badness 10000) in paragraph at lines 305--307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--308
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 310--312
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--314
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 [10]
+Underfull \hbox (badness 1005) in paragraph at lines 349--351
+[]\TU/lmr/bx/n/10 Introduction \TU/lmr/m/n/10 (this chapter): Types of research
+ papers — theory,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--353
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
+
+ []
+
+[11]
+Missing character: There is no 好 (U+597D) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no 文 (U+6587) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no 章 (U+7AE0) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no 是 (U+662F) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no 改 (U+6539) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no 出 (U+51FA) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no 来 (U+6765) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no 的 (U+7684) in font [lmroman10-bold]:mapping=tex-
+text;!
+File: files/ks-comments.png Graphic file (type bmp)
+<files/ks-comments.png>
+[12]
 Chapter 2.
+[13
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[11
-
-]
-
-Package natbib Warning: Citation `price2022effects' on page 12 undefined on inp
-ut line 368.
+] [14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (38.25pt too wide) in paragraph at lines 1038--1038
+[]\TU/lmtt/m/n/10 LaTeX Warning: Citation []smith2020[] on page 3 undefined on 
+input line 45.[] 
+ []
 
 
-Package natbib Warning: Citation `caplan2019dental' on page 12 undefined on inp
-ut line 368.
+Underfull \hbox (badness 10000) in paragraph at lines 1043--1045
+
+ []
 
 
-Package natbib Warning: Citation `jiao2022cyberattack' on page 12 undefined on 
-input line 371.
+Underfull \hbox (badness 10000) in paragraph at lines 1045--1046
+
+ []
 
 
-Package natbib Warning: Citation `li2021uncertainty' on page 12 undefined on in
-put line 372.
+Underfull \hbox (badness 3333) in paragraph at lines 1078--1081
+\TU/lmr/m/n/10 use the following ordering unless the journal specifies otherwis
+e
+ []
 
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1107
 
-Package natbib Warning: Citation `jiao2021bayesian' on page 12 undefined on inp
-ut line 378.
+ []
 
+[22] [23] [24]
+Overfull \hbox (32.00212pt too wide) in paragraph at lines 1328--1353
+ [][] 
+ []
 
-Package natbib Warning: Citation `hu2021moving' on page 12 undefined on input l
-ine 378.
-
-
-Package natbib Warning: Citation `li2023regularized' on page 12 undefined on in
-put line 409.
-
-
-Package natbib Warning: Citation `lau2022bias' on page 12 undefined on input li
-ne 409.
-
-
-Package natbib Warning: Citation `gopen1990science' on page 12 undefined on inp
-ut line 414.
-
-
-Package natbib Warning: Citation `oshima2000writing' on page 12 undefined on in
-put line 417.
-
-
-Package natbib Warning: Citation `gopen2004expectations' on page 12 undefined o
-n input line 417.
-
-
-Package natbib Warning: Citation `hairston2003successful' on page 12 undefined 
-on input line 417.
-
-
-Package natbib Warning: Citation `lebrun2021scientific' on page 12 undefined on
- input line 418.
-
-[12] [13] [14
-
-]
+[25] [26] [27] [28]
 Chapter 3.
 
-Overfull \hbox (17.577pt too wide) in paragraph at lines 439--440
-[]\TU/lmr/m/n/10 To label an un-numbered heading, use: \TU/lmtt/m/n/10 # Hello 
-world {-#nice-label}
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 442--443
-[]\TU/lmr/m/n/10 Next, reference the labeled heading anywhere in the text using
-
- []
-
-File: _main_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
-<use _main_files/figure-latex/nice-fig-1.pdf>
-[15] [16] [17] [18
-
-]
-Chapter 4.
-
-Underfull \hbox (badness 1924) in paragraph at lines 513--514
+Underfull \hbox (badness 1924) in paragraph at lines 1569--1570
 []\TU/lmr/m/n/10 Add an unnumbered part: \TU/lmtt/m/n/10 # (PART\*) Act one {-}
  \TU/lmr/m/n/10 (followed by \TU/lmtt/m/n/10 # A
  []
 
-[19] [20
+[29
+
+] [30
+
+]
+Chapter 4.
+
+Package natbib Warning: Citation `xie2015' on page 31 undefined on input line 1
+583.
+
+[31] [32
 
 ]
 Chapter 5.
-
-Package natbib Warning: Citation `R-bookdown' on page 21 undefined on input lin
-e 527.
-
-
-Package natbib Warning: Citation `xie2015' on page 21 undefined on input line 5
-27.
-
-[21] [22
+[33] [34
 
 ]
 Chapter 6.
-[23] [24
+[35] (./_main.bbl [36] [37
 
-]
-Chapter 7.
-[25] (./_main.bbl [26]
-! Misplaced alignment tab character &.
-l.41 \newblock W. W. Norton &
-                              Company, 5 edition, 2003. 
+])
+
+Package natbib Warning: There were undefined citations.
+
+[38] (./_main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 19545 strings out of 474773
- 356323 string characters out of 5757725
- 1928839 words of memory out of 5000000
- 41413 multiletter control sequences out of 15000+600000
- 564576 words of font info for 96 fonts, out of 8000000 for 9000
+ 20384 strings out of 474773
+ 371871 string characters out of 5757725
+ 1935839 words of memory out of 5000000
+ 42207 multiletter control sequences out of 15000+600000
+ 586207 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,8n,121p,1002b,525s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,8n,121p,1002b,561s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (26 pages).
+Output written on _main.pdf (38 pages).

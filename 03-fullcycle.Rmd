@@ -1,0 +1,216 @@
+# Cycle of Statistical Research
+
+
+## Full Cycle of a Statistical Research Project
+Like any research project, a typical statistical research project starts with an
+interesting idea, and goes through a full cycle of brainstorming, planning with 
+the
+right design/methods, investigating with theoretical investigation, 
+simulation studies, and data analyses,
+fixing and iterating as necessary, and finally summarizing through 
+writing and revision.
+
+
+### Find a Topic of Interest
+
+This is probably the hardest part. 
+   The topic should be meaningful, be interesting to you, and be something 
+   which you already know at least somewhat and/or can find out more. The topic 
+   should
+   also be something that is within your capacity restricted by your skill sets
+   and time. A good first step is to review the literature to see what has 
+   already been done on the topic or on closely related problems. 
+   In short, select a project that excites you, but is also realistic and doable.
+   
+   You can get ideas for research by 
+    + attending seminars, conferences, and workshops; more and more resources
+    are available online (e.g., a recent workshop on 
+    [Foundation Models and Their Biomedical Applications: Bridging the Gap](https://statsupai.org/quarto_web/site/posts/2025-birs-workshop-day-1.html#workshop-at-birs-overview) );
+    + reading reputable and relevant journals (e.g., 	[Journal of the American Statistical Association](https://www.tandfonline.com/journals/uasa20);
+	[Journal of Quantitative Analysis in Sprots](https://www.degruyter.com/journal/key/jqas/html?lang=en);
+	[American Statistician](https://www.tandfonline.com/journals/utas20)),
+     books, magazines 
+     (e.g., [Chance](https://www.tandfonline.com/journals/ucha20); [Significance](https://academic.oup.com/jrssig)), and newspapers;
+    + consulting activities with practitioners who face real-world problems;
+    + collaborating with colleagues in statistics, data science, or 
+    applied fields;
+    + exploring datasets (public repositories, [Kaggle](https://www.kaggle.com) competitions, 
+    government/health databases) that reveal new questions;
+    + revisiting your own course work, previous projects, and even class assignments that 
+    raised unanswered questions.
+    
+A critical factor to consider when identifying a topic is **data**. 
+For statisticians and data scientists, research should often be 
+both **problem-driven** and **data-driven**, with methodological development 
+tightly linked to real scientific or societal needs.
+
+* Problem-driven approach: Start from a real scientific, engineering, business, 
+or societal problem that genuinely matters. The problem motivates the research 
+questions, and data/methods are then sought or developed to address them. 
+This approach ensures relevance and often leads to impactful interdisciplinary 
+collaborations.
+
+* Data-driven approach: Start from an available dataset and explore it to 
+uncover new questions or methodological challenges. Creativity is needed 
+here to do something novel and meaningful with familiar or widely used data. This
+kind of research often serves the purpose of hypothesis generation. 
+
+* Idea-driven approach: Begin with a methodological or theoretical idea or 
+problem, and then look for ways to justify or data to test/illustrate. 
+This can lead to elegant theory, but on the other hand, it may also lead to 
+many methods of limited practical relevance. 
+
+
+Ultimately, impactful statistical research does not come from problems, ideas, or data 
+alone, but from their dynamic interplay. As Xiao-Li Meng once emphasized, 
+[*Highly Principled Data Science*](https://www.sciencedirect.com/science/article/abs/pii/S0167715218300981) 
+requires methodologies that are
+
+1. **Scientifically justified** (rooted in real problems),
+2. **Statistically principled** (built on sound inference), and
+3. **Computationally efficient** (scalable and implementable).
+
+Keeping these principles in mind ensures that your project is not only feasible 
+but also both rigorous and relevant.
+
+	
+
+
+### Initial Planning
+
+Once you have identified a promising topic, the next step is to transform a 
+broad idea into a concrete research plan. This involves clarifying your 
+research questions, understanding what data will be needed (or available), 
+and identifying the appropriate methods. Careful planning at this stage 
+will save time later and help avoid common pitfalls.
+
+1. Clarify the research questions
+
+* Narrow the topic to one or two specific questions.
+* State the research goals in precise terms (e.g., estimating a causal effect, 
+developing a predictive model, establishing a theoretical property, etc.).
+* Frame testable hypotheses. 
+
+2. Design the study
+
+* Decide whether the study will be theoretical, 
+methodological, applied, or a blend.
+* For empirical studies, determine the study design 
+(observational vs. experimental, cross-sectional vs. longitudinal).
+* Consider reproducibility and transparency 
+at the design stage. Make sure to document every steps so that others can follow.
+
+3. Identify and obtain data
+
+* Decide whether you will collect new data or use existing sources.
+* Evaluate whether available data are sufficient in size, quality, and relevance.
+* Anticipate potential data challenges (missingness, bias, access restrictions).
+
+4. Select appropriate methods
+
+* Choose statistical or computational tools that match both the problem and the data.
+* Consider multiple candidate approaches.
+* Think about the balance between rigor and feasibility 
+(e.g., a theoretically ideal method vs. one that is conceptually simple and 
+computationally practical).
+
+5. Outline the research and writing plan
+
+* Draft a tentative structure for the project 
+(introduction, methods, results, discussion).
+* Use the outline to guide both the analyses and the writing.
+
+
+Please note that the goal of initial planning is not to lock yourself into 
+a fixed path; it is impossible as every project is different. 
+This is more about paving
+a roadmap that helps you stay focused, track progress while leaving room for changes.
+
+
+    
+### Statistical investigation 
+
+    + Perform data analysis.
+    + Summarize substantive findings.
+    + Investigate the performance of proposed methods via simulations.
+    
+    
+### Iterate between planning and investigation.
+
+
+### Write, revise and proofread. 
+
+Revising and writing are two separate processes.
+    + Start with an outline for each section which includes major headings, 
+      sub-headings and paragraphs covering different points.  
+    + When starting, the goal is to get the main points and ideas captured in a 
+      document, so at this time, it does not matter if sentences are incomplete 
+      or if the grammar is incorrect.
+    + Are the statistical statements correct?
+    + Are the data displays informative?
+    + Are the conclusions based on sound evidence?
+    + Are the style and tone appropriate for the venue?
+    + Is the problem clearly stated?
+    + Check organization --- reorganize paragraphs and add transitions where 
+      necessary.
+    + Work on sentences --- check spelling, punctuation, word choice, tense, etc.
+    + Make sure all researched information is documented (reproducibility).
+    + Rework introduction and conclusion.
+    + Read out loud to check for flow.
+    + Find a friend to review.
+
+
+There are resource online that could be helpful. Here are some
+examples.
+
++ UCSD: [Data Science: Guide for Independent Projects](https://ucsd.libguides.com/data-science/projects)
++ FreeCodeCamp: [How to build a data science project from scratch](https://www.freecodecamp.org/news/how-to-build-a-data-science-project-from-scratch-dc4f096a62a1/)
+
+
+---
+
+## Writing a Research Proposal
+
+A research proposal is piece of writing that details exactly what you plan to do
+in a research project.
+
+
+The following components are expected in your proposal.
+
++ Introduction: Introducing the topic and why you have chosen this
+  topic (3--5 lines). Mention briefly the current related research and
+  cite relevant works.
+    - Why shold we care?
+    - What have been done?
+    - What are new?
+  
++ Specific aims: Formulate a research question or hypothesis in the
+  chosen topic. Describe briefly why you select such a question or
+  hypothesis and its importance in the field (cite sources).
+    - Why is it hard/interesting/unstudied?
+    - How hard/interesting is it?
+
++ Data description: Describe your data set (for instance: sampling
+  scheme, number of observations, number of variables, variables of
+  interest, nature of the variables) and the source of your data set
+  if it is not collected by yourself.
+
++ Research design/methods/schedule: 
+  Describe briefly (5-7 lines) your plan of action. 
+    - Why are the methods appropriate (with proper references) for the
+      problem?
+    - What steps are required to use the methods?
+    - Which of the steps will be particularly hard?
+    - What would you do if the hardest steps do not work as planned?
+    - How would the methods help in investigating the task problem?
+
++ Discussion: potential problems and solutions.
+    - What do you expect to find and why do you feel so? 
+    - Any ways your work can corroborate or challenge existing results
+      or assumptions?
+    - What are the potential impacts of your work?
+    - What if the results of your investigation is not what you
+      expected?
+
++ Conclusion (optional):  Wrap it up by briefly summarizing your
+  research proposal and reinforcing your research’s stated purpose.

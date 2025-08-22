@@ -1,8 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 # Tools and Workflows for Writing {#ch-tools}
 
 Many people use MS Word when it comes to writing.
@@ -15,7 +10,7 @@ routine office documentary tasks.
 For professional writing, one need to be aware
 of the professional tools and invest time to master them.
 
-
+---
 
 ## Word vs. LaTeX
 
@@ -58,12 +53,10 @@ L(\mu, \sigma^2 \mid x_1, \ldots, x_n) = (2\pi\sigma^2)^{-n / 2}\exp\left\{
 ```
 
 This produces beautifully typeset mathematics, is reproducible, and can be revised easily.
-In MS Word, one must insert each symbol manually through the Equation Editor:Greek letters via dropdowns, summations via menus, exponents via special boxes.
-Formatting quickly becomes clumsy, and editing dozens of formulas is tedious.
-Copy - pasting often breaks structure, and version control is nearly impossible.
+In MS Word, one must insert each symbol manually through the Equation Editor:Greek letters via dropdowns, summations via menus, exponents via special boxes. Formatting quickly becomes clumsy, and editing dozens of formulas is tedious. Copy-pasting often breaks structure, and version control is nearly impossible.
 
-For one or two equations Word may be acceptable. But for an entire paper with dozens of equations, cross -
-references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.
+For one or two equations Word may be acceptable. But for an entire paper with dozens of equations, 
+cross-references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.
 
 :::
 
@@ -102,6 +95,7 @@ sections, appendices, or internal drafts where precise mathematical notation is
 required.
 
 
+---
 
 ## Git for Version Control
 
@@ -125,7 +119,9 @@ source game about learning Git!
 
 
 
-### Set Up+Download Git [here](https://git-scm.com/downloads).
+### Set Up
+
++ Download Git [here](https://git-scm.com/downloads).
 + Make a GitHub Account [here](https://www.github.com) if you don't have one yet.
 + Get started with your GitHub account by following the [help
 page](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account).
@@ -152,7 +148,7 @@ in a [YouTube video](https://www.youtube.com/watch?v=kHkQnuYzwoo).
   + Shows if the local repository is begind or ahead a remote branch.
 + `git add`:
   + Adds new or modified files to the Git staging area.
-  + Gives the option to select which files are to be sent to the remote repository
+  + Gives the option to select which files are to be sent to the remote repository.
 + `git rm`:
   + Used to remove files from the staging index or the local repository.
 + `git commit`:
@@ -208,6 +204,20 @@ in a [YouTube video](https://www.youtube.com/watch?v=kHkQnuYzwoo).
 + Keep the linewidth of sources to under 80 for better `git diff` view.
 
 
+
+### Pull Request
+
+To contribute to an open source project (e.g., our classnotes), use pull
+requests. [Pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+"let you tell others about changes you've pushed to a branch in a repository on
+GitHub. Once a pull request is opened, you can discuss and review the potential
+changes with collaborators and add follow-up commits before your changes are
+merged into the base branch."
+
+
+Watch this YouTube video: [GitHub pull requests in 100 seconds](https://youtu.be/8lGpZkjnkt4).
+
+
 ::: {.example}
 **A useful `.gitignore` for LaTeX/Bookdown**
 
@@ -261,37 +271,23 @@ Now `git status` will show only meaningful source changes.
 
 :::
 
+---
 
+## LaTeX
 
+### LaTeX Templates
 
-### Pull Request
-
-To contribute to an open source project (e.g., our classnotes), use pull
-requests. [Pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-"let you tell others about changes you've pushed to a branch in a repository on
-GitHub. Once a pull request is opened, you can discuss and review the potential
-changes with collaborators and add follow - up commits before your changes are
-merged into the base branch."
-
-
-Watch this YouTube video: [GitHub pull requests in 100 seconds](https://youtu.be/8lGpZkjnkt4).
-
-
-## LaTeX for Typesetting
-
-A \LaTeX source file has extension name `.tex`. It is a plain text file that can
+A LaTeX source file has extension name `.tex`. It is a plain text file that can
 be edited by any text editor. It can be tracked easily for differences between
 any two versions. Different document classes are predefined such as `letter`,
 `article`, `report`, `beamer` (for presentations), and `book`. Customized
 document classes can be defined once
-you know more about LaTeX. We focus on `article` here.
+you know more about LaTeX. <!--We focus on `article` here.-->
 
 
-The instructions in this section are practiced in a
-[demo repo](https://github.com/jun-yan/writing-demo).
++ The instructions in this section are practiced in a [demo repo](https://github.com/jun-yan/writing-demo) from Professor Jun Yan. 
 
-
-[Anthony Zeimekakis](https://www.linkedin.com/in/anthony-zeimbekakis/)
++ [Anthony Zeimekakis](https://www.linkedin.com/in/anthony-zeimbekakis/)
 was an undergraduate student who worked with us on a thesis. The
 tex sources, data, and code are in a [GitHub
 repo](https://github.com/azeimbekakis/KS-Test-Thesis), which can be
@@ -300,11 +296,54 @@ Statistician](https://doi.org/10.1080/00031305.2024.2356095), two
 years after Anthony graduated. Interested students beaware that this
 is a serious commitment.
 
++ You may also directly download LaTeX templates (zip) here: 
+  + [Download LaTeX template for writing a paper](files/Paper_templete.zip)
+  + [Download LaTeX template for making a presentation](files/Presentation_templete.zip)
 
-### A beginner's template
 
-For the product to look like a paper, we need to have title, author, abstract,
-sections, and references. Let us start from a very basic template in the
+### Editing and Compiling LaTeX
+
+Working efficiently with LaTeX largely depends on the editing environment. 
+Although a plain text editor is sufficient for editing, certain
+tools can make the writing, compiling, and debugging process much smoother.
+
+#### Local Editors
+
++ *Emacs with AUCTeX*: a very powerful, customizable editor popular with many
+  statisticians. AUCTeX provides syntax highlighting, 
+  automatic indentation, compilation shortcuts, and forward/backward search
+  between the source and the PDF.
+  + Here is a short [tutorial](https://michaelneuper.com/posts/efficient-latex-editing-with-emacs/). 
++ *RStudio*: although primarily for R, it supports LaTeX via R Markdown and
+  Bookdown projects, making it very convenient for statistical writing.
+  + Here is [a template from the UConn Data Science Lab](https://statds.org/templates.html).
++ *TeXstudio* and *TeXmaker*: cross-platform editors that offer integrated
+  compiling, autocompletion, spell checking, and bibliography management.
+
+
+
+#### Online Editors
+
++ [*Overleaf*](https://www.overleaf.com): a widely used online LaTeX editor that 
+runs in the browser.
+  It allows real-time collaboration, version history, and
+  integrates easily with GitHub. Overleaf is especially helpful when working
+  with co-authors who are less comfortable setting up LaTeX locally.
+
+
+#### Compiling LaTeX
+
+For compilation, the traditional workflow involves running `pdflatex` and
+`bibtex` manually. Tools like `latexmk` can automate this process by detecting
+which passes are needed and executing them automatically. Most editors (e.g.,
+TeXstudio, VS Code, Emacs+AUCTeX) integrate `latexmk` so you only need to press
+one shortcut key to recompile the document.
+
+
+::: {.exercise}
+**Compile a LaTeX template**
+
+Let us start from a basic template in the
 [demo repo](https://github.com/jun-yan/writing-demo). Clone it to an appropriate
 location on your own computer. Go to the `manuscript` folder and compile the pdf
 product with the following:
@@ -315,7 +354,7 @@ pdflatex statspaper
 pdflatex statspaper
 ```
 It is the `bibtex` step that incorporates the references from the bib files. Two
-rounds of `pdflatex` are necessary for \LaTeX\ to get all the cross-referencing
+rounds of `pdflatex` are necessary for LaTeX to get all the cross-referencing
 settled.
 
 
@@ -324,12 +363,44 @@ The whole process could be automated by:
 latexmk -pdf statspaper
 ```
 
-
 Advanded users may take a look at the `Makefile`, in which different targets can
 be set up and the needed opertations for each target is automated.
+:::
 
 
-Tips on getting started with \LaTeX.
+#### Choosing the Right Tool
+
+- If you prefer maximum control and flexibility, *Emacs with AUCTeX* or *VS
+  Code with LaTeX Workshop* are excellent.
+  
+- If you want a quick, friendly environment, *RStudio* work well.
+  
+- For collaborations, especially interdisciplinary projects or student
+  mentoring, *Overleaf* is often the most practical choice, since it removes
+  the need to install LaTeX locally.
+
+
+::: {.exercise}
+**Trying Different Editors**
+
+1. If you already have LaTeX installed, open the same `.tex` file in two
+   different editors (e.g., Emacs and TeXstudio, or VS Code and RStudio). 
+   Alternatively, you may use [Overleaf](https://www.overleaf.com/).
+2. Try compiling the document and correcting a small error (e.g., a missing
+   bracket).
+3. Discuss:
+   - Which editor felt more comfortable?
+   - Which features (syntax highlighting, autocompletion, error display) were
+     most helpful?
+   - If you were collaborating with someone outside statistics, which tool would
+     you recommend?
+
+:::
+
+
+
+
+#### Tips on Getting Started
 
 + Read the compiling log and fix the errors/warnings.
 + Googling the error/warning messages usually helps.
@@ -341,9 +412,46 @@ tables](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols).
 + Keep line widths under 80 characters in source files.
 + Separate paragraphs in source files by double blank lines.
 + Define acronyms at their first occurrences and only once.
++ Use GPT or other LLM tools. While these tools are very convenient and getting 
+better and better, it is still helpful if you know the basic about LaTeX. 
 
 
-### Math equations
+Perfect — that will be very engaging for students. You can simulate **realistic LaTeX error messages**, show them in an example block, and then ask students to diagnose what they mean. Here’s a ready-to-drop Rmd block:
+
+::: {.example}
+**Common LaTeX Error Messages**
+
+Here are some typical error messages you might encounter.  
+
+1. **Missing end of document**
+```
+! LaTeX Error: \begin{document} ended by \end{article}.
+```
+
+2. **Undefined control sequence**
+```
+! Undefined control sequence.
+l.6 This paper is written in \Latex
+```
+
+3. **Missing $ inserted**
+```
+! Missing \$ inserted.
+l.12 The regression coefficient is beta\_1
+```
+
+4. **Citation undefined**
+```
+LaTeX Warning: Citation 'smith2020' on page 3 undefined on input line 45.
+```
+- What do each of these errors/warnings mean?  
+- How would you go about fixing them?  
+:::
+
+
+
+
+### Math Equations
 
 For serious math typesetting, use packages `amsmath`, `amsthm`, and others.
 
@@ -370,13 +478,121 @@ readable.
 + Align at appropriate places in multiline equations.
 
 
+::: {.example}
+**Cleaning Up Math Expressions in LaTeX**
+
+Below are some math expressions written poorly in LaTeX.  
+Your task is to (1) identify what’s wrong with each one, and (2) rewrite it
+following the best practices listed above.
+
+1. Inline math with fraction:  
+  ```latex
+   $ \frac{a}{b} + c $
+  ```
+
+2. Missing equation label:
+
+   ```latex
+   \begin{equation}
+   y = \beta_0 + \beta_1 x + \epsilon
+   \end{equation}
+   ```
+
+3. Wrong font for notations:
+
+   ```latex
+   $ AIC = -2logL + 2k $
+   ```
+
+4. Misplaced function and parentheses:
+
+   ```latex
+   $ P(X>c) = exp(-\lambda c) $
+   ```
+:::
+
+
+
+::: {.exercise}
+**A Statistically Correct Paragraph with Bad LaTeX**
+
+The following paragraph deliberately violates many LaTeX best practices. Your task is to identify and fix all the issues.
+
+```latex
+Let $\mathbf{m}=(m_1,\ldots,m_p)^T \in N^{p}$ be a vector of taxon counts
+and $M=\sum_{j=1}^{p} m_j$ be the total count. Let $S \in \{1, ..., K\}$
+be the unobservable hidden state variable indicating the cluster membership.
+Assume $\mathbf{m}$, in any given state S, follow a Dirichlet-Multinomial (DM)
+distribution. More specifically
+\begin{equation}\label{eq:dm}
+  \mathbf{m} | (S=k) \sim DM(M,\theta_k,\alpha^{[k]})
+\end{equation}
+or, equivalently, the hierarchical structure
+\begin{equation*}
+  \begin{aligned}
+    \mathbf{m} | \mathbf{p} &\sim Multinomial(M,\mathbf{p}) \\
+    \mathbf{p} | (S=k) &\sim Dir(\theta_k,\alpha^{[k]})
+  \end{aligned}
+\end{equation*}
+where $\alpha^{[k]}=(\alpha_{1}^{[k]},...,\alpha_{p}^{[k]})^T \in \Delta^{p-1}, 
+\theta_k>0$
+is an over-dispersion parameter and $\mathbf{p}$ follows a Dirichlet 
+distribution under
+each state k in the hierarchical formulation The conditional mean of 
+taxon j's count is
+$E(m_{j} | S = k) = M\alpha_{j}^{[k]}$ and the conditional variance 
+is
+$Var(m_j | S=k) = 
+\frac{M\alpha_{j}^{[k]}(1-\alpha_{j}^{[k]})(M \theta_k + 1)}{\theta_k + 1}$
+For completeness, note also that $P(S=k|\mathbf{m})>0$ for 
+all k $[\{(m_1+m_2]\}]$ (see (\ref{eq:dm})).
+
+```
+
+Let $\mathbf{m}=(m_1,\ldots,m_p)^T \in N^{p}$ be a vector of taxon counts
+and $M=\sum_{j=1}^{p} m_j$ be the total count. Let $S \in \{1, ..., K\}$
+be the unobservable hidden state variable indicating the cluster membership.
+Assume $\mathbf{m}$, in any given state S, follow a Dirichlet-Multinomial (DM)
+distribution. More specifically
+\begin{equation}\label{eq:dm}
+  \mathbf{m} | (S=k) \sim DM(M,\theta_k,\alpha^{[k]})
+\end{equation}
+or, equivalently, the hierarchical structure
+\begin{equation*}
+  \begin{aligned}
+    \mathbf{m} | \mathbf{p} &\sim Multinomial(M,\mathbf{p}) \\
+    \mathbf{p} | (S=k) &\sim Dir(\theta_k,\alpha^{[k]})
+  \end{aligned}
+\end{equation*}
+where $\alpha^{[k]}=(\alpha_{1}^{[k]},...,\alpha_{p}^{[k]})' \in \Delta^{p-1}, \theta_k>0$
+is an over-dispersion parameter and $\mathbf{p}$ follows a Dirichlet distribution under
+each state k in the hierarchical formulation
+The conditional mean of taxon j's count is
+$E(m_{j} | S = k) = M\alpha_{j}^{[k]}$ and the conditional variance is
+$Var(m_j | S=k) = \frac{M\alpha_{j}^{[k]}(1-\alpha_{j}^{[k]})(M \theta_k + 1)}{\theta_k + 1}$.
+For completeness, note also that $P(S=k|\mathbf{m})>0$ for all k $[\{(m_1+m_2]\}]$ (see (\ref{eq:dm})).
+
+---
+
+* Display equations missing terminal punctuation.
+* Conditional bars written as `|` instead of `\mid`.
+* Distribution names (`DM`, `Multinomial`, `Dir`) as bare text in math (should use `\text{}`/`\mbox{}` or `\mathrm{}`).
+* Wrong/undefined sets and symbols.
+* Inconsistent notation/fonts (transpose).
+* Inline fraction `\frac{…}{…}` in inline math.
+* Mismatched/incorrect delimiter ordering: `[\{( … ]\}]`.
+* Unnumbered vs numbered environments used inconsistently; labeled equation `\label{eq:dm}` referenced as `(ref{…})` instead of `\eqref{…}`; or labeled without a proper reference.
+* Missing commas and periods in sentences around math; weak spacing/readability in sources.
+
+:::
+
 ### Tables
 
-If you are manually typing a \LaTeX table source, think if you can generate the
+If you are manually typing a LaTeX table source, think if you can generate the
 source. There are multiple R packages that can generate the tex source from a
 given dataset. See package `xtable` for example.
 
-Tips on professional \LaTeX tables:
+Tips on professional LaTeX tables:
 
 + Use `tbp` for floating locations; avoid `h`.
 + Make it self-contained with an informative caption.
@@ -397,16 +613,77 @@ of measurements.
 See [Small Guide to Making Nice Tables by Markus
 Puschel](https://people.inf.ethz.ch/markusp/teaching/guides/guide-tables.pdf)
 
+
+
+Perfect — this is a great place to design a **“bad table” exercise** so students can practice spotting and fixing formatting issues. Here’s a deliberately messy version of your table, full of bad practices (tiny font, vertical lines, inconsistent decimals, misaligned numbers, redundant symbols, etc.).
+
+You can drop this directly into your bookdown/LaTeX as an **exercise block**.
+
+
+::: {.exercise}
+**Fix the Table**
+
+Below is the same descriptive table as before, but typeset 
+with many bad practices.  
+Your task is to identify the issues (at least 8) and then rewrite 
+the table according to professional LaTeX table guidelines.
+
+```latex
+\begin{table}[h]
+\caption{Table showing descriptive characteristics of the case control data.}
+\centering
+\tiny
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & Multi-record cases & Multi-record controls & Single-record cases & 
+ Single-record controls \\
+\hline
+Total & 487.0 & 2435 & 1408.00 & 7040 \\
+\hline
+Sex &   &   &   &   \\
+Female & 310(63.7%) & 1505 (61.8) & 952(67.61 %) & 4760 \\
+Male & 177 (36.34) & 885 & 456 (32.4 %) & 2280.000 \\
+\hline
+Race &   &   &   &   \\
+Asian & 12 & 60.00 & 27(1.9\%) & 135.000 \\
+Black & 36 (7.39 \%) & 180 & 106 (7.5%) & 530 \\
+Hispanic & 32 (6.57%) & 160 & 116 (8.2) & 580 \\
+Other & 24 (4.93 %) & 120 & 128(9.09%) & 640 \\
+White & 383 (78.64 \% ) & 1915 & 1031 (73.2\%) & 5155 \\
+\hline
+Age &   &   &   &   \\
+10-14 & 46 (9.45) & 237 (9.7%) & 176(12.5) & 830 (11.8%) \\
+15-19 & 247(50.7 \%) & 1161 & 711 (50.50) & 3449 (49) \\
+20-24 & 194 (39.84\%) & 1037 & 521(37.0\%) & 2761 (39.22\%) \\
+\hline
+\end{tabular}
+\end{table}
+```
+
+* Overuse of vertical lines `|`.
+* Inconsistent decimal places (e.g., `487.0` vs `1408.00` vs `106 (7.5%)`).
+* Parentheses and percentages formatted inconsistently (`63.7%`, `67.61 %`, `7.5%`).
+* Tiny font (`\tiny`) makes the table unreadable.
+* Caption is vague and not self-contained.
+* Numbers not aligned by decimal point.
+* Extra zeros (`2280.000`, `135.000`).
+* Percentages outside math mode.
+* Floating specifier `[h]` instead of `tbp`.
+
+:::
+
+
+
 ### Figures
 
 Use vector graphs, not raster graphs (unless you have to, e.g.,
 screenshots). Save the code that generates the figures so the figures can be
 improved easily.
 
-Tips on \LaTeX figures:
+Tips on LaTeX figures:
 
 + Use `tbp` for floating locations; avoid `h`.
-+ Use latex package `graphicx`.
++ Use LaTeX package `graphicx`.
 + Make it self-contained with an informative caption.
 + Captions should be located below the figure unless the journal specifies
 otherwise.
@@ -424,7 +701,7 @@ pp-plot).
 ### References
 
 BibTeX is a reference management tool for formatting lists of references that
-can be used together with \LaTeX to generate a reference list.
+can be used together with LaTeX to generate a reference list.
 Non-referenced
 references are not to be cited. All referenced references are to be listed. This
 nice feature is made possible by the package `natbib`.  We need to collect
@@ -481,6 +758,55 @@ __quality control__ the google output for missing fields and errors.
 + All references without page numbers or volume number should be checked.
 + Keep bib key style consistent.
 
+
+Perfect — this section lends itself naturally to a **“spot the errors”** exercise.
+Here’s a ready-to-drop exercise block you can use in your *bookdown* chapter:
+
+
+::: {.exercise}
+**Cleaning Up BibTeX Entries**
+
+Below are two BibTeX entries that contain several common problems (formatting, capitalization, missing fields, inconsistent page ranges, etc.).  
+
+```bibtex
+@article{Foygel2019,
+author = {Rina Foygel Barber and Emmanuel J. Cand{\`e}s and Aaditya Ramdas and Ryan J. Tibshirani},
+title = {{Predictive inference with the jackknife+}},
+volume = {49},
+journal = {The Annals of Statistics},
+number = {1},
+publisher = {Institute of Mathematical Statistics},
+pages = {486--507},
+year = {2021},
+doi = {10.1214/20-AOS1965},
+URL = {https://doi.org/10.1214/20-AOS1965}
+}
+```
+
+```bibtex
+@article{Kessler2019,
+  title={Using EHRs to Predict Suicide Risk: Harnessing Big Data for Better Care},
+  author={Kessler, Ronald C. and Hwang, Irving and Hoffmire, Claire A. and McCarthy, John F.},
+  journal={American journal of psychiatry},
+  volume={176},
+  number={1},
+  pages={19-20},
+  year={2019},
+  publisher={American Psychiatric Association}
+}
+```
+
+* Are author names formatted consistently?
+* Is capitalization in titles handled correctly?
+* Are page numbers written with a single dash or double dash?
+* Should `publisher` appear for journal articles?
+* Are all required fields present (doi, url, etc.)?
+* Is the key (`Foygel2019`, `Kessler2019`) descriptive and consistent?
+
+:::
+
+
+
 ### Cross-referencing
 
 Define a label for each object and refer to it by its label.
@@ -500,10 +826,7 @@ labels and fix them.
 across documents).
 
 
-## Using R Markdown as a Frontend
-
-Here is [a template from the UConn Data Science Lab](https://statds.org/templates.html).
-
+---
 
 ## Command Line Interface
 
