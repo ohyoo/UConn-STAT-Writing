@@ -24,6 +24,9 @@ Most of the articles in journals such as *Annals of Statistics*, *Annals of Prob
 
 Examples include @Foygel2021. 
 
+[Download @Foygel2021](files/papers/Foygel2021.pdf). 
+
+
 
 ### Methodological Papers
 A **methodological paper** focuses on proposing a novel methodological contribution that can be applied to a general class of real-world problems. A commonly seen structure is:  
@@ -43,8 +46,9 @@ Such papers emphasize methodological development, often with a blend of theory (
 In other words, the most impactful methodological contributions are those that connect with practical relevance. They are inspired by genuine applied needs, but provide solutions that are general enough to influence future work in an important domain or even across different domains. 
 
 
-Example include @li2023regularized and @lau2022bias.  
+Example include @li2023regularized, @lau2022bias, and @ChenChanStenseth2012. 
 
+[Download @ChenChanStenseth2012](files/papers/ChenChanStenseth2012.pdf). 
 
 
 ### Applied Papers
@@ -56,12 +60,16 @@ An **applied paper** focuses on addressing a concrete scientific question in a p
 + Results  
 + Discussion  
 
-Sometimes simulation studies are added to assess sensitivity. Applied papers may involve applying existing methods or developing new ones motivated by the application. Examples include @price2022effects; @caplan2019dental; @jiao2022cyberattack.  
-
-
-It is important to note that what we call "applied papers" here includes a large portion of scientific papers that rely on data analytics, statistics, and machine learning methods. In many scientific domains, these papers may in fact be considered theoretical or methodological contributions within that field. For instance, an applied paper with genomical data analysis could be regarded as a methodological paper in genetics.  
+What we call "applied papers" here includes a large portion of scientific papers that rely on data analytics, statistics, and machine learning methods. In many scientific domains, these papers may in fact be considered theoretical or methodological contributions within that field. For instance, an applied paper with genomical data analysis could be regarded as a methodological paper in genetics.  
 
 Such works are most often interdisciplinary, typically resulting from close collaborations between statisticians, data scientists, and domain experts. They showcase how quantitative methods advance science in other fields, while also motivating the development of new techniques within statistics and machine learning.
+
+Sometimes, simulation studies are added to assess sensitivity. Applied papers may involve applying existing methods or developing new ones motivated by the application. 
+
+Examples include @price2022effects, @caplan2019dental, @jiao2022cyberattack, and @Johnson2021. 
+
+[Download @Johnson2021](files/papers/Johnson2021.pdf). 
+
 
 ---
 
@@ -79,6 +87,11 @@ Beyond traditional statistics journals, researchers often publish in data scienc
 
 Compared to *JASA* or *Annals of Statistics*, these outlets often prioritize empirical performance and novelty over extensive theoretical justifications or methodological development, though many still include core mathematical or probabilistical analysis. This emphasis partly reflects the nature of the research topics: for many cutting-edge machine learning and AI methods, their theoretical understanding is still evolving and often lags behind practice. As a result, papers are judged primarily on their ability to demonstrate empirical advances on benchmark datasets or practical applications.
 
+Examples include @Vaswani2017, and @HeChen2018. 
+
+[Download @HeChen2018](files/papers/HeChen2018.pdf). 
+
+
 ---
 
 ## Scientific Writing Resources
@@ -89,7 +102,7 @@ Many resources on scientific writing are available. For example, @gopen1990scien
 
 ## About This Book
 
-This book, *Advanced Research Writing in Statistics and Data Science*, extends earlier efforts from [*Statistical Writing*](https://statds.github.io/stat-writing/), by broadening its scope and including hands-on examples and exercises.   
+This book, *Research Writing in Statistics and Data Science*, extends earlier efforts from [*Statistical Writing*](https://statds.github.io/stat-writing/), by broadening its scope and including many hands-on examples and exercises.   
 
 The book emphasizes three guiding principles:  
 
