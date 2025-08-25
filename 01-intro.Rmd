@@ -14,7 +14,7 @@ This book (and its companion course) is motivated by the need to make these conv
 
 ## Types of Papers in Statistics and Data Science
 
-### Theory papers
+### Theory Papers
 
 A **theory paper** in statistics and probability is closest in form to a mathematical paper. It typically includes the statement of the problem, formulation of assumptions, and the presentation of theorems, lemmas, and proofs. The purpose is often to establish fundamental properties of certain statistical or probabilistic tools/approaches, including but well beyond consistency, efficiency, optimality, convergence, asymptotic distributions, and non-asymptotic error bounds. 
 
@@ -25,7 +25,7 @@ Most of the articles in journals such as *Annals of Statistics*, *Annals of Prob
 Examples include @Foygel2021. 
 
 
-### Methodological papers
+### Methodological Papers
 A **methodological paper** focuses on proposing a novel methodological contribution that can be applied to a general class of real-world problems. A commonly seen structure is:  
 
 + Introduction
@@ -47,7 +47,7 @@ Example include @li2023regularized and @lau2022bias.
 
 
 
-### Applied papers
+### Applied Papers
 An **applied paper** focuses on addressing a concrete scientific question in a particular domain using statistical or data science methods. Its structure often includes:  
 
 + Introduction  
@@ -127,10 +127,11 @@ Regardless of outlet, any scientific writing should be convincing and concise. A
 
 Ultimately, strong writing can never substitute for strong research. In short, keep in mind that **a good paper must rest on good work**. Just as important, a good paper is made through revision. 
 
-Or, as the Chinese phrase puts it: **好文章是改出来的**.
+Or, using one phrase to put it: **Good writing is rewriting** (好文章是改出来的).
 
-You can view an example of a marked-up draft with comments from my PhD advisor:  
-[Download advisor’s comments (PDF)](files/ks-comments.pdf)
+You can view an example of a marked-up draft with comments from Dr. Kun Chen's Ph.D. advisor:  
+[Download a marked-up draft (PDF)](files/ks-comments.pdf) of @ChenChanStenseth2012. 
+
 
 ![](files/ks-comments.png){width=70%}
 
