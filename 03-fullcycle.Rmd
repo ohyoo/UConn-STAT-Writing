@@ -14,55 +14,81 @@ writing and revision.
 ### Find a Topic of Interest
 
 This is probably the hardest part. 
-   The topic should be meaningful, be interesting to you, and be something 
-   which you already know at least somewhat and/or can find out more. The topic 
-   should
-   also be something that is within your capacity restricted by your skill sets
-   and time. A good first step is to review the literature to see what has 
-   already been done on the topic or on closely related problems. 
-   In short, select a project that excites you, but is also realistic and doable.
+
+The topic should be meaningful, be interesting to you, and be something 
+which you already know at least somewhat and/or can find out more. The topic 
+should also be something that is within your capacity restricted by your skill 
+sets and time. A good first step is to review the literature to see what has 
+already been done on the topic or on closely related problems. In short, 
+selecting a project that excites you, but is also realistic and doable.
    
-   You can get ideas for research by 
-    + attending seminars, conferences, and workshops; more and more resources
-    are available online (e.g., a recent workshop on 
-    [Foundation Models and Their Biomedical Applications: Bridging the Gap](https://statsupai.org/quarto_web/site/posts/2025-birs-workshop-day-1.html#workshop-at-birs-overview) );
-    + reading reputable and relevant journals (e.g., 	[Journal of the American Statistical Association](https://www.tandfonline.com/journals/uasa20);
-	[Journal of Quantitative Analysis in Sprots](https://www.degruyter.com/journal/key/jqas/html?lang=en);
-	[American Statistician](https://www.tandfonline.com/journals/utas20)),
+You can get ideas for research by 
+
++ attending seminars, conferences, and workshops; more and more resources are 
+available online (e.g., a very recent workshop on [Foundation Models and 
+Their Biomedical Applications: Bridging the Gap](https://statsupai.org/quarto_web/site/posts/2025-birs-workshop-day-1.html#workshop-at-birs-overview) );
+
++ reading reputable and relevant journals (e.g., those mentioned in Chapter \@ref(ch1-sec-papers)),
      books, magazines 
      (e.g., [Chance](https://www.tandfonline.com/journals/ucha20); [Significance](https://academic.oup.com/jrssig)), and newspapers;
-    + consulting activities with practitioners who face real-world problems;
-    + collaborating with colleagues in statistics, data science, or 
-    applied fields;
-    + exploring datasets (public repositories, [Kaggle](https://www.kaggle.com) competitions, 
+
++ consulting activities with practitioners who face real-world problems;
+
++ collaborating with colleagues in statistics, data science, or applied fields;
+
++ exploring datasets (public repositories, [Kaggle](https://www.kaggle.com) competitions, 
     government/health databases) that reveal new questions;
-    + revisiting your own course work, previous projects, and even class assignments that 
+
++ revisiting your own course work, previous projects, and even class assignments that 
     raised unanswered questions.
     
-A critical factor to consider when identifying a topic is **data**. 
+
+::: {.example}
+**The Double Descent Phenomenon**
+
+A striking example of how new research ideas can emerge is the discovery of the *double descent* property of mean squared error (MSE) in modern machine learning.  
+
+Traditionally, statistical learning theory emphasized the *bias–variance tradeoff*:  
+- As model complexity increases, bias decreases but variance increases, leading 
+to a U-shaped curve for prediction error (MSE).  
+- The optimal point balances bias and variance at some intermediate model complexity.  
+
+However, empirical studies in modern high-dimensional settings (e.g., deep learning, regularized high-dimensional regression) revealed something unexpected: as model complexity
+increases past some *interpolation threshold* (where the model can perfectly fit the training data), the test error often drops again. This leads to a *double descent* curve, i.e., first decreasing (classical regime), then increasing (overfitting regime), and then decreasing again (over-parameterized regime).  Key references include @Belkin2019 and @Hastie2022. 
+
+The double descent phenomenon challenges classical wisdom about overfitting and suggests that in highly over-parameterized models, effective generalization can still occur. It has reshaped thinking about why modern machine learning methods (e.g., deep neural networks) perform well despite operating in regimes far beyond the number of observations.  
+
+In my own research on *regularized estimation*, I encountered behaviors resembling double descent many times. At the time, I simply attributed them to *data instability* and moved on, missing an opportunity to study and recognize the underlying deep principle. This example is a reminder that unexpected patterns in data analysis can point to important new research directions. 
+
+:::
+
+
+
+    
+<!-- A critical factor to consider when identifying a topic is **data**. -->
+
 For statisticians and data scientists, research should often be 
 both **problem-driven** and **data-driven**, with methodological development 
 tightly linked to real scientific or societal needs.
 
 * Problem-driven approach: Start from a real scientific, engineering, business, 
 or societal problem that genuinely matters. The problem motivates the research 
-questions, and data/methods are then sought or developed to address them. 
+questions, and data/methods are then applied or developed to address them. 
 This approach ensures relevance and often leads to impactful interdisciplinary 
 collaborations.
 
 * Data-driven approach: Start from an available dataset and explore it to 
 uncover new questions or methodological challenges. Creativity is needed 
 here to do something novel and meaningful with familiar or widely used data. This
-kind of research often serves the purpose of hypothesis generation. 
+kind of research often serves the purpose of *hypothesis generation*. 
 
 * Idea-driven approach: Begin with a methodological or theoretical idea or 
 problem, and then look for ways to justify or data to test/illustrate. 
 This can lead to elegant theory, but on the other hand, it may also lead to 
 many methods of limited practical relevance. 
 
-
 Ultimately, impactful statistical research does not come from problems, ideas, or data 
-alone, but from their dynamic interplay. As Xiao-Li Meng once emphasized, 
+alone, but from their dynamic interplay. As Professor Xiao-Li Meng once emphasized, 
 [*Highly Principled Data Science*](https://www.sciencedirect.com/science/article/abs/pii/S0167715218300981) 
 requires methodologies that are
 
@@ -73,9 +99,31 @@ requires methodologies that are
 Keeping these principles in mind ensures that your project is not only feasible 
 but also both rigorous and relevant.
 
+
+::: {.example}
+**Real-world problem as a driver of applied, methodological, and theoretical research**
+
+Consider the broad societal challenge of suicide prevention. From this single 
+motivating problem, researchers can pursue projects across the spectrum, from 
+applied data analyses to methodological development and theoretical investigation. 
+Publicly available datasets such as [MIMIC-IV](https://mimic.mit.edu/) and [All of Us](https://allofus.nih.gov/) provide fertile ground for formulating such 
+projects, alongside restricted-access clinical datasets from health systems or 
+the Veterans Affairs (VA).
+
+1. Applied research. Building on real-world clinical data, applied projects aim to develop *predictive models* for suicide risk. For example, one line of research has leveraged electronic health records to construct risk prediction tools that can help clinicians identify individuals at elevated risk of suicide [@SaccoChen2025]. 
+
+2. Methodological research. Predictive modeling for suicide often uses *rare features* (e.g., infrequent diagnosis/procedure codes) with strong *hierarchies* (e.g., ICD trees). A methodological response is @ChenAseltineWangChen2024, which uses the known disease-code hierarchy to encourage structured selection and to aggregate rare binary features via logical OR operations. This approach improves predictive performance, stability, and interpretability in EHR applications by borrowing strength across related codes while retaining clinically meaningful groupings.
+
+3. Theoretical research. At a more abstract level, our work on developing suicide risk models for diverse clinical settings has motivated many questions on transfer learning and robust data fusion. One of such questions is how can we safely *leverage external datasets* (which may be heterogeneous or even contaminated) to improve a target model? A recent theoretical contribution studies *subsampling-based fusion* strategies, including *target-guided* and *leverage-based random* (variance-reducing) sampling [@WangWangChen2025RDFS]. 
+
+
+This example shows that statistical research often begins with a real-world problem but can evolve into contributions across the spectrum of applied, methodological, and theoretical work.
+
+:::
 	
-
-
+	
+	
+	
 ### Initial Planning
 
 Once you have identified a promising topic, the next step is to transform a 
@@ -86,7 +134,7 @@ will save time later and help avoid common pitfalls.
 
 1. Clarify the research questions
 
-* Narrow the topic to one or two specific questions.
+* Narrow the topic to a few specific questions.
 * State the research goals in precise terms (e.g., estimating a causal effect, 
 developing a predictive model, establishing a theoretical property, etc.).
 * Frame testable hypotheses. 
@@ -104,7 +152,7 @@ at the design stage. Make sure to document every steps so that others can follow
 
 * Decide whether you will collect new data or use existing sources.
 * Evaluate whether available data are sufficient in size, quality, and relevance.
-* Anticipate potential data challenges (missingness, bias, access restrictions).
+* Anticipate potential data challenges (access restrictions, missingness, bias, etc.).
 
 4. Select appropriate methods
 
@@ -122,25 +170,80 @@ computationally practical).
 
 
 Please note that the goal of initial planning is not to lock yourself into 
-a fixed path; it is impossible as every project is different. 
-This is more about paving
-a roadmap that helps you stay focused, track progress while leaving room for changes.
+a fixed path; it is impossible as every project is different. This is more about 
+paving a roadmap that helps you stay focused, track progress while leaving 
+room for changes.
 
 
-    
-### Statistical investigation 
+	
+::: {.example}
+**Using publicly available clinical data for research**
+
+Suppose you are broadly interested in *suicide prevention and risk prediction*. 
+Rather than starting from scratch, you explore large, publicly available datasets 
+that include rich health information:  
+  
+- [MIMIC-IV](https://mimic.mit.edu/) (Medical Information Mart for Intensive Care):  
+  An openly accessible critical care database developed by MIT that contains de-identified health data from tens of thousands of ICU admissions.  
+- [All of Us Research Program](https://allofus.nih.gov/):  
+  A large NIH initiative to collect data from one million or more people across the U.S., including surveys, EHRs, physical measurements, and genomics.  
+
+Starting from the broad interest predicting suicide risk with electronic health records, you refine the question to something more concrete and feasible:  
+
+*Can routinely collected EHR variables (such as demographics, prior psychiatric diagnoses, comorbid medical conditions, and medication history) from All of Us participants be used to develop a suicide risk prediction model, and how does it compare to models built using only demographic and diagnostic data?*  
+
+This illustrates how a general interest (suicide prevention) can be made specific to be a data-supported, clinically relevant, and methodologically rich project by leveraging open-access resources.  
+
+:::
+
+::: {.example}
+**Clarifying research questions**
+
+1. Health disparities  
+   - *Vague question:* "How do social factors affect health?"
+   - *Specific question:* "Does neighborhood-level income inequality predict differences in hypertension rates after adjusting for age and sex?"  
+
+2. Machine learning for prediction  
+   - *Vague question:* "Can machine learning improve disease prediction?"
+   - *Specific question:* "Among adults with electronic health record data, does a random forest model improve 5-year diabetes risk prediction compared to logistic regression with standard risk factors?"  
+
+3. *Theoretical statistics*  
+   - *Vague question:* "How can we make valid statistical inference in high dimensions?" 
+   - *Specific question:* "Under what conditions on sparsity and sample size does the Lasso estimator achieve consistent variable selection in linear regression?"
+
+:::
+
+
+
+
+### Statistical Investigation 
+
+This stage is where the actual research work happens.
 
     + Perform data analysis.
     + Summarize substantive findings.
-    + Investigate the performance of proposed methods via simulations.
+    + Investigate the performance of proposed methods via simulations or theoretical studies.
     
     
 ### Iterate between planning and investigation.
 
 
+Research is never a straight line. Iteration between planning and investigation is very natural, and usually necessary, for arriving at results that are both valid and meaningful.  
+
+- *Unexpected results.* Data analysis might reveal problems you did not anticipate: heavy missingness, unexpected correlations, or measurement error. 
+
+- *Simulation surprises.* Your proposed method may fail in certain scenarios or underperform compared to existing benchmarks. This is not failure, rather, treat it as a guide to refine assumptions, modify algorithms, or rethink evaluation criteria.  
+
+
+Importantly, *do not just bring raw output to your advisor without examining it first*. If something looks clearly off, for example, excessively large standard deviations of a performance measure or inconsistent patterns across settings, you should pause, diagnose, and think about the implications.
+
+A good investigation is not only about producing numbers but also about interpreting whether they make sense. We all learn from mistakes, as the Chinese saying goes, *吃一堑, 长一智* ("a setback is a lesson learned").  
+
+
 ### Write, revise and proofread. 
 
 Revising and writing are two separate processes.
+
     + Start with an outline for each section which includes major headings, 
       sub-headings and paragraphs covering different points.  
     + When starting, the goal is to get the main points and ideas captured in a 
@@ -165,6 +268,21 @@ examples.
 
 + UCSD: [Data Science: Guide for Independent Projects](https://ucsd.libguides.com/data-science/projects)
 + FreeCodeCamp: [How to build a data science project from scratch](https://www.freecodecamp.org/news/how-to-build-a-data-science-project-from-scratch-dc4f096a62a1/)
+
+
+
+
+::: {.exercise}
+**From idea to action**
+
+Suppose you want to study the effects of social media use on college students' academic performance.  
+
+1. Frame three possible *specific research questions*.  
+2. Identify what types of *data* you would need.  
+3. Suggest one *study design* (observational or experimental) and justify it.  
+4. Propose at least two *statistical methods* you could consider, and discuss trade-offs.  
+
+:::
 
 
 ---
@@ -214,3 +332,7 @@ The following components are expected in your proposal.
 
 + Conclusion (optional):  Wrap it up by briefly summarizing your
   research proposal and reinforcing your research’s stated purpose.
+
+
+
+---

@@ -1,10 +1,10 @@
 --- 
 title: "Research Writing in Statistics and Data Science"
-author: "Kun Chen, Elizabeth Schifano, Jun Yan"
+author: "Kun Chen, Elizabeth Schifano, Jun Yan^[Authors are listed in alphabetical order.]"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib,6694.bib]
+bibliography: [book.bib,packages.bib,6694.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
@@ -19,11 +19,11 @@ github-repo: rstudio/bookdown-demo
 This book aims to train students in statistics and data science on academic
 writing with professional tools such as LaTeX, BibTeX, R, and Git. 
 
-This book is currently under-development, and it is meant to be 
+This book is currently under development, and it is meant to be 
 an extended version of the book "Statistical Writing" <https://github.com/statds/stat-writing> written by Dr. Elizabeth Schifano and Dr. Jun Yan.
 
 The notes are prepared with the **bookdown** R package [@xie2016bookdown], 
-which can be installed from CRAN or Github: 
+which can be installed from CRAN or GitHub: 
 
 ```{r eval=FALSE}
 install.packages("bookdown")
@@ -36,7 +36,7 @@ defined by the first-level heading `#`.
 
 
 To compile this example to PDF, you need XeLaTeX. You are recommended to install
-TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+[TinyTeX](https://yihui.name/tinytex/) (which includes XeLaTeX).
 
 
 ```{r include=FALSE}

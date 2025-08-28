@@ -1,4 +1,4 @@
-# Tools and Workflows for Writing {#ch-tools}
+# Tools \& Workflows for Writing {#ch-tools}
 
 Many people use MS Word when it comes to writing.
 Not withholding the importance of the invention of MS Office, it is not the right tool to write methodological or theoretical papers in
@@ -14,9 +14,10 @@ of the professional tools and invest time to master them.
 
 ## Word vs. LaTeX
 
-The right, high - quality, professional typesetting system is LaTeX. LaTeX is a
+The right, high quality, professional typesetting system is LaTeX. LaTeX is a
 typesetting language that makes it easier and cleaner to write documents
-involving extensive mathematical content. It is the standard in Statistics, Mathematics, Physics, Chemistry and other disciplines that require many
+involving extensive mathematical content. It is the standard in Statistics, 
+Mathematics, Physics, Chemistry and other disciplines that require many
 mathematical formulas.
 
 LaTeX separates the appearance of a document from its content. This allows authors
@@ -27,9 +28,8 @@ adaptation to different formats and styles.
 
 A LaTeX document has `.tex` extension, and can be
 edited by your favorite text editor. The final output of the document can have
-different formats, the most popular of which is `pdf`, which stands for *
-portable
-document format * . It can be opened on any platform (computer operating system).
+different formats, the most popular of which is `pdf`, which stands for *portable
+document format*. It can be opened on any platform (computer operating system).
 
 The source `.tex` file is a plain text file. Just like source code of any
 programming language, a plain text file allows version control, which makes
@@ -52,11 +52,16 @@ L(\mu, \sigma^2 \mid x_1, \ldots, x_n) = (2\pi\sigma^2)^{-n / 2}\exp\left\{
 -\frac{1}{2\sigma^2}\sum_{i = 1}^n(x_i - \mu)^2\right\}.
 ```
 
-This produces beautifully typeset mathematics, is reproducible, and can be revised easily.
-In MS Word, one must insert each symbol manually through the Equation Editor:Greek letters via dropdowns, summations via menus, exponents via special boxes. Formatting quickly becomes clumsy, and editing dozens of formulas is tedious. Copy-pasting often breaks structure, and version control is nearly impossible.
+This produces beautifully typeset mathematics, is reproducible, and can be 
+revised easily. In MS Word, one must insert each symbol manually through 
+the Equation Editor: Greek letters via dropdowns, summations via menus, 
+exponents via special boxes. Formatting quickly becomes clumsy, 
+and editing dozens of formulas is tedious. Copy-pasting often breaks 
+structure, and version control is nearly impossible.
 
-For one or two equations Word may be acceptable. But for an entire paper with dozens of equations, 
-cross-references, and theorems, LaTeX is the only tool that is professional, efficient, and sustainable.
+For one or two equations Word may be acceptable. But for an entire paper 
+with dozens of equations, cross-references, and theorems, LaTeX is the only 
+tool that is professional, efficient, and sustainable.
 
 :::
 
@@ -66,13 +71,14 @@ Compare Word and LaTeX
 
 1. Typeset the following equation in **MS Word** using its built - in Equation Editor:
 \[
-\hat{\beta} = \arg\min_{\beta \in \mathbb{R}^p}\left\{\frac{1}{2n}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\}.
+\hat{\beta} = \arg\min_{\beta \in \mathbb{R}^p}\left\{\frac{1}{2n} \|y - X\beta\|_2^2 
++ \lambda \|\beta\|_1 \right\}.
 \]
 
 2. Now, paste this LaTeX code into Overleaf (or another LaTeX editor) and compile:
 ```latex
 \hat{\beta} = \arg\min_{\beta \in \mathbb{R}^p}
-\left\{\frac{1}{2n}\ | y - X\beta\ | _2^2 + \lambda \ | \beta\ | _1 \right\}
+\left\{\frac{1}{2n}\|y - X\beta\|_2^2 + \lambda \| \beta\|_1 \right\}
 ```
 
 - Which approach is faster?
@@ -111,7 +117,7 @@ co - workers easy.
 
 There are tools and tutorials that make learning Git easy.
 
-+ Here is a collection of [online Git exersices](https://gitexercises.fracz.com)
++ Here is a collection of [online Git exersices](https://gitexercises.fracz.com).
 
 + Here is a game called [`Oh My Git`](https://ohmygit.org), an open
 source game about learning Git!
@@ -481,11 +487,11 @@ readable.
 
 
 ::: {.example}
-**Cleaning pp Math expressions in LaTeX**
+**Cleaning math expressions in LaTeX**
 
 Below are some math expressions written poorly in LaTeX.  
 Your task is to (1) identify what’s wrong with each one, and (2) rewrite it
-following the best practices listed above.
+following the best practices.
 
 1. Inline math with fraction:  
   ```latex
@@ -556,8 +562,8 @@ and $M=\sum_{j=1}^{p} m_j$ be the total count. Let $S \in \{1, ..., K\}$
 be the unobservable hidden state variable indicating the cluster membership.
 Assume $\mathbf{m}$, in any given state S, follow a Dirichlet-Multinomial (DM)
 distribution. More specifically
-\begin{equation}\label{eq:dm}
-  \mathbf{m} | (S=k) \sim DM(M,\theta_k,\alpha^{[k]})
+\begin{equation}
+  \mathbf{m} | (S=k) \sim DM(M,\theta_k,\alpha^{[k]}) (\#eq:dm)
 \end{equation}
 or, equivalently, the hierarchical structure
 \begin{equation*}
@@ -572,9 +578,12 @@ each state k in the hierarchical formulation
 The conditional mean of taxon j's count is
 $E(m_{j} | S = k) = M\alpha_{j}^{[k]}$ and the conditional variance is
 $Var(m_j | S=k) = \frac{M\alpha_{j}^{[k]}(1-\alpha_{j}^{[k]})(M \theta_k + 1)}{\theta_k + 1}$.
-For completeness, note also that $P(S=k|\mathbf{m})>0$ for all k $[\{(m_1+m_2]\}]$ (see (\ref{eq:dm})).
+For completeness, note also that $P(S=k|\mathbf{m})>0$ for all k $[\{(m_1+m_2]\}]$ (see \@ref(eq:dm)).
 
 ---
+
+<details>
+<summary>Click here for tips</summary>
 
 * Display equations missing terminal punctuation.
 * Conditional bars written as `|` instead of `\mid`.
@@ -585,6 +594,8 @@ For completeness, note also that $P(S=k|\mathbf{m})>0$ for all k $[\{(m_1+m_2]\}
 * Mismatched/incorrect delimiter ordering: `[\{( … ]\}]`.
 * Unnumbered vs numbered environments used inconsistently; labeled equation `\label{eq:dm}` referenced as `(ref{…})` instead of `\eqref{…}`; or labeled without a proper reference.
 * Missing commas and periods in sentences around math; weak spacing/readability in sources.
+
+</details>
 
 :::
 
@@ -662,6 +673,9 @@ Age &   &   &   &   \\
 \end{table}
 ```
 
+<details>
+<summary>Click here for tips</summary>
+
 * Overuse of vertical lines `|`.
 * Inconsistent decimal places.
 * Parentheses and percentages formatted inconsistently.
@@ -671,6 +685,8 @@ Age &   &   &   &   \\
 * Extra zeros (`2280.000`, `135.000`).
 * Percentages outside math mode.
 * Floating specifier `[h]` instead of `tbp`.
+
+</details>
 
 :::
 
@@ -798,14 +814,20 @@ URL = {https://doi.org/10.1214/20-AOS1965}
 }
 ```
 
+<details>
+<summary>Click here for tips</summary>
 * Are author names formatted consistently?
 * Is capitalization in titles handled correctly?
 * Are page numbers written with a single dash or double dash?
 * Should `publisher` appear for journal articles?
 * Are all required fields present (doi, url, etc.)?
 * Is the key (`Foygel2019`, `Kessler2019`) descriptive and consistent?
+</details>
 
 :::
+
+
+
 
 
 
@@ -860,3 +882,7 @@ Here are several commonly used shell commands:
 + `cp`: copy file/folder from a source to a target.
 + `mv`: move file/folder from a source to a target.
 + `rm`: remove a file a folder.
+
+
+
+---
