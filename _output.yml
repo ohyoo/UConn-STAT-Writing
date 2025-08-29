@@ -1,7 +1,10 @@
 bookdown::gitbook:
   css: style.css
   includes:
-    in_header: mathjax-macros.html
+    in_header: ["mathjax-macros.html", "assets/tts.html"]
+  html_document:
+    df_print: paged
+  pandoc_args: ["--wrap=preserve"]    
   config:
     toc:
       before: |
@@ -20,4 +23,11 @@ bookdown::pdf_book:
   citation_package: none  
   keep_tex: yes
   split_bib: true  
+  
 bookdown::epub_book: default
+
+bookdown::bs4_book:
+  includes:
+    in_header: ["assets/tts.html"]
+  pandoc_args: ["--wrap=preserve"]
+  
