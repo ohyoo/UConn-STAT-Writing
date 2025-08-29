@@ -30,3 +30,8 @@ pre code {
   margin: 1em 0;
 }
 
+
+.abstract-tts { border: 1px solid #e5e7eb; border-radius: 8px; padding: .75rem 1rem; background: #fafafa; }
+.tts-controls { display: flex; align-items: center; gap: .5rem; margin-top: .5rem; }
+.tts-controls button { padding: .35rem .6rem; border-radius: .5rem; border: 1px solid #d1d5db; background: white; cursor: pointer; }
+.tts-controls button:disabled { opacity: .5; cursor: not-allowed; }

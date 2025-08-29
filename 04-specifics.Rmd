@@ -1,0 +1,539 @@
+```{r tts-setup, include=FALSE}
+tts_box <- function(text, id = paste0("abs", as.integer(as.numeric(Sys.time())))) {
+  if (!knitr::is_html_output()) {
+    return(htmltools::tagList(htmltools::tags$p(text)))
+  }
+  
+  css <- "
+  .abstract-tts { border:1px solid #e5e7eb; border-radius:8px; padding:.75rem 1rem; background:#fafafa; margin:.5rem 0 1rem; }
+  .tts-controls { display:flex; align-items:center; gap:.5rem; margin-top:.5rem; flex-wrap:wrap; }
+  .tts-controls button { padding:.35rem .6rem; border-radius:.5rem; border:1px solid #d1d5db; background:#fff; cursor:pointer; }
+  .tts-controls button:disabled { opacity:.5; cursor:not-allowed; }"
+  
+  js <- "
+  (function () {
+    const synth = window.speechSynthesis;
+    let currentToken = 0;          // increments on each (re)start
+    let currentContainer = null;   // track which box is speaking
+
+    function getContainer(el){ return el.closest('.abstract-tts'); }
+    function getText(container){
+      const clone = container.cloneNode(true);
+      clone.querySelectorAll('.tts-controls').forEach(el=>el.remove());
+      return (clone.textContent || '').replace(/\\s+/g,' ').trim();
+    }
+    function setState(container, state){
+      container.dataset.state = state;
+      const play  = container.querySelector('.tts-play');
+      const pause = container.querySelector('.tts-pause');
+      const stop  = container.querySelector('.tts-stop');
+      if(!play || !pause || !stop) return;
+      if(state==='idle'){
+        play.disabled=false; pause.disabled=true; stop.disabled=true; play.textContent='▶︎ Play';
+      }else if(state==='playing'){
+        play.disabled=true; pause.disabled=false; stop.disabled=false; pause.textContent='⏸ Pause';
+      }else{ // paused
+        play.disabled=false; pause.disabled=false; stop.disabled=false; play.textContent='▶︎ Resume'; pause.textContent='▶︎ Pause';
+      }
+    }
+
+    function speak(container){
+      if(!synth){ alert('Speech Synthesis not supported in this browser.'); return; }
+      // If resuming from paused, just resume
+      if (synth.paused && currentContainer === container) {
+        synth.resume(); setState(container,'playing'); return;
+      }
+      // Fresh start
+      if (synth.speaking) synth.cancel();
+      const token = ++currentToken;
+      currentContainer = container;
+      const rate = parseFloat(container.querySelector('.tts-rate')?.value || '1.0');
+      const utter = new SpeechSynthesisUtterance(getText(container));
+      utter.rate = rate;
+      utter.onend = () => { if (token === currentToken) setState(container,'idle'); };
+      utter.onerror = () => { if (token === currentToken) setState(container,'idle'); };
+      synth.speak(utter);
+      setState(container,'playing');
+    }
+
+    function pause(container){
+      if(!synth || currentContainer !== container) return;
+      if (synth.speaking && !synth.paused){ synth.pause(); setState(container,'paused'); }
+      else if (synth.paused){ synth.resume(); setState(container,'playing'); }
+    }
+
+    function stop(container){
+      if(!synth) return;
+      if (synth.speaking || synth.paused){
+        synth.cancel();
+        currentToken++;            // invalidate any pending onend from prior utterances
+        setState(container,'idle');
+      }
+    }
+
+    function restartWithRate(container){
+      if(!synth) return;
+      const wasPaused = synth.paused && currentContainer === container;
+      if (synth.speaking || synth.paused){ synth.cancel(); currentToken++; }
+      // Defer to next tick so cancel fully flushes before speaking again
+      setTimeout(() => {
+        speak(container);
+        if (wasPaused) { synth.pause(); setState(container,'paused'); }
+      }, 0);
+    }
+
+    function initAll(){ document.querySelectorAll('.abstract-tts').forEach(c => setState(c,'idle')); }
+
+    // Event delegation (robust with gitbook/bs4 dynamic loads)
+    document.addEventListener('click', function(ev){
+      const btn = ev.target.closest('.tts-play, .tts-pause, .tts-stop');
+      if(!btn) return;
+      const container = getContainer(btn);
+      if(!container) return;
+      ev.preventDefault();
+      if (btn.classList.contains('tts-play'))  speak(container);
+      if (btn.classList.contains('tts-pause')) pause(container);
+      if (btn.classList.contains('tts-stop'))  stop(container);
+    });
+
+    // Use 'change' (not 'input') to avoid rapid restarts while dragging
+    document.addEventListener('change', function(ev){
+      if (!ev.target.matches('.tts-rate')) return;
+      const container = getContainer(ev.target);
+      if(!container) return;
+      if (synth && (synth.speaking || synth.paused)) restartWithRate(container);
+      // If idle, the new rate will apply on next Play automatically
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAll);
+    } else { initAll(); }
+  })();
+  "
+  
+  htmltools::tagList(
+    htmltools::tags$style(css),
+    htmltools::tags$div(
+      class="abstract-tts", id=id,
+      htmltools::tags$p(text),
+      htmltools::tags$div(
+        class="tts-controls", `aria-label`="Abstract audio controls",
+        htmltools::tags$button(class="tts-play",  type="button", "▶︎ Play"),
+        htmltools::tags$button(class="tts-pause", type="button", disabled=NA, "⏸ Pause"),
+        htmltools::tags$button(class="tts-stop",  type="button", disabled=NA, "⏹ Stop"),
+        htmltools::tags$label(
+          style="margin-left:.5rem;",
+          "Speed ",
+          htmltools::tags$input(class="tts-rate", type="range", min="0.6", max="1.6", step="0.1", value="1.0")
+        )
+      )
+    ),
+    htmltools::tags$script(js)
+  )
+}
+```
+
+# Writing Specific Sections
+
+## Title
+
+The title is the most read part of an article, and influences whether a reader 
+is interested in reading the manuscript.
+
+@hairston2003successful suggest that the title of a research paper 
+should accomplish four goals:
+
++ predict the content of the research paper;
++ be interesting to the reader;
++ reflect the tone of the writing;
++ contain important keywords (that makes it easier to be found from keywords
+  search).
+  
+The title of a paper is usually determined when the paper is close to
+completion. To come up with a good title, list some key phrases that you would
+like to have, and be creative in forming a good title that consists of most of 
+them. Here are some tips.
+
++ Be informative by including these aspects: topic, method(s), data, and
+  results.
++ Consider adding a subtitle to give more specifics about the paper.
++ Use appropriate critical keywords to increase the discoverability of the
+  paper.
++ Follow the requirements from the instructions or journals.
++ Keep it as concise as possible.
+
+:::{.example}
+**Less effective vs. effective titles**
+
+1. *A Comprehensive Regression Shrinkage Estimation and Variable Selection Procedure Using a Novel Least Absolute Shrinkage and Selection Operator*  
++ Too long, technical, and redundant; buries the key idea.  
+
+<details>
+<summary>Reveal the real title</summary>
+
+*Regression Shrinkage and Selection via the Lasso* [@tibshirani1996lasso]  
+
+  + Concise and memorable; immediately signals novelty.  
+</details>
+
+---
+
+2. *A New Nonparametric Resampling-Based Monte Carlo Estimator for Determining the Optimal Quantity of Groupings with Multivariate Data*  
++ Overly technical; hard to parse at a glance.  
+
+<details>
+<summary>Reveal the real title</summary>
+
+*Estimating the Number of Clusters in a Data Set via the Gap Statistic* [@tibshirani2001gap] 
+
+  + States problem, method, and context clearly.  
+</details>
+
+---
+
+3. *A Stepwise Algorithm for Sequentially Updating Correlation-Adjusted Regression Coefficients in High-Dimensional Settings with Strong Multicollinearity*  
++ Too wordy and technical; makes the method sound less accessible.  
+
+<details>
+<summary>Reveal the real title</summary>
+
+*Least Angle Regression* [@efron2004lars]  
+
+  + Short, clear, and intriguing; signals both novelty and relevance.  
+</details>
+
+---
+
+4. *A Generalized Ensemble Learning Framework Based on Aggregating Decision Tree Classifiers for Improved Prediction Accuracy with Complex Data*  
++ Technically accurate but long, clunky, and forgettable.  
+
+<details>
+<summary>Reveal the real title</summary>
+
+*Random Forests* [@breiman2001rf]  
+
+  + Extremely concise and memorable; easy to cite and recall.  
+</details>
+
+:::
+
+
+
+::: {.exercise}
+**Can you guess the title from the abstract?**
+
+1. Abstract: 
+
+```{r, echo=FALSE, results='asis'}
+tts_box("The dominant sequence transduction models are based on complex recurrent or
+convolutional neural networks that include an encoder and a decoder. The best
+performing models also connect the encoder and decoder through an attention
+mechanism. We propose a new simple network architecture, the Transformer,
+based solely on attention mechanisms, dispensing with recurrence and convolutions
+entirely. Experiments on two machine translation tasks show these models to
+be superior in quality while being more parallelizable and requiring significantly
+less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-
+to-German translation task, improving over the existing best results, including
+ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,
+our model establishes a new single-model state-of-the-art BLEU score of 41.0 after
+training for 3.5 days on eight GPUs, a small fraction of the training costs of the
+best models from the literature.")
+```
+
+
+<details>
+<summary>Reveal the real title</summary>
+
+*Attention Is All You Need* [@vaswani2017attention]
+  
+  + Strikingly simple and memorable; it reframed the field with just five words.  
+</details>
+
+---
+
+2. Abstract:
+
+```{r, echo=FALSE, results='asis'}
+tts_box("We propose an adaptive nuclear norm penalization approach for low-rank matrix approximation, and use it to develop a new reduced rank estimation method for high-dimensional multivariate regression. The adaptive nuclear norm is defined as the weighted sum of the singular values of the matrix, and it is generally nonconvex under the natural restriction that the weight decreases with the singular value. However, we show that the proposed nonconvex penalized regression method has a global optimal solution obtained from an adaptively soft-thresholded singular value decomposition. The method is computationally efficient, and the resulting solution path is continuous. The rank consistency of and prediction/estimation performance bounds for the estimator are established for a high-dimensional asymptotic regime. Simulation studies and an application in genetics demonstrate its efficacy.")
+```
+
+<details>
+<summary>Reveal the real title</summary>
+
+*Reduced Rank Regression via Adaptive Nuclear Norm Penalization* [@chen2013rrr]
+
+  + Highlights both the framework and the new contribution.  
+</details>
+
+---
+
+3. Abstract:
+
+```{r, echo=FALSE, results='asis'}
+tts_box("We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.")
+```
+
+
+<details>
+<summary>Reveal the real title</summary>
+
+*Adam: A Method for Stochastic Optimization* [@kingma2015adam] 
+
+  + Minimalist and branded: a single word, “Adam,” now instantly recognized in ML.  
+</details>
+
+---
+:::
+
+
+
+
+
+
+
+## Abstract
+
+@marron1999effective recommended the following:
+
+> Abstract material needs to be carefully chosen. A balance between the
+> twin goals of brevity and maximal information content should again be
+> carefully sought. There is room for more detail than in the title, but not
+> enough room for all ideas covered in the paper. Make sure each "high point"
+> is included. The paper will have a better chance in the review process if it
+> is made clear what is done, and why it is important, since this will
+> immediately capture the interest of the reviewer.
+
+> Any recommendations for length here must be more case dependent. Longer
+> papers will usually need longer abstracts. However, something between 4
+> and 10 sentences is reasonable for most situations.
+
+> Mathematical notation is rarely useful in the abstract. Sometimes notation is
+> introduced in an abstract, and then not used at all! Even when notation is
+> used in the abstract, the point can usually be conveyed more efficiently in
+> words alone.
+
+Tips:
+
++ Open with a sentence to establish the importance of the subject of the paper.
++ Identify a gap in the literature to set up the background of the paper.
++ Highlight the novelty/contributions of the paper.
++ For application papers, allude to new discoveries and their impacts.
++ For method papers, outline the essence of the methodology, and evidence from
+  theoretical and numerical studies supporting the methods.
++ It must make sense when read in isolation for those who only read the 
+  abstract, and must also provide a clear and accurate summary of the manuscript
+  for readers who read the entire manuscript [@zeiger2000writing].  
++ Should not include citations.
+
+## Keywords
+Keywords are words in addition to those in the title that attract search
+queries. Including the most relevant keywords helps other researchers find
+your paper.
+
+
++ No need to repeat anything in the title already. 
++ List them in alphabetical order.
++ Contain words and phrases that suggest what the topic is about. 
+
+## Introduction
+
+The introduction section is always the first section of a paper. Some journals
+may not call it introduction but require a section that serves the same
+purpose. The purpose of the introduction is to stimulate the reader’s interest 
+and to provide background information which is pertinent to the study 
+[@jenkins1995write]. The introduction section guides the readers from a general 
+subject 
+area to the narrow topic of the paper. It should answer three questions:
+
++ Why does it matter?
++ What has already been done?
++ What is new?
+
+That is, the introduction sections need to explain the importance of the topic 
+of
+the paper, provide the background of the research work, and highlight the
+contributions of the work. At the end of the introduction, a roadmap, or an
+outline of the paper is useful in helping the readers navigate through the
+following sections.
+
+The introduction is typically outlined at the very beginning of the writing
+process, but completed towards the end after the other sections have been 
+written.   Do NOT wait to perform the literature review until 
+last, however!  This should happen *before* the research is undertaken to
+ensure you are not duplicating something that has already been done!
+
+An introduction often contains the following items.
+
++ An overview of the topic. Start with a general overview of your topic and
+  narrow it to the specific subject you are addressing. Then, mention
+  questions or concerns you have about the case. Explain why they are important
+  and why it needs to be addressed right now.
++ Existing works. The introduction is the place to review other conclusions on 
+  your
+  topic. The literature review should be thorough, including both old and recent
+  works. It should show that you are aware of prior research. It also introduces
+  past findings to those who might not have that expertise. 
++ A gap needs to be
+  identified from the importance of the topic and the current status of the
+  literature, which is the rationale for your work. Why are existing methods not
+  sufficient?  What are elements of an attractive solution?
++ Contributions. This is a thesis statement, which summarizes the the
+  contributions of your work to the existing literature, and answers the "what
+  is new" question.
++ A roadmap. A brief summary of what each section does in the paper. This 
+  concludes the introduction.
+  
+
+## Data
+
+The data section should provide all the details that are relevant for the
+research project.
+
++ Who collected the data (source)?
++ How was the data collected? Sampling frame? Sampling approach?
++ What period or range does the data cover?
++ Why does the data help answer the research question?
++ What exploratory analyses are done (descriptives, visualization, etc.)?
+
+
+## Methods
+
+Notation is much easier to digest if the reader first understands the main
+idea at an intuitive level.
+
++ Establish notation.
++ What are the observed data?
++ What are the models?
++ What are the parameters to be estimated?
++ How are the point estimators obtained?
++ How are the uncertainty (standard errors) of the point estimators assessed?
++ How are the variances of the point estimators estimated?
++ How are the null distribution of the testing statistics established?
++ Clearly state the assumptions and claims of theoretical results.
+
+## Simulation
+
+ADEMP [@morris2019using]:
+
++ Aims
++ Data generating mechanism
++ Estimand/target of analysis
++ Methods
++ Performance measures
+
+Coding and Execution
+
+Analysis/Discussion: with tables and figures.  May be included in a Results 
+section.
+
++ For each table/figure, write down the bullet points to convey to the readers.
++ Group the bullet points in blocks and put the blocks in a logical order.
++ Within each block, put the bullet points in the right logical order.
++ Some (shorter) blocks can be converted into proper paragraphs in the final 
+  paper, while other (longer) blocks may remain in bullet form.
+
+## Application
+
++ Report the statistical analyses in tables/figures.
++ When summarizing from tables/figures, paint the big picture, rather than
+  reiterating all of the little details.
++ Discussions to link the analyses back to the substantive topic
+  [@miller2015chicago]:
+  
+> Having presented the individual pieces of evidence, an investigator must
+> summarize how that evidence, taken together, support the conclusoin of the
+> investigation. Statisticians should explain how the statistical evidence answers
+> the question posed at the beginning of the paper, following standard
+> expository writing guidelines to writing an analytic essay.
+
+
+## Discussion and Conclusion
+
++ A summary, again, of the contributions of the research. 
++ The research question posed as the `need' of the introduction must be
+  answered here [@zeiger2000writing].
++ Limitations of the current study
++ Future directions.
+
+## Appendix
+
++ Technical details (e.g., proofs, algorithms) that would otherwise break the
+  flow of the main text.
++ Data source details.
+
+## Acknowledgements
+
+This section is optional, but could be used to acknowledge certain individuals
+who have contributed to the research and/or success of the manuscript (e.g.
+peer reviewers).  
+
+In general, if the research upon which you are writing was funded, the funding
+agency and funding mechanism are typically included here unless otherwise 
+specified.  
+
+## References
+
++ Every reference cited in the paper should appear here.
++ References not cited should not appear here.
++ All are automatically taken care of by BibTeX.
++ Styles are controlled by bib style (`.bst` file).
+
+## Online Supplement
+
++ Computer code
++ Data
++ Additional simulation results
+
+## General Tips
+
+From @jenkins1995write:
+
+> In order to maintain continuity between the key sections (introduction, 
+> methods, results and discussion) it is helpful to consider the manuscript as
+> telling a story. 
+>
+> The strong parts to the story-line are the introduction and the discussion, so
+> the link between these sections must be clear.  
+
+Devices such as paragraphing, headings, indentation, and enumeration
+help the reader see the major points that you want to make.
+
+As a rule of thumb, if you type a full page (double spaced) without
+indenting for a new paragraph, you almost certainly have run one thought
+into another and have missed an opportunity to differentiate your ideas.
+
+Any tables and figures included in the manuscript must be mentioned (referenced)
+within the main text.
+
+If journal/instructions do not specify otherwise, tables and figures should be
+placed near (ideally after) the related text, and on the top of the page. 
+
+Use consistent notation throughout the manuscript, avoid defining any 
+unnecessary notation, and avoid using the same notation to describe different
+things (variables, indices, etc.).  
+
+## General Tips: Use of English
+
+It is relatively easy to read and understand English which is well written. 
+As the quality of writing deteriorates, however, it becomes progressively more 
+difficult for the reader to understand the author's intended meaning. 
+
+An obvious problem occurs when the author fails to use properly constructed 
+sentences. This can be easily corrected with revision and external review.
+
+A much more dangerous problem occurs when the author unconsciously assumes that 
+the reader is able to follow his/her unwritten train of thought.  This can 
+also usually be caught with external review.
+
+More tips on the use of English:
+
++ Use of tenses: Use present tense for most of the manuscript; use past tense 
+only when describing events that occurred in the past (data collection, an 
+experiment that has already been conducted, how simulations were designed).  
+Be consistent with tense usage within sections, paragraphs, etc.
+
++ Do not use the word 'significant' other than in a statistical sense.
+
++ The word 'data' is often mistakenly treated as if it were a singular noun
+instead of as a plural noun.  The word 'data' is, in fact, a plural noun (its 
+singular form is 'datum'). 
