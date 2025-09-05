@@ -54,11 +54,17 @@ to a U-shaped curve for prediction error (MSE).
 - The optimal point balances bias and variance at some intermediate model complexity.  
 
 However, empirical studies in modern high-dimensional settings (e.g., deep learning, regularized high-dimensional regression) revealed something unexpected: as model complexity
-increases past some *interpolation threshold* (where the model can perfectly fit the training data), the test error often drops again. This leads to a *double descent* curve, i.e., first decreasing (classical regime), then increasing (overfitting regime), and then decreasing again (over-parameterized regime).  Key references include @Belkin2019 and @Hastie2022. 
+increases past some *interpolation threshold* (where the model can perfectly fit the training data), the test error often drops again. This leads to a *double descent* curve, i.e., first decreasing (classical regime), then increasing (overfitting regime), and then decreasing again (over-parameterized regime).  Key references include @Belkin2019, @Hastie2022, and @schaeffer2024double.
+
+* [Link to @Belkin2019](https://www.pnas.org/doi/epdf/10.1073/pnas.1903070116)
+* [Link to @Hastie2022](https://arxiv.org/pdf/1903.08560)
+* [Link to @schaeffer2024double](https://arxiv.org/pdf/2303.14151)
+
+
 
 The double descent phenomenon challenges classical wisdom about overfitting and suggests that in highly over-parameterized models, effective generalization can still occur. It has reshaped thinking about why modern machine learning methods (e.g., deep neural networks) perform well despite operating in regimes far beyond the number of observations.  
 
-In my own research on *regularized estimation*, I encountered behaviors resembling double descent many times. At the time, I simply attributed them to *data instability* and moved on, missing an opportunity to study and recognize the underlying deep principle. This example is a reminder that unexpected patterns in data analysis can point to important new research directions. 
+In my own research on high-dimensional statistics, I encountered behaviors resembling double descent many times. At the time, I simply attributed them to *data instability* and moved on. THis was a miss of opportunity to study and recognize the underlying deep principle. It has been a reminder to me that unexpected patterns in data analysis can point to important new research directions.
 
 :::
 
@@ -188,7 +194,7 @@ that include rich health information:
 - [All of Us Research Program](https://allofus.nih.gov/):  
   A large NIH initiative to collect data from one million or more people across the U.S., including surveys, EHRs, physical measurements, and genomics.  
 
-Starting from the broad interest predicting suicide risk with electronic health records, you refine the question to something more concrete and feasible:  
+Starting from the broad interest on predicting suicide risk with electronic health records, you refine the question to something more concrete and feasible:  
 
 *Can routinely collected EHR variables (such as demographics, prior psychiatric diagnoses, comorbid medical conditions, and medication history) from All of Us participants be used to develop a suicide risk prediction model, and how does it compare to models built using only demographic and diagnostic data?*  
 
@@ -199,17 +205,36 @@ This illustrates how a general interest (suicide prevention) can be made specifi
 ::: {.example}
 **Clarifying research questions**
 
-1. Health disparities  
-   - *Vague question:* "How do social factors affect health?"
-   - *Specific question:* "Does neighborhood-level income inequality predict differences in hypertension rates after adjusting for age and sex?"  
+1.  *Vague question:* "How do social factors affect health?"
+   
+<details>
 
-2. Machine learning for prediction  
-   - *Vague question:* "Can machine learning improve disease prediction?"
-   - *Specific question:* "Among adults with electronic health record data, does a random forest model improve 5-year diabetes risk prediction compared to logistic regression with standard risk factors?"  
+<summary>Specific question</summary>
+   - "Does neighborhood-level income inequality predict differences in hypertension rates after adjusting for age and sex?"  
+   
+</details>
+---
 
-3. *Theoretical statistics*  
-   - *Vague question:* "How can we make valid statistical inference in high dimensions?" 
-   - *Specific question:* "Under what conditions on sparsity and sample size does the Lasso estimator achieve consistent variable selection in linear regression?"
+2. *Vague question:* "Can machine learning improve disease prediction?"
+   
+<details>
+
+<summary>Specific question</summary>
+   
+   - "Among adults with electronic health record data, does a random forest model improve 5-year diabetes risk prediction compared to logistic regression with standard risk factors?"  
+
+</details>
+---
+
+3. *Vague question:* "How can we make valid statistical inference in high dimensions?" 
+   
+<details>
+
+<summary>Specific question</summary>
+   
+   - "Under what conditions on sparsity and sample size does the Lasso estimator achieve consistent variable selection in linear regression?"
+
+</details>
 
 :::
 
@@ -225,7 +250,7 @@ This stage is where the actual research work happens.
     + Investigate the performance of proposed methods via simulations or theoretical studies.
     
     
-### Iterate between planning and investigation.
+### Iterate between Planning and Investigation.
 
 
 Research is never a straight line. Iteration between planning and investigation is very natural, and usually necessary, for arriving at results that are both valid and meaningful.  
@@ -240,7 +265,7 @@ Importantly, *do not just bring raw output to your advisor without examining it 
 A good investigation is not only about producing numbers but also about interpreting whether they make sense. We all learn from mistakes, as the Chinese saying goes, *吃一堑, 长一智* ("a setback is a lesson learned").  
 
 
-### Write, revise and proofread. 
+### Write, Revise and Proofread. 
 
 Revising and writing are two separate processes.
 
