@@ -282,7 +282,7 @@ tts_box("We introduce Adam, an algorithm for first-order gradient-based optimiza
   + Minimalist and branded: a single word, “Adam,” now instantly recognized in ML.  
 </details>
 
----
+
 :::
 
 
@@ -314,8 +314,8 @@ tts_box("We introduce Adam, an algorithm for first-order gradient-based optimiza
 
 Tips:
 
-+ Open with a sentence to establish the importance of the subject of the paper.
-+ Identify a gap in the literature to set up the background of the paper.
++ Consider ppen with a sentence to establish the importance of the subject of the paper.
++ Identify a gap in the literature to set up the background and motivation of the paper.
 + Highlight the novelty/contributions of the paper.
 + For application papers, allude to new discoveries and their impacts.
 + For method papers, outline the essence of the methodology, and evidence from
@@ -324,6 +324,236 @@ Tips:
   abstract, and must also provide a clear and accurate summary of the manuscript
   for readers who read the entire manuscript [@zeiger2000writing].  
 + Should not include citations.
+
+
+
+### Compoments in an Abstract
+
+There are five major components in an abstract: 
+
+- **Context** (1–2 sentences): situate the problem and why it matters.
+- **Objective** (1 sentence): the question or aim.
+- **Approach** (1–2 sentences): data, design, and key methods.
+- **Findings** (1–2 sentences): the most important results.
+- **Implications** (1 sentence): what the results imply (perhaps in a broader context).
+
+Components can also blend. For example, the objective and approach may appear together in one line, e.g., ‘We aim to estimate Y by developing X’, and a single sentence may introduce a novel approach and immediately state the key result, e.g., ‘By introducing A, we show B’.
+
+There are other optional components (sometimes required by the venue):
+
+- Data set: sample size or cohorts (applied/clinical).
+- Assumptions/Limitations: stating key conditions or the main caveat (theory/methods).
+- Uncertainty/Effect size: CIs, rates, or precision that quantify findings.
+- Software/Computation/Availability: runtime/complexity; package; code/data source.
+- Registration/Ethics: trial ID, preregistration, or IRB when human subjects are involved.
+- Funding/Disclosure: only if the outlet asks for it in the abstract.
+
+> **Length:** typecially ~150–250 words for journals. 
+
+
+---
+
+::: {.example}
+Transfer learning under large-scale low-rank regression models (A recent JASA paper)
+
+<!-- Legend -->
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+<!-- Color-coded abstract -->
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">In high-dimensional multiple response regression problems, the large dimensionality of the coefficient matrix poses a challenge to parameter estimation.</span> 
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">To address this challenge, low-rank matrix estimation methods have been developed to facilitate parameter estimation in the high-dimensional regime, where the number of parameters increases with sample size.</span> 
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Despite these methodological advances, accurately predicting multiple responses with limited target data remains a difficult task.</span> 
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">To gain statistical power, the use of diverse datasets from source domains has emerged as a promising approach.</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">In this paper, we focus on the problem of transfer learning in a high-dimensional multiple response regression framework, which aims to improve estimation accuracy by transferring knowledge from informative source datasets.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">To reduce potential performance degradation due to the transfer of knowledge from irrelevant sources, we propose a novel transfer learning procedure including the forward selection of informative source sets.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">In particular, our forward source selection method is new compared to existing transfer learning framework, offering deeper theoretical insights and substantial methodological innovations.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">In addition, we develop an alternative transfer learning based on non-convex penalization to ensure rank consistency.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">Theoretical results show that the proposed estimator achieves a faster convergence rate than the single-task penalized estimator using only target data.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">Through simulations and real data experiments, we provide empirical evidence for the effectiveness of the proposed method and for its superiority over other methods.</span>
+
+<!-- (Optional) Implications sentence—this abstract doesn’t currently include one -->
+<span style="background:#fee2e2;padding:.1em .2em;border-radius:.2em"><em>(Optional) The proposed framework clarifies when and how multi-source transfer improves multi-response prediction, guiding principled use of external data in high-dimensional applications.</em></span>
+
+:::
+
+
+::: {.example}
+Conformal prediction with conditional guarantees (A recent JRSSB paper)
+
+<!-- Legend -->
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">We consider the problem of constructing distribution-free prediction sets with finite-sample conditional guarantees.</span>
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Prior work has shown that it is impossible to provide exact conditional coverage universally in finite samples.</span>
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Thus, most popular methods only guarantee marginal coverage over the covariates or are restricted to a limited set of conditional targets, e.g. coverage over a finite set of prespecified subgroups.</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">This paper bridges this gap by defining a spectrum of problems that interpolate between marginal and conditional validity.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">We motivate these problems by reformulating conditional coverage as coverage over a class of covariate shifts.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">When the target class of shifts is finite-dimensional, we show how to simultaneously obtain exact finite-sample coverage over all possible shifts.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">For example, given a collection of subgroups, our prediction sets guarantee coverage over each group.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">For more flexible, infinite-dimensional classes where exact coverage is impossible, we provide a procedure for quantifying the coverage errors of our algorithm.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">Moreover, by tuning interpretable hyperparameters, we allow the practitioner to control the size of these errors across shifts of interest.</span> <span style="background:#fee2e2;padding:.1em .2em;border-radius:.2em">Our methods can be incorporated into existing split conformal inference pipelines, and thus can be used to quantify the uncertainty of modern black-box algorithms without distributional assumptions.</span>
+
+:::
+
+
+::: {.example}
+Exact Bayesian inference for fitting stochastic epidemic models to partially observed incidence data (A recent AoAS paper)
+
+<!-- Legend -->
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Stochastic epidemic models provide an interpretable probabilistic description of the spread of a disease through a population.</span>
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Yet fitting these models to partially observed data can be a difficult task due to intractability of the marginal likelihood, even for classic Markovian models.</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">To remedy this issue, this article introduces a novel data-augmented Markov chain Monte Carlo sampler for exact Bayesian inference under the stochastic susceptible-infectious-removed model, given only discretely observed counts of infections.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">In a Metropolis–Hastings step, the latent data are jointly proposed from a surrogate process carefully designed to closely resemble the target process and from which we can efficiently generate epidemics consistent with the observed data.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">This yields a method that explores the high-dimensional latent space efficiently and easily scales to outbreaks with thousands of infections.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">We prove that our sampler is uniformly ergodic and find empirically that it mixes much faster than existing single-site samplers.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">We apply the algorithm to fit a semi-Markov susceptible-infectious-removed model to the 2013–2015 outbreak of Ebola Haemorrhagic Fever in Guéckédou, Guinea.</span>
+
+<!-- No explicit implications sentence present -->
+<span style="background:#fee2e2;padding:.1em .2em;border-radius:.2em"><em>(Optional) Implication: The sampler enables principled Bayesian inference for partially observed epidemics at realistic scales, improving reliability of outbreak analysis and forecasting.</em></span>
+
+:::
+
+::: {.example}
+Statistical significance of clustering for count data (A recent Biometrics paper)
+
+<!-- Legend -->
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Clustering is widely used in biomedical research for meaningful subgroup identification.</span> <span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">However, most existing clustering algorithms do not account for the statistical uncertainty of the resulting clusters and consequently may generate spurious clusters due to natural sampling variation.</span> <span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">To address this problem, the Statistical Significance of Clustering (SigClust) method was developed to evaluate the significance of clusters in high-dimensional data.</span>
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">While SigClust has been successful in assessing clustering significance for continuous data, it is not specifically designed for discrete data, such as count data in genomics.</span> <span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Moreover, SigClust and its variations can suffer from reduced statistical power when applied to non-Gaussian high-dimensional data.</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">To overcome these limitations, we propose SigClust-DEV, a method designed to evaluate the significance of clusters in count data.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">Through extensive simulations, we compare SigClust-DEV against other existing SigClust approaches across various count distributions and demonstrate its superior performance.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">Furthermore, we apply our proposed SigClust-DEV to Hydra single-cell RNA sequencing (scRNA) data and electronic health records (EHRs) of cancer patients to identify meaningful latent cell types and patient subgroups, respectively.</span>
+
+<!-- No explicit implications sentence present -->
+<span style="background:#fee2e2;padding:.1em .2em;border-radius:.2em"><em>(Optional) Implication: Rigorous significance testing for clusters in count data can reduce false discoveries and sharpen biological and clinical subgrouping.</em></span>
+
+
+:::
+
+
+
+
+::: {.example}
+Robust transfer learning with unreliable source data (A recent AoS paper)
+
+<!-- Legend -->
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">This paper addresses challenges in robust transfer learning stemming from ambiguity in Bayes classifiers and weak transferable signals between the target and source distributions.</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">We introduce a novel quantity called the “ambiguity level” that measures the discrepancy between the target and source regression functions, propose a simple transfer learning procedure, and establish a general theorem that shows how this new quantity is related to the transferability of learning in terms of risk improvements.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">Our proposed “Transfer Around Boundary” (TAB) method, with a threshold that balances the performance contributions of the target and source data, is shown to be both efficient and robust, improving classification while avoiding negative transfer.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">Moreover, we demonstrate the effectiveness of the TAB model on nonparametric classification and logistic regression tasks, achieving upper bounds which are optimal up to logarithmic factors.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">Simulation studies lend further support to the effectiveness of TAB.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">We also provide simple approaches to bound the excess misclassification error without the need for specialized knowledge in transfer learning.</span>
+
+<!-- Optional implication to complete the five-part structure -->
+<span style="background:#fee2e2;padding:.1em .2em;border-radius:.2em"><em>(Optional) Implication: By quantifying “ambiguity” and adapting transfer near class boundaries, TAB offers a principled recipe for robust performance gains while guarding against negative transfer in practice.</em></span>
+
+:::
+
+
+
+
+::: {.exercise}
+Spot the Components of an Abstract
+
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+**Abstract:**  
+We consider the problem of constructing distribution-free prediction sets with finite-sample conditional guarantees. Prior work has shown that it is impossible to provide exact conditional coverage universally in finite samples. Thus, most popular methods only guarantee marginal coverage over the covariates or are restricted to a limited set of conditional targets, e.g. coverage over a finite set of prespecified subgroups. This paper bridges this gap by defining a spectrum of problems that interpolate between marginal and conditional validity. We motivate these problems by reformulating conditional coverage as coverage over a class of covariate shifts. When the target class of shifts is finite-dimensional, we show how to simultaneously obtain exact finite-sample coverage over all possible shifts. For example, given a collection of subgroups, our prediction sets guarantee coverage over each group. For more flexible, infinite-dimensional classes where exact coverage is impossible, we provide a procedure for quantifying the coverage errors of our algorithm. Moreover, by tuning interpretable hyperparameters, we allow the practitioner to control the size of these errors across shifts of interest. Our methods can be incorporated into existing split conformal inference pipelines, and thus can be used to quantify the uncertainty of modern black-box algorithms without distributional assumptions.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">We consider the problem of constructing distribution-free prediction sets with finite-sample conditional guarantees.</span>
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Prior work has shown that it is impossible to provide exact conditional coverage universally in finite samples.</span>
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Thus, most popular methods only guarantee marginal coverage…</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">This paper bridges this gap by defining a spectrum of problems that interpolate between marginal and conditional validity.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">We motivate these problems by reformulating conditional coverage as coverage over a class of covariate shifts.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">When the target class of shifts is finite-dimensional… exact finite-sample coverage over all possible shifts.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">…given a collection of subgroups, our prediction sets guarantee coverage over each group.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">For more flexible, infinite-dimensional classes… we provide a procedure for quantifying the coverage errors…</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">Moreover, by tuning interpretable hyperparameters… control the size of these errors…</span> <span style="background:#fee2e2;padding:.1em .2em;border-radius:.2em">Our methods can be incorporated into existing split conformal pipelines… quantify the uncertainty of modern black-box algorithms without distributional assumptions.</span>
+</details>
+
+---
+
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+**Abstract:**  
+Stochastic epidemic models provide an interpretable probabilistic description of the spread of a disease through a population. Yet, fitting these models to partially observed data is a notoriously difficult task due to intractability of the likelihood for many classical models. To remedy this issue, this article introduces a novel data-augmented MCMC algorithm for exact Bayesian inference under the stochastic SIR model, given only discretely observed counts of infection. In a Metropolis-Hastings step, the latent data are jointly proposed from a surrogate process carefully designed to closely resemble the SIR model, from which we can efficiently generate epidemics consistent with the observed data. This yields a method that explores the high-dimensional latent space efficiently, and scales to outbreaks with hundreds of thousands of individuals. We show that the Markov chain underlying the algorithm is uniformly ergodic, and validate its performance via thorough simulation experiments and a case study on the 2013-2015 outbreak of Ebola Haemorrhagic Fever in Western Africa.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Stochastic epidemic models provide an interpretable probabilistic description of the spread of a disease through a population.</span>
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Yet, fitting these models to partially observed data is a notoriously difficult task due to intractability of the likelihood for many classical models.</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">To remedy this issue, this article introduces a novel data-augmented MCMC algorithm for exact Bayesian inference under the stochastic SIR model, given only discretely observed counts of infection.</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">In a Metropolis-Hastings step, the latent data are jointly proposed from a surrogate process carefully designed to closely resemble the SIR model, from which we can efficiently generate epidemics consistent with the observed data.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">This yields a method that explores the high-dimensional latent space efficiently, and scales to outbreaks with hundreds of thousands of individuals.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">We show that the Markov chain underlying the algorithm is uniformly ergodic, and validate its performance via thorough simulation experiments and a case study on the 2013-2015 outbreak of Ebola Haemorrhagic Fever in Western Africa.</span>
+
+<!-- No explicit implications sentence present -->
+<span style="background:#fee2e2;padding:.1em .2em;border-radius:.2em"><em>(Optional) Implication: The algorithm enables principled, scalable Bayesian inference for partially observed epidemics at realistic population sizes.</em></span>
+</details>
+
+
+---
+
+
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Context</span> 
+<span style="background:#e9d5ff;padding:.1em .3em;border-radius:.2em">Objective</span> 
+<span style="background:#dcfce7;padding:.1em .3em;border-radius:.2em">Approach</span> 
+<span style="background:#ffedd5;padding:.1em .3em;border-radius:.2em">Findings</span> 
+<span style="background:#fee2e2;padding:.1em .3em;border-radius:.2em">Implications</span>
+
+**Abstract**:  
+Statistical learning with a large number of rare binary features is commonly encountered in analyzing electronic health records (EHR) data, especially in the modeling of disease onset with prior medical diagnoses and procedures. Dealing with the resulting highly sparse and large-scale binary feature matrix is notoriously challenging as conventional methods may suffer from a lack of power in testing and inconsistency in model fitting, while machine learning methods may suffer from the inability of producing interpretable results or clinically-meaningful risk factors. To improve EHR-based modeling and use the natural hierarchical structure of disease classification, we propose a tree-guided feature selection and logic aggregation approach for large-scale regression with rare binary features, in which dimension reduction is achieved through not only a sparsity pursuit but also an aggregation promoter with the logic operator of “or”. We convert the combinatorial problem into a convex linearly-constrained regularized estimation, which enables scalable computation with theoretical guarantees. In a suicide risk study with EHR data, our approach is able to select and aggregate prior mental health diagnoses as guided by the diagnosis hierarchy of the International Classification of Diseases. By balancing the rarity and specificity of the EHR diagnosis records, our strategy improves both prediction and interpretation. We identify important higher-level categories and subcategories of mental health conditions and simultaneously determine the level of specificity needed for each of them in associating with suicide risk.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Statistical learning with a large number of rare binary features is commonly encountered in analyzing EHR data, especially in modeling disease onset with prior diagnoses and procedures.</span> <span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Dealing with the resulting highly sparse and large-scale binary feature matrix is challenging… conventional methods lack power/consistency; ML methods lack interpretability/clinically-meaningful factors.</span> <span style="background:#e9d5ff;padding:.1em .2em;border-radius:.2em">To improve EHR-based modeling and leverage the disease hierarchy, we propose a tree-guided feature selection and logic aggregation approach for large-scale regression with rare binary features…</span> <span style="background:#dcfce7;padding:.1em .2em;border-radius:.2em">We convert the combinatorial problem into a convex linearly-constrained regularized estimation, enabling scalable computation with theoretical guarantees.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">In a suicide risk study, the method selects and aggregates diagnoses guided by ICD hierarchy.</span>
+<span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">By balancing rarity and specificity, the strategy improves both prediction and interpretation.</span> <span style="background:#ffedd5;padding:.1em .2em;border-radius:.2em">It identifies important higher-level categories and subcategories of mental health conditions and determines the needed specificity for associating with suicide risk.</span> 
+
+</details>
+
+:::
+
+
+
+
+::: {.exercise}
+Compress an Abstract to the Required Length
+
+**Task.** Read the original abstract (220 words), then rewrite it to ≤150 words, and then to ≤100 words while preserving the five core components: Context, Objective, Approach, Findings, Implications.
+
+**Original (≈220 words)**  
+Rare-event risk prediction from multi-site EHR data is hampered by extreme class imbalance and heterogeneity across institutions. Models that perform well at one site often fail to generalize, and naive pooling can hide site-specific signals that matter clinically. We develop **RankFuse**, a federated learning framework that consolidates rankings from related event phenotypes across sites without sharing raw data. Our objective is to improve identification of the highest-risk patients under strict privacy constraints. RankFuse uses truncated listwise losses with top-K–focused mini-batches and a cross-site consensus penalty that aligns phenotype-specific orderings while allowing site-level deviations. We derive conditions under which RankFuse improves precision at fixed review capacity and prove a finite-sample bound on recall@K under prevalence 0.2–1%. In simulations with controlled heterogeneity, RankFuse raises precision@1% by 16–24% over calibrated XGBoost and by 11–18% over focal-loss baselines. In a 10-hospital suicide cohort (N=850,000; 2,970 events), RankFuse improves precision@1% from 0.29 to 0.36 and recall@1% from 0.51 to 0.62, while preserving site-level calibration. These gains translate to earlier identification of high-risk patients without expanding the clinical review queue. The method fits into standard federated pipelines, requires only gradient sharing, and supports secure aggregation. Code for RankFuse and synthetic benchmarks will be released to facilitate adoption.
+
+---
+
+<details>
+<summary><b>Sample ≤150-word version (≈148 words)</b></summary>
+
+Rare-event risk prediction in multi-site EHRs suffers from class imbalance and cross-site heterogeneity, limiting generalization. We propose **RankFuse**, a privacy-preserving federated framework that consolidates phenotype-specific rankings across hospitals to better surface the highest-risk patients. RankFuse optimizes truncated listwise losses with top-K–focused mini-batches and a consensus penalty that aligns site rankings while allowing local deviations. We show conditions for improved precision at fixed capacity and provide a finite-sample bound on recall@K under 0.2–1% prevalence. In simulations with controlled heterogeneity, RankFuse raises precision@1% by 16–24% over calibrated XGBoost and by 11–18% over focal-loss baselines. In a 10-hospital suicide cohort (N=850,000; 2,970 events), it improves precision@1% from 0.29→0.36 and recall@1% from 0.51→0.62, maintaining calibration. These gains enable earlier identification without expanding review queues. The approach fits standard federated workflows with gradient sharing and secure aggregation; code and synthetic benchmarks will be released.
+</details>
+
+---
+
+<details>
+<summary><b>Sample ≤100-word version (≈98 words)</b></summary>
+
+We introduce **RankFuse**, a federated ranking method for rare-event prediction in multi-site EHRs. Using truncated listwise losses and a cross-site consensus penalty, RankFuse aligns phenotype-specific rankings while preserving site idiosyncrasies. Theory gives conditions for precision gains at fixed capacity and a finite-sample bound on recall@K under 0.2–1% prevalence. Simulations show +16–24% precision@1% over calibrated XGBoost and +11–18% over focal-loss baselines. In a 10-hospital suicide cohort (N=850k; 2,970 events), precision@1% improves 0.29→0.36 and recall@1% 0.51→0.62 with calibration intact. RankFuse integrates into federated workflows via gradient sharing; code and synthetic benchmarks will be released.
+</details>
+
+---
+
+**Discussion**
+
+- What was removed or condensed in each shorter version, and why didn’t meaning suffer?
+- Did all five components survive the compression? 
+
+:::
+
 
 ## Keywords
 Keywords are words in addition to those in the title that attract search
