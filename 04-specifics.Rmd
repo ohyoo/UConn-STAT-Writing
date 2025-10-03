@@ -327,7 +327,7 @@ Tips:
 
 
 
-### Compoments in an Abstract
+### Components in an Abstract
 
 There are five major components in an abstract: 
 
@@ -613,6 +613,171 @@ An introduction often contains the following items.
 + A roadmap. A brief summary of what each section does in the paper. This 
   concludes the introduction.
   
+  
+### Components in an Introduction
+
++ **Overview of the topic.**  
+  Begin with a general discussion of the area, narrowing down to your specific research focus. Emphasize the importance and timeliness of the problem.  
+  
+  *Example:* “Electronic health records provide rich opportunities for predictive modeling, but their high dimensionality and sparsity create statistical challenges.”  
+
++ **Existing work.**  
+  Briefly review relevant literature. Include both classical and recent works, highlighting what is known.  
+  
+  *Example:* “Traditional regression approaches often break down in high dimensions, and recent machine learning methods, while predictive, lack interpretability.”  
+
++ **The gap.**  
+  Identify what is missing or insufficient in the current body of work—this is the rationale for your study.  
+  *Example:* “However, existing methods rarely exploit the hierarchical structure of medical codes, leaving a gap in clinically meaningful risk prediction.”  
+
++ **Contributions.**  
+  Clearly state what is new and how it advances the field. This is the thesis statement of your paper.  
+  *Example:* “We propose a tree-guided feature selection method that integrates sparsity with clinical hierarchies to improve both interpretability and predictive power.”  
+
++ **Roadmap.**  
+  Provide a brief outline of the rest of the paper.  
+  *Example:* “The remainder of this paper is organized as follows. Section 2 introduces the model formulation. Section 3 presents theoretical guarantees. Section 4 reports simulation results, and Section 5 applies the method to suicide risk prediction with EHR data.”  
+
+
+
+
+
+::: {.exercise}
+Spot the Components of an Introduction
+
+**Legend:**  
+<span style="background:#dbeafe;padding:.1em .3em;border-radius:.2em">Overview</span> 
+<span style="background:#fde68a;padding:.1em .3em;border-radius:.2em">Existing work</span> 
+<span style="background:#fca5a5;padding:.1em .3em;border-radius:.2em">Gap / Limitation</span> 
+<span style="background:#a7f3d0;padding:.1em .3em;border-radius:.2em">Contribution</span> 
+<span style="background:#c7d2fe;padding:.1em .3em;border-radius:.2em">Roadmap</span>
+
+**Introduction:**  
+Recurrent neural networks, long short-term memory [13] and gated recurrent [7] neural networks in particular, have been firmly established as state of the art approaches in sequence modeling and transduction problems such as language modeling and machine translation [35, 2, 5]. Numerous efforts have since continued to push the boundaries of recurrent language models and encoder-decoder architectures [38, 24, 15]. 
+
+Recurrent models typically factor computation along the symbol positions of the input and output sequences. Aligning the positions to steps in computation time, they generate a sequence of hidden states ht, as a function of the previous hidden state ht−1 and the input for position t. This inherently sequential nature precludes parallelization within training examples, which becomes critical at longer sequence lengths, as memory constraints limit batching across examples. Recent work has achieved significant improvements in computational efficiency through factorization tricks [21] and conditional computation [32], while also improving model performance in case of the latter. The fundamental constraint of sequential computation, however, remains. 
+
+Attention mechanisms have become an integral part of compelling sequence modeling and transduction models in various tasks, allowing modeling of dependencies without regard to their distance in the input or output sequences [2, 19]. In all but a few cases [27], however, such attention mechanisms are used in conjunction with a recurrent network. 
+
+
+In this work we propose the Transformer, a model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output. The Transformer allows for significantly more parallelization and can reach a new state of the art in translation quality after being trained for as little as twelve hours on eight P100 GPUs.
+
+<details>
+<summary><b>Show answer</b></summary>
+
+<span style="background:#dbeafe;padding:.1em .2em;border-radius:.2em">Recurrent neural networks, long short-term memory and gated recurrent neural networks in particular, have been firmly established as state of the art approaches in sequence modeling and transduction problems such as language modeling and machine translation. Numerous efforts have since continued to push the boundaries of recurrent language models and encoder-decoder architectures.</span>  
+
+<span style="background:#fde68a;padding:.1em .2em;border-radius:.2em">Recurrent models typically factor computation along the symbol positions of the input and output sequences... Recent work has achieved significant improvements in computational efficiency through factorization tricks and conditional computation, while also improving model performance.</span>  
+
+<span style="background:#fca5a5;padding:.1em .2em;border-radius:.2em">The fundamental constraint of sequential computation, however, remains.</span>  
+
+<span style="background:#fde68a;padding:.1em .2em;border-radius:.2em">Attention mechanisms have become an integral part of compelling sequence modeling... In all but a few cases, however, such attention mechanisms are used in conjunction with a recurrent network.</span>  
+
+<span style="background:#a7f3d0;padding:.1em .2em;border-radius:.2em">In this work we propose the Transformer, a model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output. The Transformer allows for significantly more parallelization and can reach a new state of the art in translation quality after being trained for as little as twelve hours on eight P100 GPUs.</span>  
+
+<span style="background:#c7d2fe;padding:.1em .2em;border-radius:.2em"><em>(Implicit roadmap: The paper goes on to describe the model, training setup, and evaluation, but here the “In this work we propose...” serves as both contribution and a forward pointer.)</em></span>
+</details>
+:::
+
+
+## Tips and Common Mistakes in Writing Introductions
+
+### Useful tips
+
+- Use the first sentence of each paragraph to state the main idea.  
+
+::: {.example}  
+"High-dimensional genomic data pose unique challenges for clustering because of noise and sparsity......"
+
+This first sentence signals the point of the paragraph; the following sentences can then elaborate with details and evidence.  
+:::
+
+::: {.exercise}  
+Take a paragraph from one of your drafts and rewrite the first sentence so that the main idea is clear at the start.  
+:::
+
+- Limit the scope of the background to what directly connects to your research problem.  
+
+::: {.example}  
+"Clustering has been studied by [1], [2], [3], [4], [5]…"  
+
+"Several approaches have been proposed for clustering in high-dimensional data. Penalized methods [1,2] improve stability, while likelihood-based approaches [3–5] provide inference tools. Yet none are tailored to discrete genomic data." 
+ 
+Instead of reviewing all clustering methods, narrow the discussion to those designed for genomic count data.  
+:::
+
+::: {.exercise}  
+Find two sentences in your current draft introduction that provide background but do not directly relate to your problem. Revise or cut them.  
+:::
+
+- Link the gap and contribution in one motion.  
+
+::: {.example}  
+"Existing sparse regression methods fail to use the disease hierarchy in EHR data. To close this gap, we develop a tree-guided feature aggregation method."  
+:::
+
+::: {.exercise}  
+Write one sentence where you state a limitation in the literature and directly follow it with your contribution.  
+:::
+
+- Keep the roadmap short and functional. If it is very generic, maybe you don't need such a paragraph.
+
+::: {.example}  
+Section 2 presents the method, Section 3 reports simulations, and Section 4 applies the model to EHR data.  
+:::
+
+::: {.exercise}  
+Write a one-sentence roadmap for a paper you have recently read.  
+:::
+
+
+---
+
+### Common mistakes
+
+- Burying the main idea at the end of the paragraph.  
+
+::: {.example}  
+"Many methods have been proposed for sparse regression, ranging from penalization to Bayesian priors. Some perform well, others fail in practice...... In this paper, we study tree-guided regression."  
+
+"In this paper, we study tree-guided regression, motivated by challenges in sparse regression. We review existing penalized and Bayesian methods to highlight the limitations that our approach addresses."  
+
+:::
+
+
+
+- Listing prior work without synthesis and connections to your own work.
+
+::: {.exercise}  
+Turn a list of references from your notes into a synthesized, comparative statement.  
+:::
+
+- Overloading the introduction with method details.  
+
+::: {.example}  
+"Our method solves a convex optimization problem with ADMM iterations and gradient descent, initializing with ridge regression and adapting a warm start strategy, and then applies cross-validation to select the penalty parameter..."  
+:::
+
+::: {.exercise}  
+Take a method-heavy introduction paragraph you wrote and reduce it to a single motivating sentence.  
+:::
+
+- Failing to connect the gap and the contribution.  
+
+::: {.exercise}  
+Write two linked sentences: the first states a limitation, the second shows how your work addresses it.  
+:::
+
+- Using excessive mathematical notation instead of clear language.  
+
+
+- Over-exaggerating the contribution or being too superficial.  
+
+
+- Ignoring key references or cherry-picking the literature.  
+
+
+
 
 ## Data
 
@@ -624,6 +789,7 @@ research project.
 + What period or range does the data cover?
 + Why does the data help answer the research question?
 + What exploratory analyses are done (descriptives, visualization, etc.)?
+
 
 
 ## Methods
@@ -640,6 +806,8 @@ idea at an intuitive level.
 + How are the variances of the point estimators estimated?
 + How are the null distribution of the testing statistics established?
 + Clearly state the assumptions and claims of theoretical results.
+
+
 
 ## Simulation
 
