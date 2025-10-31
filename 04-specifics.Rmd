@@ -791,11 +791,49 @@ research project.
 + What exploratory analyses are done (descriptives, visualization, etc.)?
 
 
+### Structure and Key Elements
+
+The data section forms the empirical backbone of a research paper. It explains where the data come from, how they were collected, what they contain, and what insights can be drawn from preliminary exploration. The goal is to help readers evaluate the quality, appropriateness, and limitations of the data before interpreting any statistical results. 
+
+
+1. Data source and access
+   Indicate who collected the data, when and where they were collected, and how access was obtained. Mention whether the data are publicly available, proprietary, or collected by the investigators.
+
+2. Study design and population
+   Describe how the analytic dataset was constructed, including inclusion and exclusion criteria, time period, and the unit of analysis. Specify whether the data arise from an experiment, a survey, or an observational study.
+
+3. Variables and measurements
+   Define outcomes, exposures, predictors, and covariates. Provide clear operational definitions and coding rules. Identify coding systems (for example, ICD, LOINC, RxNorm) and describe how composite variables were formed.
+
+4. Data preprocessing
+   Summarize the steps taken to prepare the data for analysis—such as filtering, merging, deduplication, variable transformation, and handling of missing data or outliers.
+
+5. Preliminary data analysis
+   Present descriptive and exploratory analyses that reveal the structure and features of the data. This stage helps to identify irregularities, guide model selection, and provide context for interpretation. Common elements include:
+
+   * Descriptive statistics: sample size, means, medians, proportions, standard deviations.
+   * Graphical summaries: histograms, boxplots, scatterplots, or correlation matrices.
+   * Checks for data quality: missingness patterns, implausible values, and consistency across related variables.
+   * Initial group comparisons or cross-tabulations to detect broad relationships or heterogeneity.
+   * Analysis to justify the motivation of the proposed methods. 
+
+Either in the data section or later in discussion, one should discuss known biases, limitations, or measurement errors, and clarify to what population the findings can reasonably be generalized.
+
+
+**Tips**
+
+* Integrate descriptive results into short paragraphs rather than long, unconnected tables.
+* Always check the internal consistency of key variables before proceeding to modeling.
+* Use visualization to complement numerical summaries; readers grasp patterns more quickly in plots.
+* Point out any notable trends, distributions, or anomalies that motivated analytic choices later.
+* Keep preliminary analyses exploratory; do not perform formal hypothesis testing at this stage.
+
+
 
 ## Methods
 
-Notation is much easier to digest if the reader first understands the main
-idea at an intuitive level.
+The methods section is the technical heart of a research paper. It presents the modeling framework, the inferential or computational strategy, and the assumptions that underlie the proposed approach. The goal is to make the methodology clear, logical, and reproducible, not necessarily to show every line of algebra, but to communicate the essential ideas and reasoning behind them.
+
 
 + Establish notation.
 + What are the observed data?
@@ -808,10 +846,109 @@ idea at an intuitive level.
 + Clearly state the assumptions and claims of theoretical results.
 
 
+### Major Components of a Method Section
+
+1. Overview of the method
+
+   Begin with a short paragraph describing the main idea of the proposed method in plain language. This paragraph should be connected to the discussion in the previous sections. 
+   
+::: {.example}
+   ``Motivated by XXXX, we propose a penalized regression framework that integrates group structure among predictors to achieve both sparsity and interpretability.''
+   
+   This sets the stage before introducing notation or equations.
+:::
+
+2. Notation and data structure
+
+   Clearly define the observed data and notation before presenting formulas. Ambiguous notation confuses readers quickly.
+
+::: {.example}
+
+   * Specify dimensions (e.g., (n \times p)).
+   * Distinguish random variables, parameters, and fixed constants.
+   * Use consistent notation throughout the paper; avoid redefining symbols.
+   
+:::
+
+
+3. Model specification
+
+   State the model explicitly, whether it is probabilistic, deterministic, or algorithmic. Describe key assumptions about the data-generating process.
+   
+::: {.example}  
+Regression models, hierarchical models, latent variable models, or machine-learning formulations.
+   Clarify what each component represents, e.g.,
+   \[
+   Y_i = X_i^\top \beta + \varepsilon_i, \quad \varepsilon_i \sim N(0, \sigma^2).
+   \]
+   Briefly interpret each term in words.
+
+:::
+
+4. Estimation procedure
+
+   Explain how the parameters are estimated.
+
+   * Likelihood-based: maximum likelihood or Bayesian inference.
+   * Regularized methods: penalized loss minimization.
+   * Nonparametric or algorithmic methods: iterative optimization or ensemble procedures.
+
+
+5. Inference and uncertainty quantification
+
+   Describe how to assess uncertainty around estimates, for example, standard errors, confidence intervals, or posterior credible intervals.
+   
+   Explain how variance is estimated (analytically, by bootstrap, jackknife, or asymptotic approximation).
+   
+   State how null distributions are established for test statistics or how p-values are computed.
+   
+   These things are considered essential for a statistics paper; if developing inferential methods is not the focus, you may still add some discussion. 
+   
+
+6. Theoretical properties
+
+   If the paper contains theory, state main assumptions and results clearly. Each theorem should be accompanied by a short intuitive explanation of what it means and why it matters.
+   
+   Examples include consistency, oracle properties, convergence rates, or robustness guarantees. Avoid overly detailed proofs in the main text, ratherm place them in the appendix if necessary.
+   
+   It often makes sense to have a separate Theory section. 
+   
+
+7. Computation and implementation
+
+  Derive and present the optimization/computation algorithms if applicable.
+
+  Discuss computational aspects such as algorithmic complexity, convergence criteria, and scalability. 
+  
+  If specialized software or code is used, mention it explicitly and reference open-source implementations when possible.
+  
+  Include details about hyperparameter tuning, initialization, and stopping rules.
+  
+  If space is limited, provide pseudo algorithms instead; technical contents should be presented in appendix or supplement. 
+
+
+---
+
+### Tips for Writing the Method Section
+
+* Start with intuition before equations. Readers should understand *what* problem the method solves and *why* before seeing how.
+* Define notation once and stick to it. Overloaded symbols are one of the most common sources of confusion.
+* Separate model, estimation, and inference. Organizing the section around these three themes improves clarity.
+* Explain assumptions explicitly. Hidden assumptions (e.g., independence, homoscedasticity, exchangeability) should be spelled out and discussed.
+* Connect to prior work. Briefly mention how your approach relates to or extends existing methods; this orients the reader.
+* Avoid unnecessary math in the main text. Focus on ideas; detailed derivations belong in the appendix or supplement.
+* Ensure reproducibility. Indicate how the procedure can be implemented (software, packages, or code snippets).
+* Include a roadmap if the section is long. For example: “This section introduces the model in Section 3.1, the estimation algorithm in Section 3.2, and the asymptotic properties in Section 3.3.”
+
+
+---
+
+
+
 
 ## Simulation
 
-ADEMP [@morris2019using]:
+Simulation studies are essential for understanding how a method behaves when the truth is known. They reveal operating characteristics that a single real dataset cannot: bias, variance, coverage, type I error, power, robustness to misspecification, sensitivity to tuning, and scalability. A clear simulation section follows a simple logic ADEMP [@morris2019using]:
 
 + Aims
 + Data generating mechanism
@@ -819,16 +956,69 @@ ADEMP [@morris2019using]:
 + Methods
 + Performance measures
 
-Coding and Execution
 
-Analysis/Discussion: with tables and figures.  May be included in a Results 
-section.
+### Major Components of a Simulation Section
 
-+ For each table/figure, write down the bullet points to convey to the readers.
-+ Group the bullet points in blocks and put the blocks in a logical order.
-+ Within each block, put the bullet points in the right logical order.
-+ Some (shorter) blocks can be converted into proper paragraphs in the final 
-  paper, while other (longer) blocks may remain in bullet form.
+A clear simulation study follows a predictable structure. Organize your section with the items below so readers can understand, reproduce, and trust your results.
+
+1. Simulation aims
+   State what the simulation is designed to assess. Examples: small-sample bias and variance; variable-selection accuracy under correlation; calibration of uncertainty quantification; type I error and power under local alternatives; robustness to outliers or heavy tails; performance under distribution shift; runtime and memory growth with n and p.
+
+2. Data-generating mechanisms (setups)
+   Specify precisely how synthetic data are created so others can reproduce your study.
+
+   * Design grid: factors and levels (for example, sample size; dimension; signal-to-noise; sparsity; correlation; number of clusters; heterogeneity levels; missing rate).
+   * Models and distributions: exact formulas and parameter values.
+   * Estimands: the target(s) you want to learn about (parameter estimation, prediction, coverage, power, etc.).
+   * Practical details: number of replicates R, train/validation/test splits, cross-validation folds, preprocessing pipeline, tuning protocol. If you simulate missingness, state mechanism (MCAR/MAR/MNAR) and rates.
+
+3. Competing methods
+   List all methods compared, including straightforward baselines and standard references and state-of-art methods from the literature.
+
+   * Tuning and implementation: for each method, how hyperparameters are selected (cross-validation, information criteria, theory-guided rules), and software versions/options used.
+   * Variants and ablations: include stripped versions of your method to show which components drive gains.
+   
+
+4. Evaluation metrics (performance measures)
+
+   * Estimation: bias, variance, MSE; support recovery (TPR, FPR, precision, recall, F1); selection stability across resamples.
+   * Prediction: test RMSE/MAE; AUROC and AUPRC (for imbalance classification); specificity/sensitivity; positive predictive value (PPV). 
+   * Inference: empirical coverage and average length of intervals; type I error; power under prespecified alternatives; FDR/FWER as appropriate.
+   * Robustness and efficiency: sensitivity to misspecification; runtime and memory; convergence diagnostics.
+   
+     Report uncertainty across Monte Carlo replicates (for example, mean ± Monte Carlo standard error or distributional summaries).
+
+
+5. Results presentation and interpretation
+
+   * Figures and tables
+
+     * Prefer compact, readable visuals: line plots across a design grid, box/violin plots for variability across replicates, and heatmaps when two factors vary jointly.
+     * Always display uncertainty (error bars for means; boxplots).
+     * Use consistent axes, units, and significant digits across panels; label methods and settings directly on the plot or in a clear legend.
+     * Place long or dense tables in the supplement; keep main-text tables small and focused.
+
+   * Narrative
+
+     * For each figure/table, provide crisp takeaways in plain language. Lead with a summary and a general pattern, then support with representative numbers.
+     * Explain any ``unexpected'' results. 
+     * Avoid repeating every number; synthesize what the reader should conclude.
+     * Be objective. 
+
+
+---
+
+#### Tips
+
+* Align simulations with claims; include the regimes your method is intended to handle.
+* Cover easy, moderate, and hard settings; avoid cherry-picking a single favorable point.
+* Keep tuning fair and inside training folds; never tune on test data.
+* Fix the design grid before running to reduce post hoc choices.
+* Report Monte Carlo error; means alone can mislead.
+* Prefer interpretable plots over large tables; move long tables to the supplement.
+* Include ablations to justify why the method works.
+* Document failures and edge cases; negative results increase credibility.
+
 
 ## Application
 
