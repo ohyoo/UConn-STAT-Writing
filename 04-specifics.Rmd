@@ -680,9 +680,9 @@ In this work we propose the Transformer, a model architecture eschewing recurren
 :::
 
 
-## Tips and Common Mistakes in Writing Introductions
+### Tips and Common Mistakes in Writing Introductions
 
-### Useful tips
+#### Useful tips
 
 - Use the first sentence of each paragraph to state the main idea.  
 
@@ -733,7 +733,7 @@ Write a one-sentence roadmap for a paper you have recently read.
 
 ---
 
-### Common mistakes
+#### Common mistakes
 
 - Burying the main idea at the end of the paragraph.  
 
@@ -833,7 +833,6 @@ Either in the data section or later in discussion, one should discuss known bias
 ## Methods
 
 The methods section is the technical heart of a research paper. It presents the modeling framework, the inferential or computational strategy, and the assumptions that underlie the proposed approach. The goal is to make the methodology clear, logical, and reproducible, not necessarily to show every line of algebra, but to communicate the essential ideas and reasoning behind them.
-
 
 + Establish notation.
 + What are the observed data?
