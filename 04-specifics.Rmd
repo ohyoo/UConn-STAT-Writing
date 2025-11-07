@@ -1099,28 +1099,93 @@ Use consistent notation throughout the manuscript, avoid defining any
 unnecessary notation, and avoid using the same notation to describe different
 things (variables, indices, etc.).  
 
+
+
 ## General Tips: Use of English
 
-It is relatively easy to read and understand English which is well written. 
-As the quality of writing deteriorates, however, it becomes progressively more 
-difficult for the reader to understand the author's intended meaning. 
+It is relatively easy to read and understand English that is well written.
+As the quality of writing deteriorates, however, it becomes progressively more
+difficult for the reader to understand the author's intended meaning.
 
-An obvious problem occurs when the author fails to use properly constructed 
-sentences. This can be easily corrected with revision and external review.
+An obvious problem occurs when the author fails to use properly constructed
+sentences. This can often be corrected with revision and external review.
 
-A much more dangerous problem occurs when the author unconsciously assumes that 
-the reader is able to follow his/her unwritten train of thought.  This can 
-also usually be caught with external review.
+A more serious problem occurs when the author unconsciously assumes that
+the reader is able to follow an unwritten train of thought. The reasoning
+may be clear in the author's mind, but not on the page. This can also
+usually be caught by careful revision and by asking others to read a draft.
 
-More tips on the use of English:
+More tips on the use of English, especially for statistics, machine learning,
+and data science papers:
 
-+ Use of tenses: Use present tense for most of the manuscript; use past tense 
-only when describing events that occurred in the past (data collection, an 
-experiment that has already been conducted, how simulations were designed).  
-Be consistent with tense usage within sections, paragraphs, etc.
+* Use of tenses.
+  Use present tense for most of the manuscript (for example, when describing
+  the content of the paper, the structure of the method, or general facts).
+  Use past tense when describing events that occurred in the past (for example,
+  data collection, an experiment that has been conducted, the design of a
+  simulation). Be consistent with tense usage within sections, paragraphs, and
+  related sentences.
 
-+ Do not use the word 'significant' other than in a statistical sense.
+* Use of the word "significant".
+  Do not use the word "significant" in a vague or informal sense. Reserve it
+  for a statistical meaning (for example, "statistically significant at the
+  5% level"). If you mean "large", "important", or "meaningful", use those
+  words instead.
 
-+ The word 'data' is often mistakenly treated as if it were a singular noun
-instead of as a plural noun.  The word 'data' is, in fact, a plural noun (its 
-singular form is 'datum'). 
+* Use of "data".
+  The word "data" is often mistakenly treated as a singular noun. It is, in
+  fact, plural (its singular form is "datum"). In practice, both "the data are"
+  and "the data set is" are acceptable; choose one style and use it consistently.
+
+* Avoid unnecessary jargon.
+  Many terms in statistics and machine learning are not familiar to all readers. 
+  When first using a technical term, provide a short explanation
+  in plain language. Do not overload sentences with many specialized terms.
+
+* Define acronyms and abbreviations.
+  Spell out each acronym the first time it appears in the main text, followed
+  by the abbreviation in parentheses, and then use the abbreviation afterwards.
+  For example: "area under the receiver operating characteristic curve (AUC)".
+  Avoid long strings of acronyms in the same sentence.
+
+* Prefer clear, direct sentences.
+  Long, nested sentences with many clauses and parentheses are hard to follow,
+  especially when equations or technical terms are included. It is often better
+  to split a long sentence into two or three shorter ones. As a rule of thumb,
+  if a sentence spans more than three lines, consider breaking it.
+
+* Avoid vague qualifiers.
+  Words such as "very", "quite", "rather", or "somewhat" rarely add precision.
+  Instead of "the method is very accurate", write "the method achieves a
+  prediction error 30% lower than the baseline".
+
+* Distinguish speculation from evidence.
+  Clearly separate what is supported by data from what is a
+  conjecture or an open question. Phrases such as "our results suggest that",
+  "it is plausible that", or "one possible explanation is" help signal the
+  level of certainty.
+
+* Be careful with causal language.
+  In many statistical and machine learning analyses, the data and design only
+  support association statements. Avoid verbs such as "cause" or "lead to"
+  unless the design justifies causal interpretation. Use "is associated with" or
+  "is related to" when appropriate.
+
+* Maintain consistent terminology.
+  Choose one term for each concept (for example, "predictor", not alternating
+  between "feature", "variable", and "covariate" without reason) and use it
+  throughout. Changing terms can confuse readers and make the paper harder to
+  follow.
+
+
+* Avoid informal or conversational expressions.
+  Phrases such as "obviously", "of course", "clearly", or "we just" can sound
+  dismissive or may be incorrect for some readers. If a point is important,
+  it is better to explain it carefully than to label it "obvious".
+
+
+These points may seem minor, but they have a large impact on how easily
+readers can understand and trust your work. Good English usage does not mean
+fancy vocabulary; it means clear, precise, and consistent language that serves
+the statistical ideas.
+
